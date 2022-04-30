@@ -1,0 +1,101 @@
+<nz-page-header nzBackIcon>
+  <!--title-->
+  <nz-page-header-title>产品详情</nz-page-header-title>
+  <!--subtitle-->
+  <nz-page-header-subtitle></nz-page-header-subtitle>
+</nz-page-header>
+<form nz-form [formGroup]="productForm" class="ant-advanced-search-form" disabled="true">
+  <fieldset disabled>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzFor="batchNo">产品批号</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input
+          nz-input
+          placeholder="请输入产品批号"
+          formControlName="batchNo"
+          id="batchNo"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzFor="name">产品名称</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input
+          nz-input
+          placeholder="产品名称"
+          formControlName="name"
+          id="name"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzFor="specs">规格</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input
+          nz-input
+          placeholder="请输入产品规格"
+          formControlName="specs"
+          id="specs"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzFor="material">原材料</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input
+          nz-input
+          placeholder="原材料"
+          formControlName="material"
+          id="material"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzFor="manufacturer">制造商</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input
+          nz-input
+          placeholder="请输入产品制造商"
+          formControlName="manufacturer"
+          id="manufacturer"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzFor="brand">品牌</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input
+          nz-input
+          placeholder="品牌"
+          formControlName="brand"
+          id="brand"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzFor="manufacturer">产品批号</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input
+          nz-input
+          placeholder="请输入产品批号"
+          formControlName="batchNum"
+          id="batchNum"
+        />
+      </nz-form-control>
+    </nz-form-item>
+
+    <!--
+    <nz-form-item>
+      <nz-form-label nzFor="qualityStatus">质检状态</nz-form-label>
+      <nz-form-control>
+        <input
+          nz-input
+          placeholder="质检状态"
+          formControlName="qualityStatus"
+          id="qualityStatus"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    -->
+  </fieldset>
+</form>

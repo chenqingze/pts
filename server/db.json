@@ -1,0 +1,127 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "num": "1",
+      "name": "1",
+      "specs": "1",
+      "material": "1",
+      "manufacturer": "1",
+      "brand": "1",
+      "batchNum": "1"
+    },
+    {
+      "id": 2,
+      "num": "2",
+      "name": "2",
+      "specs": "2",
+      "material": "2",
+      "manufacturer": "2",
+      "brand": "2",
+      "batchNum": "6"
+    },
+    {
+      "id": 3,
+      "num": "2",
+      "name": "2",
+      "specs": "2",
+      "material": "2",
+      "manufacturer": "2",
+      "brand": "2",
+      "batchNum": "2"
+    },
+    {
+      "name": "1",
+      "batchNo": "!!!",
+      "specs": "121",
+      "countryOFOrigin": "1",
+      "quantity": 1,
+      "importer": "1",
+      "importerAddress": "1",
+      "placeOfClearance": "1",
+      "manufacturer": "11",
+      "material": "12",
+      "expirationDate": "1",
+      "description": "1",
+      "picture": "1",
+      "certificateOfOriginNo": "1",
+      "certificateOfOrigin": "1",
+      "qualifiedCertificateNo": "1",
+      "qualifiedCertificate": "1",
+      "tracingNo": "1",
+      "id": 4
+    },
+    {
+      "name": "1",
+      "batchNo": "1",
+      "specs": "1",
+      "countryOFOrigin": "1",
+      "quantity": "1",
+      "importer": "1",
+      "importerAddress": "1",
+      "placeOfClearance": "1",
+      "manufacturer": "1",
+      "material": "1",
+      "expirationDate": "2022-04-30T10:22:01.358Z",
+      "description": "1",
+      "pictures": [],
+      "id": 5
+    },
+    {
+      "name": "2",
+      "batchNo": "2",
+      "specs": "2",
+      "countryOFOrigin": "2",
+      "quantity": "1",
+      "importer": "2",
+      "importerAddress": "2",
+      "placeOfClearance": "2",
+      "manufacturer": "2",
+      "material": "2",
+      "expirationDate": "2022-04-22T11:08:57.847Z",
+      "description": "2",
+      "pictures": [
+        null
+      ],
+      "id": 6
+    },
+    {
+      "name": "3",
+      "batchNo": "3",
+      "specs": "3",
+      "countryOFOrigin": "3",
+      "quantity": "1",
+      "importer": "3",
+      "importerAddress": "3",
+      "placeOfClearance": "3",
+      "manufacturer": "3",
+      "material": "3",
+      "expirationDate": "2022-04-21T11:10:38.619Z",
+      "description": "3",
+      "pictures": [
+        "classic-art-painting-Lady-Godiva-John-Collier-women-horse-1383815-wallhere.com.jpg"
+      ],
+      "id": 7
+    },
+    {
+      "name": "5",
+      "batchNo": "5",
+      "specs": "5",
+      "countryOFOrigin": "5",
+      "quantity": "1",
+      "importer": "5",
+      "importerAddress": "5",
+      "placeOfClearance": "5",
+      "manufacturer": "5",
+      "material": "5",
+      "expirationDate": "2022-05-05T11:21:49.214Z",
+      "description": "5",
+      "pictures": [
+        "product-pic-1651317716099.jpg",
+        "product-pic-1651317723610.jpg",
+        "product-pic-1651317734370.jpg"
+      ],
+      "id": 8
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+<nz-page-header nzBackIcon>
+  <!--breadcrumb-->
+  <!-- <nz-breadcrumb nz-page-header-breadcrumb>
+     <nz-breadcrumb-item>
+       <a routerLink="/welcome">首页</a>
+     </nz-breadcrumb-item>
+     <nz-breadcrumb-item>
+       <a routerLink="/product">产品纳官</a>
+     </nz-breadcrumb-item>
+   </nz-breadcrumb>-->
+  <!--title-->
+  <nz-page-header-title>产品列表</nz-page-header-title>
+  <!--subtitle-->
+  <nz-page-header-subtitle>您可以在这里提交质检或管理产品信息</nz-page-header-subtitle>
+  <!--extra-->
+  <nz-page-header-extra>
+    <button nz-button nzType="primary" routerLink="/product/add"><i nz-icon nzType="plus-square"></i>新增产品</button>
+    <button nz-button nzType="primary" (click)="qualityDetection()"><i nz-icon nzType="send"></i>提交质检</button>
+    <button nz-button (click)="qualityDetection()"><i nz-icon nzType="import"></i>导入</button>
+    <button nz-button (click)="qualityDetection()"><i nz-icon nzType="export"></i>导出</button>
+    <a class="collapse" (click)="toggleCollapse()">
+      筛选查询
+      <i nz-icon [nzType]="isCollapse ? 'down' : 'up'"></i>
+    </a>
+  </nz-page-header-extra>
+  <!--content-->
+  <nz-page-header-content>
+    <form nz-form [formGroup]="searchForm" class="ant-advanced-search-form" [hidden]="isCollapse"
+          (ngSubmit)="submitForm()">
+      <div nz-row [nzGutter]="24">
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label nzFor="searchName">产品名称</nz-form-label>
+            <nz-form-control>
+              <input
+                nz-input
+                placeholder="产品名称"
+                formControlName="name"
+                id="searchName"
+              />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label nzFor="searchBatchNum">产品批号</nz-form-label>
+            <nz-form-control>
+              <input
+                nz-input
+                placeholder="产品批号"
+                formControlName="batchNum"
+                id="searchBatchNum"
+              />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+      <div nz-row [nzGutter]="24">
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label nzFor="searchQualityStatus">质检状态</nz-form-label>
+            <nz-form-control>
+              <nz-select nzShowSearch nzAllowClear nzPlaceHolder="选择质检状态" formControlName="qualityStatus"
+                         id="searchQualityStatus">
+                <nz-option nzLabel="全部" nzValue="jack"></nz-option>
+                <nz-option nzLabel="未质检" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="待质检" nzValue="tom"></nz-option>
+                <nz-option nzLabel="已质检" nzValue="tom"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="8">
+          <nz-form-item>
+            <nz-form-label nzFor="searchProductionDate">生产日期</nz-form-label>
+            <nz-form-control>
+              <nz-date-picker id="searchProductionDate" formControlName="productionDate"></nz-date-picker>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="4" class="search-area">
+          <button nz-button [nzType]="'primary'"><i nz-icon nzType="search"></i>搜索</button>
+          <button nz-button (click)="resetForm()"><i nz-icon nzType="clear"></i>清空</button>
+        </div>
+      </div>
+      <!--  <div nz-row>
+          <div nz-col [nzSpan]="24" class="search-area">
+            <button nz-button [nzType]="'primary'"><i nz-icon nzType="search"></i>搜索</button>
+            <button nz-button (click)="resetForm()"><i nz-icon nzType="clear"></i>清空</button>
+          </div>
+        </div>-->
+    </form>
+  </nz-page-header-content>
+</nz-page-header>
+<div class="search-result-list">
+  <nz-table
+    #rowSelectionTable
+    nzShowSizeChanger
+    nzBordered
+    [nzData]="productList"
+    (nzCurrentPageDataChange)="onCurrentPageDataChange($event)"
+    [nzScroll]="{ x: '80vw',y: '60vh' }"
+  >
+    <thead>
+    <tr>
+      <th nzLeft
+          [nzSelections]="selectionList"
+          [(nzChecked)]="checked"
+          [nzIndeterminate]="indeterminate"
+          (nzCheckedChange)="onAllChecked($event)"></th>
+      <th nzLeft>产品批号</th>
+      <th nzLeft>产品名称</th>
+      <th>产品规格</th>
+      <th>数量</th>
+      <th>原产国</th>
+      <th nzRight>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of rowSelectionTable.data">
+      <td nzLeft [nzChecked]="setOfCheckedId.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"></td>
+      <td nzLeft>{{ data.batchNo }}</td>
+      <td nzLeft>{{ data.name }}</td>
+      <td>{{ data.specs }}</td>
+      <td>{{ data.quantity }}</td>
+      <td>{{ data.countryOFOrigin }}</td>
+      <td nzRight>
+        <nz-button-group>
+          <button nz-button [routerLink]="['/product/detail', data.id, ]">查看</button>
+          <button nz-button nz-dropdown [nzDropdownMenu]="moreAction" nzPlacement="bottomRight">
+            <!--            <i nz-icon nzType="ellipsis"></i>-->
+            更多<i nz-icon nzType="double-right"></i>
+          </button>
+        </nz-button-group>
+        <nz-dropdown-menu #moreAction="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item>
+              <a nz-button nzType="primary" nzSize="small" [routerLink]="['/product/edit', data.id, ]">
+                <i nz-icon nzType="edit"></i>编辑
+              </a>
+            </li>
+            <li nz-menu-item>
+              <a nz-button nzType="default" nzSize="small" nzDanger (click)="delete(data.id)">
+                <i nz-icon nzType="delete"></i>删除
+              </a>
+            </li>
+          </ul>
+        </nz-dropdown-menu>
+      </td>
+    </tr>
+    </tbody>
+  </nz-table>
+</div>
