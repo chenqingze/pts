@@ -1,16 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "num": "1",
-      "name": "1",
-      "specs": "1",
-      "material": "1",
-      "manufacturer": "1",
-      "brand": "1",
-      "batchNum": "1"
-    },
-    {
       "id": 2,
       "num": "2",
       "name": "2",
@@ -104,6 +94,7 @@
       "id": 7
     },
     {
+      "id": 8,
       "name": "5",
       "batchNo": "5",
       "specs": "5",
@@ -117,11 +108,10 @@
       "expirationDate": "2022-05-05T11:21:49.214Z",
       "description": "5",
       "pictures": [
-        "product-pic-1651317716099.jpg",
-        "product-pic-1651317723610.jpg",
-        "product-pic-1651317734370.jpg"
-      ],
-      "id": 8
+        "product-pic-1651462246677.jpg",
+        "product-pic-1651462257169.jpg",
+        "product-pic-1651462697851.jpg"
+      ]
     }
   ]
 }

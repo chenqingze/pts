@@ -40,7 +40,7 @@ export class ProductEditComponent implements OnInit {
 
   submitForm(): void {
     if (this.productForm.valid) {
-      let pics = this.pictureList.map(pic => pic.response.filename);
+      let pics = this.pictureList.map(pic => pic.response ? pic.response.filename : pic.name);
       this.productForm.controls['pictures'].setValue(pics);
       console.log('submit', this.productForm.getRawValue());
       this.productService.update(this.productForm.getRawValue()).subscribe(() => {

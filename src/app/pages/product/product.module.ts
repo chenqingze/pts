@@ -18,6 +18,7 @@ import {NzDropDownModule} from "ng-zorro-antd/dropdown";
 import {NzInputNumberModule} from "ng-zorro-antd/input-number";
 import {NzUploadModule} from "ng-zorro-antd/upload";
 import {NzModalModule} from "ng-zorro-antd/modal";
+import {NzImageModule} from "ng-zorro-antd/image";
 
 
 @NgModule({
@@ -27,23 +28,24 @@ import {NzModalModule} from "ng-zorro-antd/modal";
     ProductDetailComponent,
     ProductEditComponent,
   ],
-  imports: [
-    ProductRoutingModule,
-    NzTableModule,
-    NzButtonModule,
-    NzFormModule,
-    NzInputModule,
-    SharedModule,
-    NzSelectModule,
-    NzDatePickerModule,
-    NzPageHeaderModule,
-    NzBreadCrumbModule,
-    NzDropDownModule,
-    NzInputNumberModule,
-    NzUploadModule,
-    NzModalModule
+    imports: [
+        ProductRoutingModule,
+        NzTableModule,
+        NzButtonModule,
+        NzFormModule,
+        NzInputModule,
+        SharedModule,
+        NzSelectModule,
+        NzDatePickerModule,
+        NzPageHeaderModule,
+        NzBreadCrumbModule,
+        NzDropDownModule,
+        NzInputNumberModule,
+        NzUploadModule,
+        NzModalModule,
+        NzImageModule
 
-  ]
+    ]
 })
 export class ProductModule {
 }
