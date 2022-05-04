@@ -105,6 +105,11 @@ server.post('/login', (req, res) => {
   res.status(200).json({username: username, token: access_token})
 });
 
+server.post('/uploads', upload.single('product-pic'), function (req, res) {
+  // req.file is the name of your file in the form above, here 'uploaded_file'
+  // req.body will hold the text fields, if there were any
+  res.status(200).json({filename: req.file.filename});
+});
 
 /*server.use(/^(?!\/auth).*$/,  (req, res, next) => {
   if (req.headers.authorization === undefined || req.headers.authorization.split(' ')[0] !== 'Bearer') {
@@ -157,11 +162,7 @@ server.use((req, res, next) => {
 });
 
 
-server.post('/uploads', upload.single('product-pic'), function (req, res) {
-  // req.file is the name of your file in the form above, here 'uploaded_file'
-  // req.body will hold the text fields, if there were any
-  res.status(200).json({filename: req.file.filename});
-});
+
 
 server.post('/inspect', (req, res) => {
   const db = router.db; // Assign the lowdb instance
