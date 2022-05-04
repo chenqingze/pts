@@ -3,13 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server/server.js & ng serve",
+    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "json-server": "json-server --watch server/db.json",
     "start-server": "node server/server.js",
-    "test": "ng test",
-    "tauri": "tauri"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +20,6 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
-    "@tauri-apps/api": "^1.0.0-rc.3",
     "json-server": "^0.17.0",
     "jsonwebtoken": "^8.5.1",
     "multer": "^1.4.4",
@@ -34,7 +32,6 @@
     "@angular-devkit/build-angular": "~13.3.2",
     "@angular/cli": "~13.3.2",
     "@angular/compiler-cli": "~13.3.0",
-    "@tauri-apps/cli": "^1.0.0-rc.8",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~4.0.0",

@@ -9,6 +9,7 @@ button {
 nz-date-picker {
   width: 100%;
 }
-nz-input-number>{
+
+nz-input-number > {
   width: 100%;
 }

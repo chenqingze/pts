@@ -28,24 +28,24 @@ import {NzImageModule} from "ng-zorro-antd/image";
     ProductDetailComponent,
     ProductEditComponent,
   ],
-    imports: [
-        ProductRoutingModule,
-        NzTableModule,
-        NzButtonModule,
-        NzFormModule,
-        NzInputModule,
-        SharedModule,
-        NzSelectModule,
-        NzDatePickerModule,
-        NzPageHeaderModule,
-        NzBreadCrumbModule,
-        NzDropDownModule,
-        NzInputNumberModule,
-        NzUploadModule,
-        NzModalModule,
-        NzImageModule
+  imports: [
+    ProductRoutingModule,
+    NzTableModule,
+    NzButtonModule,
+    NzFormModule,
+    NzInputModule,
+    SharedModule,
+    NzSelectModule,
+    NzDatePickerModule,
+    NzPageHeaderModule,
+    NzBreadCrumbModule,
+    NzDropDownModule,
+    NzInputNumberModule,
+    NzUploadModule,
+    NzModalModule,
+    NzImageModule
 
-    ]
+  ]
 })
 export class ProductModule {
 }

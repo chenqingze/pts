@@ -2,7 +2,7 @@ import {environment} from '../../../environments/environment';
 
 const baseUrl = environment.endpoint
 export const HttpApi = {
-  uploads:`${baseUrl}/uploads`,
+  uploads: `${baseUrl}/uploads`,
   test: `${baseUrl}/test`,
   register: `${baseUrl}/register`,
   login: `${baseUrl}/login`,
