@@ -8,7 +8,7 @@ const server = jsonServer.create();
 const path = require('path');
 const router = jsonServer.router(path.join(__dirname, 'db.json'));
 const userDb = JSON.parse(fs.readFileSync(path.join(__dirname, 'users.json'), 'UTF-8'))
-
+const _ = require('lodash');
 const multer = require('multer');
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -163,9 +163,38 @@ server.post('/uploads', upload.single('product-pic'), function (req, res) {
   res.status(200).json({filename: req.file.filename});
 });
 
+server.post('/inspect', (req, res) => {
+  const db = router.db; // Assign the lowdb instance
+  if (Array.isArray(req.body.ids)) {
+    req.body.ids.forEach(id => {
+      update(db, 'products', id);
+    });
+  }
+  res.status(200).json();
+
+  function update(db, collection, id) {
+    const table = db.get(collection);
+    // console.log(table);
+    let tmpProduct = table.find({id: id}).value();
+    tmpProduct.qualityStatus = '待质检';
+    // console.log(JSON.stringify(tmpProduct));
+    // console.log(tmpProduct.qualityStatus);
+    table.find({id: id}).assign(_.omit(tmpProduct, ['id'])).write();
+    // // Create a new doc if this ID does not exist
+    // if (_.isEmpty(table.find({_id: data._id}).value())) {
+    //   table.push(data).write();
+    // }
+    // else{
+    //   // Update the existing data
+    //   table.find({_id: data._id})
+    //     .assign(_.omit(data, ['_id']))
+    //     .write();
+    // }
+  }
+});
 
 server.use(router);
-server.listen(3000, () => {
+server.listen(3000, '0.0.0.0', () => {
   console.log('JSON Server is running')
 });
 

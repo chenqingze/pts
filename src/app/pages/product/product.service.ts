@@ -24,6 +24,12 @@ export class ProductService {
     return this.httpClient.put(`${HttpApi.products}/${product.id}`, product);
   }
 
+  qualityInspect(ids: Array<string>): Observable<unknown> {
+    return this.httpClient.post(`${HttpApi.baseUrl}/inspect`, {
+      ids: ids
+    });
+  }
+
   delete(id: string): Observable<unknown> {
     return this.httpClient.delete(`${HttpApi.products}/${encodeURI(id)}`);
   }

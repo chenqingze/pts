@@ -6,7 +6,7 @@ export const environment = {
 
   production: false,
   appName: 'pts',
-  endpoint: 'http://localhost:3000',
+  endpoint: 'http://192.168.100.219:3000',
 };
 
 /*

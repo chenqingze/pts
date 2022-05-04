@@ -25,5 +25,19 @@ export interface Product {
   qualifiedCertificate: string; // 合格证书、质检证书
   tracingNo: string; // 溯源码
   hashCode: string; // 哈希值
-  // qualityStatus: string; // 质检状态:未质检；待质检；已质检
+  qualityStatus: QualityStatus; // 质检状态:未质检；待质检；已质检
 }
+
+export enum QualityStatus {
+  NotInspected = '未质检',
+  ToBeInspected = '待质检',
+  Inspected = '已质检'
+}
+
+export const QualityStatusRecord: Record<QualityStatus, string> = {
+  [QualityStatus.NotInspected]: '未质检',
+  [QualityStatus.ToBeInspected]: '待质检',
+  [QualityStatus.Inspected]: '已质检'
+}
+
+

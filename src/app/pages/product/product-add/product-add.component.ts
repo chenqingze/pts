@@ -6,6 +6,7 @@ import {NzUploadChangeParam, NzUploadFile} from "ng-zorro-antd/upload";
 import {NzMessageService} from "ng-zorro-antd/message";
 import {getBase64} from "../../../shared/utils";
 import {HttpApi} from "../../../core/http/http-api";
+import {QualityStatus} from "../product";
 
 
 @Component({
@@ -87,6 +88,7 @@ export class ProductAddComponent implements OnInit {
       // qualifiedCertificate: ['', Validators.required], // 合格证书、质检证书
       // tracingNo: ['', Validators.required], // 溯源码
       // hashCode: ['', Validators.required] // 哈希值
+      qualityStatus: [QualityStatus.NotInspected]
     });
   }
 

@@ -6,6 +6,7 @@ import {NzUploadChangeParam, NzUploadFile} from "ng-zorro-antd/upload";
 import {getBase64} from "../../../shared/utils";
 import {NzMessageService} from "ng-zorro-antd/message";
 import {HttpApi} from "../../../core/http/http-api";
+import {QualityStatus} from "../product";
 
 @Component({
   selector: 'app-product-edit',
@@ -42,7 +43,6 @@ export class ProductEditComponent implements OnInit {
     if (this.productForm.valid) {
       let pics = this.pictureList.map(pic => pic.response ? pic.response.filename : pic.name);
       this.productForm.controls['pictures'].setValue(pics);
-      console.log('submit', this.productForm.getRawValue());
       this.productService.update(this.productForm.getRawValue()).subscribe(() => {
         console.log("保存成功");
         this.router.navigate(['/product/list']);
@@ -78,6 +78,7 @@ export class ProductEditComponent implements OnInit {
       // qualifiedCertificate: ['', Validators.required], // 合格证书、质检证书
       // tracingNo: ['', Validators.required], // 溯源码
       // hashCode: ['', Validators.required] // 哈希值
+      qualityStatus: [QualityStatus.NotInspected]
     });
   }
 
@@ -109,6 +110,7 @@ export class ProductEditComponent implements OnInit {
           // qualifiedCertificate: ['', Validators.required], // 合格证书、质检证书
           // tracingNo: ['', Validators.required], // 溯源码
           // hashCode: ['', Validators.required] // 哈希值
+          qualityStatus: data?.qualityStatus || QualityStatus.NotInspected //质检状态
         })
         this.pictureList = data.pictures.map((pic, index) => {
           return {
@@ -120,7 +122,6 @@ export class ProductEditComponent implements OnInit {
         })
       })
     });
-
   }
 
 }

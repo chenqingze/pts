@@ -15,9 +15,9 @@
   <!--extra-->
   <nz-page-header-extra>
     <button nz-button nzType="primary" routerLink="/product/add"><i nz-icon nzType="plus-square"></i>新增产品</button>
-    <button nz-button nzType="primary" (click)="qualityDetection()"><i nz-icon nzType="send"></i>提交质检</button>
-    <button nz-button (click)="qualityDetection()"><i nz-icon nzType="import"></i>导入</button>
-    <button nz-button (click)="qualityDetection()"><i nz-icon nzType="export"></i>导出</button>
+    <button nz-button nzType="primary" (click)="qualityInspect()"><i nz-icon nzType="send"></i>提交质检</button>
+    <button nz-button><i nz-icon nzType="import"></i>导入</button>
+    <button nz-button><i nz-icon nzType="export"></i>导出</button>
     <a class="collapse" (click)="toggleCollapse()">
       筛选查询
       <i nz-icon [nzType]="isCollapse ? 'down' : 'up'"></i>
@@ -97,6 +97,7 @@
     #rowSelectionTable
     nzShowSizeChanger
     nzBordered
+    nzSize="small"
     [nzData]="productList"
     (nzCurrentPageDataChange)="onCurrentPageDataChange($event)"
     [nzScroll]="{ x: '80vw',y: '60vh' }"
@@ -113,17 +114,20 @@
       <th>产品规格</th>
       <th>数量</th>
       <th>原产国</th>
+      <th nzRight>质检状态</th>
       <th nzRight>操作</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let data of rowSelectionTable.data">
-      <td nzLeft [nzChecked]="setOfCheckedId.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"></td>
+      <td nzLeft [nzChecked]="setOfCheckedId.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"
+          [nzDisabled]="data.qualityStatus!==qualityStatus.NotInspected"></td>
       <td nzLeft>{{ data.batchNo }}</td>
       <td nzLeft>{{ data.name }}</td>
       <td>{{ data.specs }}</td>
       <td>{{ data.quantity }}</td>
       <td>{{ data.countryOFOrigin }}</td>
+      <td nzRight>{{ qualityStatusMap[data.qualityStatus] || qualityStatusMap[qualityStatus.NotInspected]}}</td>
       <td nzRight>
         <nz-button-group>
           <button nz-button nzType="link" [routerLink]="['/product/detail', data.id, ]">查看</button>

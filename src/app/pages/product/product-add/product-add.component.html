@@ -216,6 +216,7 @@
       </nz-form-item>
     </div>
   </div>
+  <input [hidden]="true" formControlName="qualityStatus">
   <nz-form-item nz-row>
     <nz-form-control [nzSpan]="24" [nzOffset]="10">
       <button nz-button [nzType]="'primary'" [disabled]="!productForm.valid">提交</button>

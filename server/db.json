@@ -1,47 +1,7 @@
 {
   "products": [
     {
-      "id": 2,
-      "num": "2",
-      "name": "2",
-      "specs": "2",
-      "material": "2",
-      "manufacturer": "2",
-      "brand": "2",
-      "batchNum": "6"
-    },
-    {
-      "id": 3,
-      "num": "2",
-      "name": "2",
-      "specs": "2",
-      "material": "2",
-      "manufacturer": "2",
-      "brand": "2",
-      "batchNum": "2"
-    },
-    {
-      "name": "1",
-      "batchNo": "!!!",
-      "specs": "121",
-      "countryOFOrigin": "1",
-      "quantity": 1,
-      "importer": "1",
-      "importerAddress": "1",
-      "placeOfClearance": "1",
-      "manufacturer": "11",
-      "material": "12",
-      "expirationDate": "1",
-      "description": "1",
-      "picture": "1",
-      "certificateOfOriginNo": "1",
-      "certificateOfOrigin": "1",
-      "qualifiedCertificateNo": "1",
-      "qualifiedCertificate": "1",
-      "tracingNo": "1",
-      "id": 4
-    },
-    {
+      "id": 5,
       "name": "1",
       "batchNo": "1",
       "specs": "1",
@@ -55,9 +15,10 @@
       "expirationDate": "2022-04-30T10:22:01.358Z",
       "description": "1",
       "pictures": [],
-      "id": 5
+      "qualityStatus": "未质检"
     },
     {
+      "id": 6,
       "name": "2",
       "batchNo": "2",
       "specs": "2",
@@ -73,25 +34,7 @@
       "pictures": [
         null
       ],
-      "id": 6
-    },
-    {
-      "name": "3",
-      "batchNo": "3",
-      "specs": "3",
-      "countryOFOrigin": "3",
-      "quantity": "1",
-      "importer": "3",
-      "importerAddress": "3",
-      "placeOfClearance": "3",
-      "manufacturer": "3",
-      "material": "3",
-      "expirationDate": "2022-04-21T11:10:38.619Z",
-      "description": "3",
-      "pictures": [
-        "classic-art-painting-Lady-Godiva-John-Collier-women-horse-1383815-wallhere.com.jpg"
-      ],
-      "id": 7
+      "qualityStatus": "未质检"
     },
     {
       "id": 8,
@@ -111,7 +54,46 @@
         "product-pic-1651462246677.jpg",
         "product-pic-1651462257169.jpg",
         "product-pic-1651462697851.jpg"
-      ]
+      ],
+      "qualityStatus": "未质检"
+    },
+    {
+      "id": 9,
+      "name": "111",
+      "batchNo": "4312",
+      "specs": "432432",
+      "countryOFOrigin": "4123",
+      "quantity": "1",
+      "importer": "4312",
+      "importerAddress": "4312",
+      "placeOfClearance": "4312",
+      "manufacturer": "43124",
+      "material": "4312",
+      "expirationDate": "2022-05-11T03:51:01.658Z",
+      "description": "43124",
+      "pictures": [
+        "product-pic-1651636268882.jpg"
+      ],
+      "qualityStatus": "未质检"
+    },
+    {
+      "id": 10,
+      "name": "111",
+      "batchNo": "4312",
+      "specs": "432432",
+      "countryOFOrigin": "4123",
+      "quantity": "1",
+      "importer": "4312",
+      "importerAddress": "4312",
+      "placeOfClearance": "4312",
+      "manufacturer": "43124",
+      "material": "4312",
+      "expirationDate": "2022-05-11T03:51:01.658Z",
+      "description": "43124",
+      "pictures": [
+        "product-pic-1651636268882.jpg"
+      ],
+      "qualityStatus": "已质检"
     }
   ]
 }
