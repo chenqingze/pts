@@ -20,36 +20,36 @@ export class ProductListComponent implements OnInit {
   productList: Product[] = [];
   setOfCheckedId = new Set<string>();
   // 快速选择
-  selectionList = [
-    {
-      text: '全部',
-      onSelect: () => {
-        this.onAllChecked(true);
+  /*  selectionList = [
+      {
+        text: '全部',
+        onSelect: () => {
+          this.onAllChecked(true);
+        }
+      },
+
+      {
+        text: '未质检',
+        onSelect: () => {
+          this.currentPageList.forEach((data, index) => this.updateCheckedSet(data.id, data.qualityStatus == QualityStatus.NotInspected));
+          this.refreshCheckedStatus();
+        }
+      },
+      {
+        text: '待质检',
+        onSelect: () => {
+          this.currentPageList.forEach((data, index) => this.updateCheckedSet(data.id, data.qualityStatus == QualityStatus.ToBeInspected));
+          this.refreshCheckedStatus();
+        }
+      },
+      {
+        text: '已质检',
+        onSelect: () => {
+          this.currentPageList.forEach((data, index) => this.updateCheckedSet(data.id, data.qualityStatus == QualityStatus.Inspected));
+          this.refreshCheckedStatus();
+        }
       }
-    },
-    /*
-     {
-      text: '未质检',
-      onSelect: () => {
-        this.currentPageList.forEach((data, index) => this.updateCheckedSet(data.id, data.qualityStatus == QualityStatus.NotInspected));
-        this.refreshCheckedStatus();
-      }
-    },
-    {
-      text: '待质检',
-      onSelect: () => {
-        this.currentPageList.forEach((data, index) => this.updateCheckedSet(data.id, data.qualityStatus == QualityStatus.ToBeInspected));
-        this.refreshCheckedStatus();
-      }
-    },
-    {
-      text: '已质检',
-      onSelect: () => {
-        this.currentPageList.forEach((data, index) => this.updateCheckedSet(data.id, data.qualityStatus == QualityStatus.Inspected));
-        this.refreshCheckedStatus();
-      }
-    }*/
-  ];
+    ];*/
 
   /*for 查询*/
   searchForm!: FormGroup;
@@ -69,8 +69,13 @@ export class ProductListComponent implements OnInit {
     this.refreshCheckedStatus();
   }
 
+  /*  onAllChecked(value: boolean): void {
+      this.currentPageList.forEach(item => this.updateCheckedSet(item.id, value));
+      this.refreshCheckedStatus();
+    }*/
+
   onAllChecked(value: boolean): void {
-    this.currentPageList.forEach(item => this.updateCheckedSet(item.id, value));
+    this.currentPageList.filter(item => item.qualityStatus == QualityStatus.NotInspected).forEach((data, index) => this.updateCheckedSet(data.id, value));
     this.refreshCheckedStatus();
   }
 
