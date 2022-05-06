@@ -16,35 +16,36 @@
         <i nz-icon nzType="dashboard"></i>
         <span><a routerLink="/welcome">首页</a></span>
       </li>
-      <li nz-submenu nzOpen nzTitle="产品管理" nzIcon="gold">
+      <li nz-submenu nzOpen nzTitle="溯源管理" nzIcon="gold">
         <ul>
           <li nz-menu-item nzMatchRouter>
             <a routerLink="/product/list">产品纳管</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a>溯源信息</a>
-          </li>
-        </ul>
-      </li>
-      <li nz-submenu nzTitle="仓库管理" nzIcon="bank">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a>商品入库</a>
+            <a routerLink="/goods/list">在库商品</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a>商品出库</a>
+            <a>在途商品</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a>在库商品</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>在途信息</a>
+            <a>仓单交易</a>
           </li>
           <li nz-menu-item nzMatchRouter>
             <a>出入库单</a>
           </li>
+          <!--
+          <li nz-menu-item nzMatchRouter>
+              <a>溯源信息</a>
+          </li>
+          -->
         </ul>
       </li>
+      <!--
+      <li nz-submenu nzTitle="管理" nzIcon="bank">
+        <ul>
+        </ul>
+      </li>
+      -->
       <li nz-submenu nzTitle="系统配置" nzIcon="setting">
         <ul>
           <li nz-menu-item nzMatchRouter>
