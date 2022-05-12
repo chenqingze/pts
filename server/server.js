@@ -10,6 +10,7 @@ const router = jsonServer.router(path.join(__dirname, 'db.json'));
 const userDb = JSON.parse(fs.readFileSync(path.join(__dirname, 'users.json'), 'UTF-8'))
 const _ = require('lodash');
 const multer = require('multer');
+const nunjucks = require("nunjucks");
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, path.join(path.resolve(__dirname, '..'), 'public/uploads'));
@@ -19,7 +20,6 @@ const storage = multer.diskStorage({
   }
 })
 const upload = multer({storage});
-
 
 server.use(bodyParser.urlencoded({extended: true}))
 server.use(bodyParser.json())
@@ -111,6 +111,18 @@ server.post('/uploads', upload.single('product-pic'), function (req, res) {
   res.status(200).json({filename: req.file.filename});
 });
 
+
+nunjucks.configure(path.join(__dirname, 'views'), {
+  autoescape: true,
+  express: server,
+  watch: true
+});
+server.get('/tracing-info',(req, res) => {
+  res.render('tracing-info.html',{username: 'professor'})
+})
+
+
+
 /*server.use(/^(?!\/auth).*$/,  (req, res, next) => {
   if (req.headers.authorization === undefined || req.headers.authorization.split(' ')[0] !== 'Bearer') {
     const status = 401
@@ -193,6 +205,9 @@ server.post('/inspect', (req, res) => {
     // }
   }
 });
+
+
+
 
 server.use(router);
 server.listen(3000, '0.0.0.0', () => {
