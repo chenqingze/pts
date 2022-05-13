@@ -120,6 +120,10 @@ nunjucks.configure(path.join(__dirname, 'views'), {
 server.get('/tracing-info',(req, res) => {
   res.render('tracing-info.html',{username: 'professor'})
 })
+server.get('/tracing-map',(req, res) => {
+  res.render('tracing-map.html')
+})
+
 
 
 
