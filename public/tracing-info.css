@@ -56,18 +56,93 @@
     right: 0%;
     transform: translate(-50%, -50%);
 }
-
+/*去掉高德地图logo*/
+.amap-logo{
+    display: none!important;
+}
+.amap-copyright{
+    opacity:0;
+}
+/*首页地图*/
 #map {
     width: 100%;
     height: 200px;
 }
 
+/*模态框地图*/
 #modalMap {
     width: 100%;
     height: 80vh;
 }
 
+/*模态框*/
 #mapModal {
     width: 100vw;
     height: 90vh;
+}
+
+/*进入首页 loading spinner*/
+#overlay {
+    position: fixed;
+    /*display: none;*/
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #2980b9;
+    z-index: 10000;
+}
+
+.spinner {
+    margin: 300px auto;
+    width: 50px;
+    height: 60px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.spinner > div {
+    background-color: white;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+
+    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+    0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+    20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+    0%, 40%, 100% {
+        transform: scaleY(0.4);
+        -webkit-transform: scaleY(0.4);
+    }  20% {
+           transform: scaleY(1.0);
+           -webkit-transform: scaleY(1.0);
+       }
 }

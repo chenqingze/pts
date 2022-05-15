@@ -6,7 +6,7 @@ import {NzUploadChangeParam, NzUploadFile} from "ng-zorro-antd/upload";
 import {getBase64} from "../../../shared/utils";
 import {NzMessageService} from "ng-zorro-antd/message";
 import {HttpApi} from "../../../core/http/http-api";
-import {QualityStatus} from "../product";
+import {QualityStatus} from "../product.model";
 
 @Component({
   selector: 'app-product-edit',

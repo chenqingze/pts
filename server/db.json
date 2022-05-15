@@ -95,5 +95,64 @@
       ],
       "qualityStatus": "已质检"
     }
+  ],
+  "goods": [
+    {
+      "id": 10,
+      "name": "111",
+      "code": "21",
+      "batchNo": "4312",
+      "specs": "432432",
+      "countryOFOrigin": "4123",
+      "quantity": "1",
+      "qualityStatus": "已质检",
+      "transferList": [
+        {
+          "warehouse": "仓库名称1",
+          "position": "仓库位置1",
+          "inTime": "入库时间1",
+          "outTime": "出库时间1",
+          "shelf": "上架位置1",
+          "inspector": "质检员1",
+          "carrier": "出库物流1"
+        },
+        {
+          "warehouse": "仓库名称1",
+          "position": "仓库位置1",
+          "inTime": "入库时间1",
+          "outTime": "出库时间1",
+          "shelf": "上架位置1",
+          "inspector": "质检员1",
+          "logisticsOrder": "出库物流1"
+        }
+      ]
+    }
+  ],
+  "logistics": [
+    {
+      "id": 10,
+      "name": "111",
+      "code": "21",
+      "batchNo": "4312",
+      "specs": "432432",
+      "countryOFOrigin": "4123",
+      "quantity": "1",
+      "fromWarehouse": "发货仓",
+      "toWarehouse": "收货仓",
+      "qualityStatus": "已质检",
+      "outTime": "2022-5-10 9:00",
+      "currentPosition": "北京仓库",
+      "transitList": [
+        {
+          "station": "北京中转站",
+          "outTime": "2022-5-10 12:00"
+        },
+        {
+          "station": "北京中转站",
+          "outTime": "2022-5-10 12:00"
+        }
+      ],
+      "logisticsOrder": "德邦速运：38764534"
+    }
   ]
 }

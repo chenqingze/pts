@@ -1,5 +1,5 @@
 <nz-page-header nzBackIcon>
-    <nz-page-header-title>仓储-物流信息</nz-page-header-title>
+    <nz-page-header-title>物流-商品信息</nz-page-header-title>
     <!--subtitle-->
     <!--<nz-page-header-subtitle>仓储物流信息</nz-page-header-subtitle>-->
 </nz-page-header>
@@ -9,7 +9,7 @@
         nzShowSizeChanger
         nzBordered
         nzSize="small"
-        [nzData]="goodsList"
+        [nzData]="logisticsList"
         (nzCurrentPageDataChange)="onCurrentPageDataChange($event)"
         [nzScroll]="{ x: '80vw',y: '60vh' }"
     >
@@ -20,13 +20,13 @@
                 [nzIndeterminate]="indeterminate"
                 (nzCheckedChange)="onAllChecked($event)"></th>-->
             <th nzLeft>产品编号</th>
-            <th nzLeft>产品批号</th>
             <th nzLeft>产品名称</th>
-            <th>仓库名称</th>
-            <th>仓库位置</th>
-            <th>入库时间</th>
-            <th>出库时间</th>
-            <th nzRight>质检状态</th>
+            <th nzLeft>产品批号</th>
+            <th>发货仓</th>
+            <th>收货仓</th>
+            <th>发出时间</th>
+            <th>物流信息</th>
+            <th nzRight>当前位置</th>
             <th nzRight>操作</th>
         </tr>
         </thead>
@@ -35,13 +35,13 @@
             <!-- <td nzLeft [nzChecked]="setOfCheckedId.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"
                  [nzDisabled]="data.qualityStatus!==qualityStatus.NotInspected"></td>-->
             <td nzLeft>{{ data.code }}</td>
-            <td nzLeft>{{ data.batchNo }}</td>
             <td nzLeft>{{ data.name }}</td>
-            <td>{{ data.transferList[data.transferList.length - 1]['warehouse'] }}</td>
-            <td>{{ data.transferList[data.transferList.length - 1]['position']  }}</td>
-            <td>{{data.transferList[data.transferList.length - 1]['inTime'] }}</td>
-            <td>{{data.transferList[data.transferList.length - 1]['outTime'] }}</td>
-            <td nzRight>{{ qualityStatusMap[data.qualityStatus] || qualityStatusMap[qualityStatus.NotInspected]}}</td>
+            <td nzLeft>{{ data.batchNo }}</td>
+            <td>{{ data.fromWarehouse}}</td>
+            <td>{{ data.toWarehouse }}</td>
+            <td>{{data.outTime}}</td>
+            <td>{{data.logisticsOrder}}</td>
+            <td>{{data.currentPosition}}</td>
             <td nzRight>
                 <button nz-button nzType="link" [routerLink]="['/goods/detail', data.id, ]">查看</button>
                 <!-- <nz-button-group>

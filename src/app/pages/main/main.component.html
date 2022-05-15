@@ -1,93 +1,95 @@
 <nz-layout class="app-layout">
-  <nz-sider class="menu-sidebar"
-            nzCollapsible
-            nzWidth="256px"
-            nzBreakpoint="md"
-            [(nzCollapsed)]="isCollapsed"
-            [nzTrigger]="null">
-    <div class="sidebar-logo">
-      <a href="#" target="_blank">
-        <img src="/assets/logo/logo.png" alt="logo">
-        <h1>溯源系统</h1>
-      </a>
-    </div>
-    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-menu-item nzMatchRouter>
-        <i nz-icon nzType="dashboard"></i>
-        <span><a routerLink="/welcome">首页</a></span>
-      </li>
-      <li nz-submenu nzOpen nzTitle="溯源管理" nzIcon="gold">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/product/list">产品纳管</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/goods/list">在库商品</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>在途商品</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>仓单交易</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>出入库单</a>
-          </li>
-          <!--
-          <li nz-menu-item nzMatchRouter>
-              <a>溯源信息</a>
-          </li>
-          -->
+    <nz-sider class="menu-sidebar"
+              nzCollapsible
+              nzWidth="256px"
+              nzBreakpoint="md"
+              [(nzCollapsed)]="isCollapsed"
+              [nzTrigger]="null">
+        <div class="sidebar-logo">
+            <a href="#" target="_blank">
+                <img src="/assets/logo/logo.png" alt="logo">
+                <h1>溯源系统</h1>
+            </a>
+        </div>
+        <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+            <li nz-menu-item nzMatchRouter>
+                <i nz-icon nzType="dashboard"></i>
+                <span><a routerLink="/welcome">首页</a></span>
+            </li>
+            <li nz-submenu nzOpen nzTitle="溯源管理" nzIcon="gold">
+                <ul>
+                    <li nz-menu-item nzMatchRouter>
+                        <a routerLink="/product/list">产品纳管</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a routerLink="/goods/list">在库商品</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a routerLink="/logistics/list">在途商品</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a>交易信息</a>
+                    </li>
+                    <!--
+                      <li nz-menu-item nzMatchRouter>
+                          <a>出入库单</a>
+                      </li>
+                    -->
+                    <!--
+                      <li nz-menu-item nzMatchRouter>
+                          <a>溯源信息</a>
+                      </li>
+                      -->
+                </ul>
+            </li>
+            <!--
+            <li nz-submenu nzTitle="管理" nzIcon="bank">
+              <ul>
+              </ul>
+            </li>
+            -->
+            <li nz-submenu nzTitle="系统配置" nzIcon="setting">
+                <ul>
+                    <li nz-menu-item nzMatchRouter>
+                        <a>预警管理</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a>用户管理</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a>角色管理</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a>权限管理</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a>部门/区域机构管理</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a>岗位管理</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a>用户管理</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
-      </li>
-      <!--
-      <li nz-submenu nzTitle="管理" nzIcon="bank">
-        <ul>
-        </ul>
-      </li>
-      -->
-      <li nz-submenu nzTitle="系统配置" nzIcon="setting">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a>预警管理</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>用户管理</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>角色管理</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>权限管理</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>部门/区域机构管理</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>岗位管理</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>用户管理</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nz-sider>
-  <nz-layout>
-    <nz-header>
-      <div class="app-header">
+    </nz-sider>
+    <nz-layout>
+        <nz-header>
+            <div class="app-header">
         <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
             <i class="trigger"
                nz-icon
                [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
             ></i>
         </span>
-      </div>
-    </nz-header>
-    <nz-content>
-      <div class="inner-content">
-        <router-outlet></router-outlet>
-      </div>
-    </nz-content>
-  </nz-layout>
+            </div>
+        </nz-header>
+        <nz-content>
+            <div class="inner-content">
+                <router-outlet></router-outlet>
+            </div>
+        </nz-content>
+    </nz-layout>
 </nz-layout>

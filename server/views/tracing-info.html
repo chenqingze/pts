@@ -9,9 +9,20 @@
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="/tracing-info.css" type="text/css" rel="stylesheet">
+
     <title>产品溯源信息</title>
 </head>
 <body>
+<div id="overlay">
+    <div class="spinner" id="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+    <h3 style="color: white">正在验证区块链指纹.......</h3>
+</div>
 <div class="container">
     <header class="bd-navbar mb-2">
         <nav class="navbar navbar-dark ">
@@ -169,7 +180,20 @@
         </div>
     </div>
 </div>
+<!--loading overlay-->
+<script type="text/javascript">
+    document.body.setAttribute("class", "noscroll");
 
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("spinner").style.display = "block";
+
+    window.onload = function () {
+        document.getElementById("spinner").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+
+        document.body.className = document.body.className.replace(/\bnoscroll\b/, '');
+    }
+</script>
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -214,7 +238,8 @@
             keyboardEnable: false,
             scrollWheel: false,
             dragEnable: false,
-            zoom: 4
+            mapStyle: 'amap://styles/macaron',
+            zoom: 2
         });
         map.on('click', mapClick);
         let drivingOption = {
@@ -227,7 +252,7 @@
         let driving = new AMap.Driving(drivingOption)
 
         // 根据起终点经纬度规划驾车导航路线
-        driving.search(new AMap.LngLat(116.379028, 39.865042), new AMap.LngLat(113.43217, 22.427883), function (status, result) {
+        driving.search(new AMap.LngLat(113.267065, 23.128673), new AMap.LngLat(116.3215, 39.89455), function (status, result) {
             // result即是对应的驾车导航信息，相关数据结构文档请参考 https://lbs.amap.com/api/javascript-api/reference/route-search#m_DrivingResult
             if (status === 'complete') {
                 if (result.routes && result.routes.length) {
@@ -246,24 +271,27 @@
             let startMarker = new AMap.Marker({
                 position: path[0],
                 icon: 'https://webapi.amap.com/theme/v1.3/markers/n/start.png',
-                map: map
+                map: map,
+                anchor: 'bottom-center'
             })
 
             let endMarker = new AMap.Marker({
                 position: path[path.length - 1],
                 icon: 'https://webapi.amap.com/theme/v1.3/markers/n/end.png',
-                map: map
+                map: map,
+                anchor: 'bottom-center'
             })
 
             let routeLine = new AMap.Polyline({
                 path: path,
                 isOutline: true,
                 outlineColor: '#ffeeee',
-                borderWeight: 2,
-                strokeWeight: 5,
+                borderWeight: 1,
+                strokeWeight: 2,
                 strokeOpacity: 0.9,
                 strokeColor: '#0091ff',
-                lineJoin: 'round'
+                lineJoin: 'round',
+                bubble: true
             })
 
             map.add(routeLine);
@@ -314,12 +342,16 @@
                 features: ['bg', 'point'],
                 isHotspot: false,
                 center: [116.397559, 39.89621],
-                zoom: 4
+                mapStyle: 'amap://styles/macaron',
+                zoom: 10
             });
             // modalMap.on("complete", function () {
             //
             // });
-
+            document.getElementById('mapModal').addEventListener('hidden.bs.modal', function (event) {
+                console.log('hidden.bs.modal====>执行了)');
+                modalMap.destroy();
+            })
             let drivingOption = {
                 policy: AMap.DrivingPolicy.LEAST_TIME, // 其它policy参数请参考 https://lbs.amap.com/api/javascript-api/reference/route-search#m_DrivingPolicy
                 ferry: 1, // 是否可以使用轮渡
@@ -327,11 +359,12 @@
             }
 
             // 构造路线导航类
-            let driving = new AMap.Driving(drivingOption)
+            let driving = new AMap.Driving(drivingOption);
 
             // 根据起终点经纬度规划驾车导航路线
-            driving.search(new AMap.LngLat(116.379028, 39.865042), new AMap.LngLat(113.43217, 22.427883), function (status, result) {
-                // result即是对应的驾车导航信息，相关数据结构文档请参考 https://lbs.amap.com/api/javascript-api/reference/route-search#m_DrivingResult
+            driving.search(new AMap.LngLat(113.267065, 23.128673), new AMap.LngLat(116.3215, 39.89455), function (status, result) {
+                // result即是对应的驾车
+                // 导航信息，相关数据结构文档请参考 https://lbs.amap.com/api/javascript-api/reference/route-search#m_DrivingResult
                 if (status === 'complete') {
                     if (result.routes && result.routes.length) {
                         // 绘制第一条路线，也可以按需求绘制其它几条路线
@@ -349,24 +382,27 @@
                 let startMarker = new AMap.Marker({
                     position: path[0],
                     icon: 'https://webapi.amap.com/theme/v1.3/markers/n/start.png',
-                    map: modalMap
+                    map: modalMap,
+                    anchor: 'bottom-center'
                 })
 
                 let endMarker = new AMap.Marker({
                     position: path[path.length - 1],
                     icon: 'https://webapi.amap.com/theme/v1.3/markers/n/end.png',
-                    map: modalMap
+                    map: modalMap,
+                    anchor: 'bottom-center'
                 })
 
                 let routeLine = new AMap.Polyline({
                     path: path,
                     isOutline: true,
                     outlineColor: '#ffeeee',
-                    borderWeight: 2,
-                    strokeWeight: 5,
+                    borderWeight: 1,
+                    strokeWeight: 2,
                     strokeOpacity: 0.9,
                     strokeColor: '#0091ff',
-                    lineJoin: 'round'
+                    lineJoin: 'round',
+                    showDir: true
                 })
 
                 modalMap.add(routeLine);

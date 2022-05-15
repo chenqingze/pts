@@ -112,7 +112,8 @@
       <th nzLeft>产品名称</th>
       <th>产品规格</th>
       <th>数量</th>
-      <th>原产国</th>
+      <th>产地</th>
+      <th>生产商</th>
       <th nzRight>质检状态</th>
       <th nzRight>操作</th>
     </tr>
@@ -126,6 +127,7 @@
       <td>{{ data.specs }}</td>
       <td>{{ data.quantity }}</td>
       <td>{{ data.countryOFOrigin }}</td>
+      <td>{{ data.manufacturer }}</td>
       <td nzRight>{{ qualityStatusMap[data.qualityStatus] || qualityStatusMap[qualityStatus.NotInspected]}}</td>
       <td nzRight>
         <nz-button-group>

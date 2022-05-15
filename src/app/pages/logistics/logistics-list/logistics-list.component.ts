@@ -1,16 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder} from "@angular/forms";
-import {NzModalService} from "ng-zorro-antd/modal";
-import {Goods} from "../goods.model";
 import {QualityStatus, QualityStatusRecord} from "../../product/product.model";
-import {GoodsService} from "../goods.service";
+import {Logistics} from "../../logistics/logistics.model";
+import {FormBuilder} from "@angular/forms";
+import {LogisticsService} from "../../logistics/logistics.service";
+import {NzModalService} from "ng-zorro-antd/modal";
 
 @Component({
-    selector: 'app-goods-list',
-    templateUrl: './goods-list.component.html',
-    styleUrls: ['./goods-list.component.css']
+    selector: 'app-logistics-list',
+    templateUrl: './logistics-list.component.html',
+    styleUrls: ['./logistics-list.component.css']
 })
-export class GoodsListComponent implements OnInit {
+export class LogisticsListComponent implements OnInit {
 
     qualityStatusMap = QualityStatusRecord;
     qualityStatus = QualityStatus;
@@ -18,8 +18,8 @@ export class GoodsListComponent implements OnInit {
     /*表格*/
     checked = false;
     indeterminate = false;
-    currentPageList: readonly Goods [] = [];
-    goodsList: Goods[] = [];
+    currentPageList: readonly Logistics [] = [];
+    logisticsList: Logistics[] = [];
     setOfCheckedId = new Set<string>();
 
     updateCheckedSet(id: string, checked: boolean): void {
@@ -48,13 +48,13 @@ export class GoodsListComponent implements OnInit {
         this.refreshCheckedStatus();
     }
 
-    onCurrentPageDataChange($event: readonly Goods []): void {
+    onCurrentPageDataChange($event: readonly Logistics []): void {
         this.currentPageList = $event;
         this.refreshCheckedStatus();
     }
 
     refreshCheckedStatus(): void {
-        const listOfEnabledData = this.currentPageList.filter((item: Goods) => item.qualityStatus === QualityStatus.NotInspected);
+        const listOfEnabledData = this.currentPageList.filter((item: Logistics) => item.qualityStatus === QualityStatus.NotInspected);
         this.checked = listOfEnabledData.every(item => this.setOfCheckedId.has(item.id));
         this.indeterminate = listOfEnabledData.some(item => this.setOfCheckedId.has(item.id)) && !this.checked;
     }
@@ -62,11 +62,11 @@ export class GoodsListComponent implements OnInit {
     // 提交质检
     qualityInspect() {
         let ids = Array.from(this.setOfCheckedId.values());
-        this.goodsService.qualityInspect(ids).subscribe(data => {
+        this.logisticsService.qualityInspect(ids).subscribe(data => {
 
-            this.goodsService.list().subscribe(data => {
-                this.goodsList = data;
-                this.goodsList.forEach(item => this.updateCheckedSet(item.id, false));
+            this.logisticsService.list().subscribe(data => {
+                this.logisticsList = data;
+                this.logisticsList.forEach(item => this.updateCheckedSet(item.id, false));
                 this.refreshCheckedStatus();
             });
         });
@@ -79,9 +79,9 @@ export class GoodsListComponent implements OnInit {
             nzOkText: '是',
             nzOkType: 'primary',
             nzOkDanger: true,
-            nzOnOk: () => this.goodsService.delete(id).subscribe(() => {
+            nzOnOk: () => this.logisticsService.delete(id).subscribe(() => {
                 console.log("删除成功");
-                this.goodsService.list().subscribe(data => this.goodsList = data);
+                this.logisticsService.list().subscribe(data => this.logisticsList = data);
             }),
             nzCancelText: '否',
             nzOnCancel: () => console.log('Cancel')
@@ -89,10 +89,11 @@ export class GoodsListComponent implements OnInit {
 
     }
 
-    constructor(private fb: FormBuilder, private goodsService: GoodsService, private modal: NzModalService) {
+    constructor(private fb: FormBuilder, private logisticsService: LogisticsService, private modal: NzModalService) {
     }
 
     ngOnInit(): void {
-        this.goodsService.list().subscribe(data => this.goodsList = data);
+        this.logisticsService.list().subscribe(data => this.logisticsList = data);
     }
+
 }

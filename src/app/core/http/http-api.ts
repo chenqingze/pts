@@ -9,5 +9,7 @@ export const HttpApi = {
   login: `${baseUrl}/login`,
   logout: `${baseUrl}/logout`,
   products: `${baseUrl}/products`,
+  goods: `${baseUrl}/goods`,
+  logistics: `${baseUrl}/logistics`,
 };
 

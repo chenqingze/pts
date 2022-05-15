@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Product, QualityStatus, QualityStatusRecord} from "../product";
+import {Product, QualityStatus, QualityStatusRecord} from "../product.model";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {ProductService} from "../product.service";
 import {NzModalService} from "ng-zorro-antd/modal";

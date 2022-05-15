@@ -1,0 +1,120 @@
+<nz-page-header nzBackIcon>
+    <!--title-->
+    <nz-page-header-title>仓储商品详情</nz-page-header-title>
+    <!--subtitle-->
+    <nz-page-header-subtitle></nz-page-header-subtitle>
+</nz-page-header>
+<form nz-form [formGroup]="goodsForm">
+    <fieldset [disabled]="true">
+        <legend></legend>
+        <div nz-row [nzGutter]="24">
+            <div nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="4" nzFor="code">编号</nz-form-label>
+                    <nz-form-control [nzSpan]="16">
+                        <input
+                                nz-input
+                                formControlName="code"
+                                id="code"
+                        />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="4" nzFor="specs">规格</nz-form-label>
+                    <nz-form-control [nzSpan]="16">
+                        <input
+                                nz-input
+                                formControlName="specs"
+                                id="specs"
+                        />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+        </div>
+        <div nz-row [nzGutter]="24">
+            <div nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="4" nzFor="name">产品名称</nz-form-label>
+                    <nz-form-control [nzSpan]="16">
+                        <input
+                                nz-input
+                                formControlName="name"
+                                id="name"
+                        />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="4" nzFor="countryOFOrigin">产地</nz-form-label>
+                    <nz-form-control [nzSpan]="16">
+                        <input
+                                nz-input
+                                formControlName="countryOFOrigin"
+                                id="countryOFOrigin"
+                        />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+        </div>
+
+        <div nz-row [nzGutter]="24">
+            <div nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="4" nzFor="batchNo">产品批号</nz-form-label>
+                    <nz-form-control [nzSpan]="16">
+                        <input
+                                nz-input
+                                formControlName="batchNo"
+                                id="batchNo"
+                        />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="4" nzFor="quantity">数量</nz-form-label>
+                    <nz-form-control [nzSpan]="16">
+                        <input
+                                nz-input
+                                formControlName="quantity"
+                                id="quantity"
+                        />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+
+        </div>
+        <div nz-row [nzGutter]="24"></div>
+        <div nz-row [nzGutter]="24">
+            <div nz-col [nzSpan]="12" nzOffset="1">
+                <nz-table #basicTable [nzData]="transferList">
+                    <thead>
+                    <tr>
+                        <th>仓库名称</th>
+                        <th>仓库位置</th>
+                        <th>入库时间</th>
+                        <th>出库时间</th>
+                        <th>上架位置</th>
+                        <th>质检员</th>
+                        <th>出库物流</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let data of basicTable.data">
+                        <td>{{ data.warehouse }}</td>
+                        <td>{{ data.position }}</td>
+                        <td>{{ data.inTime }}</td>
+                        <td>{{ data.outTime }}</td>
+                        <td>{{ data.shelf }}</td>
+                        <td>{{ data.inspector }}</td>
+                        <td>{{ data.logisticsOrder }}</td>
+                    </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </div>
+    </fieldset>
+</form>
