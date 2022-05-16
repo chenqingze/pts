@@ -4,9 +4,9 @@
 
 export const environment = {
 
-  production: false,
-  appName: 'pts',
-  endpoint: 'http://localhost:3000',
+    production: false,
+    appName: 'pts',
+    endpoint: 'http://localhost:3000',
 };
 
 /*

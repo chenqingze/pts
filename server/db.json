@@ -94,6 +94,28 @@
         "product-pic-1651668457514.jpg"
       ],
       "qualityStatus": "已质检"
+    },
+    {
+      "id": 11,
+      "name": "111",
+      "batchNo": "111",
+      "specs": "111",
+      "countryOFOrigin": "111",
+      "quantity": 1,
+      "category": "111",
+      "manufacturer": "111",
+      "productionDate": "2022-05-27",
+      "expirationDate": "2022-05-27T05:17:41.298Z",
+      "storageMethods": "111",
+      "pictures": [
+        "product-pic-1652680021857.jpg",
+        "product-pic-1652682677789.jpg"
+      ],
+      "qualifiedCertificate": "QualifiedCertificate-1652680061439.pdf",
+      "qualityRating": "111",
+      "netWeight": "111",
+      "tracingNo": "tracingNo-1652670693034.jpg",
+      "qualityStatus": "未质检"
     }
   ],
   "goods": [

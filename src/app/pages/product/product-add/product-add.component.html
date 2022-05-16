@@ -1,226 +1,292 @@
 <nz-page-header nzBackIcon>
-  <!--breadcrumb-->
-  <!-- <nz-breadcrumb nz-page-header-breadcrumb>
-     <nz-breadcrumb-item>
-       <a routerLink="/welcome">首页</a>
-     </nz-breadcrumb-item>
-     <nz-breadcrumb-item>
-       <a routerLink="/product">产品纳官</a>
-     </nz-breadcrumb-item>
-   </nz-breadcrumb>-->
-  <!--title-->
-  <nz-page-header-title>新增产品</nz-page-header-title>
-  <!--subtitle-->
-  <nz-page-header-subtitle>您可以在这里新增一个产品信息</nz-page-header-subtitle>
+    <!--breadcrumb-->
+    <!-- <nz-breadcrumb nz-page-header-breadcrumb>
+       <nz-breadcrumb-item>
+         <a routerLink="/welcome">首页</a>
+       </nz-breadcrumb-item>
+       <nz-breadcrumb-item>
+         <a routerLink="/product">产品纳官</a>
+       </nz-breadcrumb-item>
+     </nz-breadcrumb>-->
+    <!--title-->
+    <nz-page-header-title>新增产品</nz-page-header-title>
+    <!--subtitle-->
+    <nz-page-header-subtitle>您可以在这里新增一个产品信息</nz-page-header-subtitle>
 </nz-page-header>
 <form nz-form [formGroup]="productForm" (ngSubmit)="submitForm()">
-  <legend></legend>
-  <div nz-row [nzGutter]="24">
-    <div nz-col [nzSpan]="12">
-      <nz-form-item>
-        <nz-form-label [nzSpan]="4" nzFor="name">产品名称</nz-form-label>
-        <nz-form-control [nzSpan]="16">
-          <input
-            nz-input
-            placeholder="产品名称"
-            formControlName="name"
-            id="name"
-          />
-        </nz-form-control>
-      </nz-form-item>
+    <legend></legend>
+    <div nz-row [nzGutter]="24">
+        <div nz-col [nzSpan]="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="name">产品名称</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <input
+                            nz-input
+                            placeholder="产品名称"
+                            formControlName="name"
+                            id="name"
+                    />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="batchNo">产品批号</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <input
+                            nz-input
+                            placeholder="请输入产品批号"
+                            formControlName="batchNo"
+                            id="batchNo"
+                    />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
     </div>
-    <div nz-col [nzSpan]="12">
-      <nz-form-item>
-        <nz-form-label [nzSpan]="4" nzFor="batchNo">产品批号</nz-form-label>
-        <nz-form-control [nzSpan]="16">
-          <input
-            nz-input
-            placeholder="请输入产品批号"
-            formControlName="batchNo"
-            id="batchNo"
-          />
-        </nz-form-control>
-      </nz-form-item>
+    <div nz-row [nzGutter]="24">
+        <div nz-col [nzSpan]="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="specs">规格</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <input
+                            nz-input
+                            placeholder="请输入产品规格"
+                            formControlName="specs"
+                            id="specs"
+                    />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="countryOFOrigin">产地</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <input
+                            nz-input
+                            placeholder="产地"
+                            formControlName="countryOFOrigin"
+                            id="countryOFOrigin"
+                    />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
     </div>
-  </div>
-  <div nz-row [nzGutter]="24">
-    <div nz-col [nzSpan]="12">
-      <nz-form-item>
-        <nz-form-label [nzSpan]="4" nzFor="specs">规格</nz-form-label>
-        <nz-form-control [nzSpan]="16">
-          <input
-            nz-input
-            placeholder="请输入产品规格"
-            formControlName="specs"
-            id="specs"
-          />
-        </nz-form-control>
-      </nz-form-item>
+    <!--<div nz-row [nzGutter]="24">
+      <div nz-col [nzSpan]="12">
+        <nz-form-item>
+          <nz-form-label [nzSpan]="4" nzFor="importerAddress">进口商地址</nz-form-label>
+          <nz-form-control [nzSpan]="16">
+            <input
+              nz-input
+              placeholder="请输入产品进口商地址"
+              formControlName="importerAddress"
+              id="importerAddress"
+            />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col [nzSpan]="12">
+        <nz-form-item>
+          <nz-form-label [nzSpan]="4" nzFor="placeOfClearance">报关口岸</nz-form-label>
+          <nz-form-control [nzSpan]="16">
+            <input
+              nz-input
+              placeholder="请输入产品报关口岸"
+              formControlName="placeOfClearance"
+              id="placeOfClearance"
+            />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>-->
+    <div nz-row [nzGutter]="24">
+        <div nz-col [nzSpan]="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="manufacturer">生产商</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <input
+                            nz-input
+                            placeholder="请输入产品生产商"
+                            formControlName="manufacturer"
+                            id="manufacturer"
+                    />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="category">产品类型</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <input
+                            nz-input
+                            placeholder="产品类型"
+                            formControlName="category"
+                            id="material"
+                    />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
     </div>
-    <div nz-col [nzSpan]="12">
-      <nz-form-item>
-        <nz-form-label [nzSpan]="4" nzFor="countryOFOrigin">原产国</nz-form-label>
-        <nz-form-control [nzSpan]="16">
-          <input
-            nz-input
-            placeholder="原产国"
-            formControlName="countryOFOrigin"
-            id="countryOFOrigin"
-          />
-        </nz-form-control>
-      </nz-form-item>
+    <div nz-row [nzGutter]="24">
+        <div nz-col [nzSpan]="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="netWeight">净含量</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <input
+                            nz-input
+                            placeholder="请输入净含量"
+                            formControlName="netWeight"
+                            id="netWeight"
+                    />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="storageMethods">储存方式</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <input
+                            nz-input
+                            placeholder="请输入储存方式"
+                            formControlName="storageMethods"
+                            id="storageMethods"
+                    />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
     </div>
-  </div>
+    <div nz-row [nzGutter]="24">
+        <div nz-col [nzSpan]="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="productionDate">生产日期</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <nz-date-picker
+                            nzFormat="yyyy-MM-dd"
+                            formControlName="productionDate"
+                            id="productionDate"
+                    ></nz-date-picker>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="qualityRating">质量等级</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <input
+                            nz-input
+                            placeholder="请输入质量等级"
+                            formControlName="qualityRating"
+                            id="qualityRating"
+                    />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+    </div>
+    <div nz-row [nzGutter]="24">
+        <div nz-col [nzSpan]="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="expirationDate">保质期</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <nz-date-picker
+                            nzFormat="yyyy-MM-dd"
+                            formControlName="expirationDate"
+                            id="expirationDate"
+                    ></nz-date-picker>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="quantity">数量</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <nz-input-number
+                            [nzMin]="1"
+                            formControlName="quantity"
+                            id="quantity"
+                    ></nz-input-number>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
 
-  <div nz-row [nzGutter]="24">
-    <div nz-col [nzSpan]="12">
-      <nz-form-item>
-        <nz-form-label [nzSpan]="4" nzFor="importerAddress">进口商地址</nz-form-label>
-        <nz-form-control [nzSpan]="16">
-          <input
-            nz-input
-            placeholder="请输入产品进口商地址"
-            formControlName="importerAddress"
-            id="importerAddress"
-          />
-        </nz-form-control>
-      </nz-form-item>
     </div>
-    <div nz-col [nzSpan]="12">
-      <nz-form-item>
-        <nz-form-label [nzSpan]="4" nzFor="placeOfClearance">报关口岸</nz-form-label>
-        <nz-form-control [nzSpan]="16">
-          <input
-            nz-input
-            placeholder="请输入产品报关口岸"
-            formControlName="placeOfClearance"
-            id="placeOfClearance"
-          />
-        </nz-form-control>
-      </nz-form-item>
+    <div nz-row [nzGutter]="24">
+        <div nz-col [nzSpan]="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="pictures">产品图片</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <div class="clearfix">
+                        <nz-upload id="pictures"
+                                   nzName="product-pic"
+                                   [nzAction]="uploadAction"
+                                   nzListType="picture-card"
+                                   nzAccept="image/*"
+                                   [(nzFileList)]="pictureList"
+                                   [nzShowButton]="pictureList.length < 6"
+                                   [nzPreview]="handlePreview"
+                                   (nzChange)="handlePicturesChange($event)"
+                        >
+                            <div>
+                                <i nz-icon nzType="plus"></i>
+                                <div style="margin-top: 8px">Upload</div>
+                            </div>
+                        </nz-upload>
+                        <nz-modal
+                                [nzVisible]="previewVisible"
+                                [nzContent]="modalContent"
+                                [nzFooter]="null"
+                                (nzOnCancel)="previewVisible = false"
+                        >
+                            <ng-template #modalContent>
+                                <img [src]="previewImage" [ngStyle]="{ width: '100%' }"/>
+                            </ng-template>
+                        </nz-modal>
+                    </div>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="5" nzOffset="1">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="tracingNo">溯源码</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <nz-upload
+                            nzName="tracingNo"
+                            [nzAction]="uploadAction"
+                            [nzHeaders]="{ authorization: 'authorization-text' }"
+                            (nzChange)="handleTracingNoChange($event)"
+                    >
+                        <button nz-button>
+                            <i nz-icon nzType="upload"></i>
+                            点击上传
+                        </button>
+                    </nz-upload>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="6">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="qualifiedCertificate">质检证书</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <nz-upload
+                            nzName="QualifiedCertificate"
+                            [nzAction]="uploadAction"
+                            [nzHeaders]="{ authorization: 'authorization-text' }"
+                            (nzChange)="handleQualifiedCertificateChange($event)"
+                    >
+                        <button nz-button>
+                            <i nz-icon nzType="upload"></i>
+                            点击上传
+                        </button>
+                    </nz-upload>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
     </div>
-  </div>
-  <div nz-row [nzGutter]="24">
-    <div nz-col [nzSpan]="12">
-      <nz-form-item>
-        <nz-form-label [nzSpan]="4" nzFor="manufacturer">制造商</nz-form-label>
-        <nz-form-control [nzSpan]="16">
-          <input
-            nz-input
-            placeholder="请输入产品制造商"
-            formControlName="manufacturer"
-            id="manufacturer"
-          />
+    <input [hidden]="true" formControlName="qualityStatus">
+    <nz-form-item nz-row>
+        <nz-form-control [nzSpan]="24" [nzOffset]="10">
+            <button nz-button [nzType]="'primary'" [disabled]="!productForm.valid">提交</button>
+            <button nz-button (click)="resetForm($event)">重填</button>
         </nz-form-control>
-      </nz-form-item>
-    </div>
-    <div nz-col [nzSpan]="12">
-      <nz-form-item>
-        <nz-form-label [nzSpan]="4" nzFor="material">原材料</nz-form-label>
-        <nz-form-control [nzSpan]="16">
-          <input
-            nz-input
-            placeholder="原材料"
-            formControlName="material"
-            id="material"
-          />
-        </nz-form-control>
-      </nz-form-item>
-    </div>
-  </div>
-  <div nz-row [nzGutter]="24">
-    <div nz-col [nzSpan]="12">
-      <nz-form-item>
-        <nz-form-label [nzSpan]="4" nzFor="description">产品描述</nz-form-label>
-        <nz-form-control [nzSpan]="16">
-          <input
-            nz-input
-            placeholder="请输入产品描述"
-            formControlName="description"
-            id="description"
-          />
-        </nz-form-control>
-      </nz-form-item>
-    </div>
-    <div nz-col [nzSpan]="12">
-      <nz-form-item>
-        <nz-form-label [nzSpan]="4" nzFor="importer">进口商</nz-form-label>
-        <nz-form-control [nzSpan]="16">
-          <input
-            nz-input
-            placeholder="请输入产品进口商"
-            formControlName="importer"
-            id="importer"
-          />
-        </nz-form-control>
-      </nz-form-item>
-    </div>
-  </div>
-  <div nz-row [nzGutter]="24">
-    <div nz-col [nzSpan]="4" [nzOffset]="1">
-      <nz-form-item>
-        <nz-form-label [nzSpan]="6" nzFor="quantity">数量</nz-form-label>
-        <nz-form-control [nzSpan]="6">
-          <nz-input-number
-            [nzMin]="1"
-            formControlName="quantity"
-            id="quantity"
-          ></nz-input-number>
-        </nz-form-control>
-      </nz-form-item>
-    </div>
-    <div nz-col [nzSpan]="7">
-      <nz-form-item>
-        <nz-form-label [nzSpan]="4" nzFor="expirationDate">保质期</nz-form-label>
-        <nz-form-control [nzSpan]="13">
-          <nz-date-picker
-            nzFormat="yyyy-MM-dd HH:mm:ss"
-            formControlName="expirationDate"
-            id="expirationDate"
-          ></nz-date-picker>
-        </nz-form-control>
-      </nz-form-item>
-    </div>
-    <div nz-col [nzSpan]="12">
-      <nz-form-item>
-        <nz-form-label [nzSpan]="4" nzFor="pictures">产品图片</nz-form-label>
-        <nz-form-control [nzSpan]="16">
-          <div class="clearfix">
-            <nz-upload id="pictures"
-                       nzName="product-pic"
-                       [nzAction]="uploadAction"
-                       nzListType="picture-card"
-                       nzAccept="image/*"
-                       [(nzFileList)]="pictureList"
-                       [nzShowButton]="pictureList.length < 8"
-                       [nzPreview]="handlePreview"
-                       (nzChange)="handleChange($event)"
-            >
-              <div>
-                <i nz-icon nzType="plus"></i>
-                <div style="margin-top: 8px">Upload</div>
-              </div>
-            </nz-upload>
-            <nz-modal
-              [nzVisible]="previewVisible"
-              [nzContent]="modalContent"
-              [nzFooter]="null"
-              (nzOnCancel)="previewVisible = false"
-            >
-              <ng-template #modalContent>
-                <img [src]="previewImage" [ngStyle]="{ width: '100%' }"/>
-              </ng-template>
-            </nz-modal>
-          </div>
-        </nz-form-control>
-      </nz-form-item>
-    </div>
-  </div>
-  <input [hidden]="true" formControlName="qualityStatus">
-  <nz-form-item nz-row>
-    <nz-form-control [nzSpan]="24" [nzOffset]="10">
-      <button nz-button [nzType]="'primary'" [disabled]="!productForm.valid">提交</button>
-      <button nz-button (click)="resetForm($event)">重填</button>
-    </nz-form-control>
-  </nz-form-item>
+    </nz-form-item>
 </form>

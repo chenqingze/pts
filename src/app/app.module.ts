@@ -18,23 +18,23 @@ import {AuthModule} from "./auth/auth.module";
 registerLocaleData(zh);
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    NzLayoutModule,
-    NzMenuModule,
-    AppRoutingModule,
-    IconsProviderModule,
-    CoreModule,
-    NzBreadCrumbModule,
-    NzDividerModule,
-    AuthModule
-  ],
-  providers: [{provide: NZ_I18N, useValue: zh_CN}],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        NzLayoutModule,
+        NzMenuModule,
+        AppRoutingModule,
+        IconsProviderModule,
+        CoreModule,
+        NzBreadCrumbModule,
+        NzDividerModule,
+        AuthModule
+    ],
+    providers: [{provide: NZ_I18N, useValue: zh_CN}],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

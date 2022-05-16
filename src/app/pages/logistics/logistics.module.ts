@@ -8,6 +8,11 @@ import {NzPageHeaderModule} from "ng-zorro-antd/page-header";
 import {NzTableModule} from "ng-zorro-antd/table";
 import {NzButtonModule} from "ng-zorro-antd/button";
 import {NzModalModule} from "ng-zorro-antd/modal";
+import {NzFormModule} from "ng-zorro-antd/form";
+import {NzInputModule} from "ng-zorro-antd/input";
+import {SharedModule} from "../../shared/shared.module";
+import {NzDividerModule} from "ng-zorro-antd/divider";
+import {NzTimelineModule} from "ng-zorro-antd/timeline";
 
 
 @NgModule({
@@ -21,7 +26,12 @@ import {NzModalModule} from "ng-zorro-antd/modal";
         NzPageHeaderModule,
         NzTableModule,
         NzModalModule,
-        NzButtonModule
+        NzButtonModule,
+        NzFormModule,
+        NzInputModule,
+        SharedModule,
+        NzDividerModule,
+        NzTimelineModule
     ]
 })
 export class LogisticsModule {

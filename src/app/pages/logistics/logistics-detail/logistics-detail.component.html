@@ -1,1 +1,106 @@
-<p>logistics-detail works!</p>
+<nz-page-header nzBackIcon>
+    <!--title-->
+    <nz-page-header-title>物流-商品详情</nz-page-header-title>
+    <!--subtitle-->
+    <nz-page-header-subtitle></nz-page-header-subtitle>
+</nz-page-header>
+<form nz-form [formGroup]="logisticsForm">
+    <fieldset [disabled]="true">
+        <legend></legend>
+        <div nz-row [nzGutter]="24">
+            <div nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="4" nzFor="code">编号</nz-form-label>
+                    <nz-form-control [nzSpan]="16">
+                        <input
+                                nz-input
+                                formControlName="code"
+                                id="code"
+                        />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="4" nzFor="specs">规格</nz-form-label>
+                    <nz-form-control [nzSpan]="16">
+                        <input
+                                nz-input
+                                formControlName="specs"
+                                id="specs"
+                        />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+        </div>
+        <div nz-row [nzGutter]="24">
+            <div nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="4" nzFor="name">产品名称</nz-form-label>
+                    <nz-form-control [nzSpan]="16">
+                        <input
+                                nz-input
+                                formControlName="name"
+                                id="name"
+                        />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="4" nzFor="countryOFOrigin">产地</nz-form-label>
+                    <nz-form-control [nzSpan]="16">
+                        <input
+                                nz-input
+                                formControlName="countryOFOrigin"
+                                id="countryOFOrigin"
+                        />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+        </div>
+
+        <div nz-row [nzGutter]="24">
+            <div nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="4" nzFor="batchNo">产品批号</nz-form-label>
+                    <nz-form-control [nzSpan]="16">
+                        <input
+                                nz-input
+                                formControlName="batchNo"
+                                id="batchNo"
+                        />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="4" nzFor="quantity">数量</nz-form-label>
+                    <nz-form-control [nzSpan]="16">
+                        <input
+                                nz-input
+                                formControlName="quantity"
+                                id="quantity"
+                        />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+
+        </div>
+        <div nz-row [nzGutter]="24"></div>
+        <nz-divider nzText="物流信息:德邦速运-38764534"></nz-divider>
+        <div nz-row [nzGutter]="24">
+            <div nz-col [nzSpan]="12">
+                <nz-timeline>
+                    <nz-timeline-item nzColor="red" nzLabel="入库">2022/2/18 17:20 北京亦庄仓库</nz-timeline-item>
+                    <nz-timeline-item nzLabel="运送中">2022/2/16 09:20:00 沈阳中转</nz-timeline-item>
+                    <nz-timeline-item nzLabel="运送中">2022/2/15 23:35:00 长春中转</nz-timeline-item>
+                    <nz-timeline-item nzLabel="运送中">2022/2/15 12:25:00 哈尔滨发车</nz-timeline-item>
+                    <nz-timeline-item nzColor="green" nzLabel="出库">2022/2/15 11:35:00 哈尔滨市裕丰仓库</nz-timeline-item>
+                </nz-timeline>
+            </div>
+            <div nz-col [nzSpan]="12">这里还有个地图</div>
+        </div>
+
+    </fieldset>
+</form>

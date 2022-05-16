@@ -12,6 +12,7 @@ import {GoodsDetailComponent} from './goods-detail/goods-detail.component';
 import {NzFormModule} from "ng-zorro-antd/form";
 import {NzImageModule} from "ng-zorro-antd/image";
 import {NzInputModule} from "ng-zorro-antd/input";
+import {NzDividerModule} from "ng-zorro-antd/divider";
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {NzInputModule} from "ng-zorro-antd/input";
         NzModalModule,
         NzFormModule,
         NzImageModule,
-        NzInputModule
+        NzInputModule,
+        NzDividerModule
     ]
 })
 export class GoodsModule {

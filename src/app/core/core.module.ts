@@ -11,29 +11,29 @@ import {NzMessageService} from "ng-zorro-antd/message";
 
 
 @NgModule({
-  declarations: [
-    MainComponent
-  ],
-  imports: [
-    // angular
-    HttpClientModule,
-    RouterModule,
-    // custom
-    SharedModule.forRoot(),
-    NzLayoutModule,
-    NzMenuModule,
-  ],
-  providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-    {provide: NzMessageService}
-  ],
+    declarations: [
+        MainComponent
+    ],
+    imports: [
+        // angular
+        HttpClientModule,
+        RouterModule,
+        // custom
+        SharedModule.forRoot(),
+        NzLayoutModule,
+        NzMenuModule,
+    ],
+    providers: [
+        {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
+        {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+        {provide: NzMessageService}
+    ],
 })
 export class CoreModule {
-  constructor(@Optional() @SkipSelf() parentModule?: CoreModule) {
-    if (parentModule) {
-      throw new Error(
-        'CoreModule is already loaded. Import it in the AppModule only');
+    constructor(@Optional() @SkipSelf() parentModule?: CoreModule) {
+        if (parentModule) {
+            throw new Error(
+                'CoreModule is already loaded. Import it in the AppModule only');
+        }
     }
-  }
 }

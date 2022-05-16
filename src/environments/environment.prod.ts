@@ -1,5 +1,5 @@
 export const environment = {
-  production: true,
-  appName: 'pts',
-  endpoint: 'http://localhost:3000'
+    production: true,
+    appName: 'pts',
+    endpoint: 'http://localhost:3000'
 };

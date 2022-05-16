@@ -1,7 +1,31 @@
-.bd-navbar {
-    padding: .15rem 0;
-    background-color: #7952b3;
+body {
+    background-color: #fffefa;
 }
+
+
+.bd-navbar p {
+    font-size: 26px;
+    font-weight: 500;
+}
+.card-subtitle{
+    font-size: 22px;
+    padding-left: 3px;
+}
+.bg-image{
+    background-image: url('bg2@2x.png');
+    background-size: cover;
+}
+.base-info .col-6 {
+    white-space: pre;
+    /*font-size: 20px;*/
+
+}
+.base-info .row{
+    border-bottom:1px dashed #DCDBD9;
+    padding-top: 12px;
+}
+
+
 
 .timeline-with-icons {
     border-left: 1px solid hsl(0, 0%, 90%);
@@ -22,7 +46,8 @@
 .timeline-with-icons .timeline-icon {
     position: absolute;
     left: -48px;
-    background-color: hsl(217, 88.2%, 90%);
+    /*background-color: hsl(217, 88.2%, 90%);*/
+    background-color: hsl(219, 100%, 94%);
     color: hsl(217, 88.8%, 35.1%);
     border-radius: 50%;
     height: 31px;
@@ -36,16 +61,16 @@
 .timeline-with-icons .timeline-icon2 {
     position: absolute;
     left: -40px;
-    color: hsl(217, 88.8%, 35.1%);
+    background-color: hsl(215, 93%, 89%);
     border-radius: 50%;
-    background: white;
+    /*background: white;*/
     height: 14px;
     width: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1;
-    border: 2px solid pink;
+    /*border: 2px solid pink;*/
 
 }
 
@@ -56,13 +81,16 @@
     right: 0%;
     transform: translate(-50%, -50%);
 }
+
 /*去掉高德地图logo*/
-.amap-logo{
-    display: none!important;
+.amap-logo {
+    display: none !important;
 }
-.amap-copyright{
-    opacity:0;
+
+.amap-copyright {
+    opacity: 0;
 }
+
 /*首页地图*/
 #map {
     width: 100%;
@@ -133,16 +161,21 @@
 }
 
 @-webkit-keyframes sk-stretchdelay {
-    0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
-    20% { -webkit-transform: scaleY(1.0) }
+    0%, 40%, 100% {
+        -webkit-transform: scaleY(0.4)
+    }
+    20% {
+        -webkit-transform: scaleY(1.0)
+    }
 }
 
 @keyframes sk-stretchdelay {
     0%, 40%, 100% {
         transform: scaleY(0.4);
         -webkit-transform: scaleY(0.4);
-    }  20% {
-           transform: scaleY(1.0);
-           -webkit-transform: scaleY(1.0);
-       }
+    }
+    20% {
+        transform: scaleY(1.0);
+        -webkit-transform: scaleY(1.0);
+    }
 }

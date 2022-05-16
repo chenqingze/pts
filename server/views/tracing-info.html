@@ -13,7 +13,7 @@
     <title>产品溯源信息</title>
 </head>
 <body>
-<div id="overlay">
+<!--<div id="overlay">
     <div class="spinner" id="spinner">
         <div class="rect1"></div>
         <div class="rect2"></div>
@@ -21,142 +21,140 @@
         <div class="rect4"></div>
         <div class="rect5"></div>
     </div>
-    <h3 style="color: white">正在验证区块链指纹.......</h3>
-</div>
+    <p style="color: white">正在验证区块链指纹.......</p>
+</div>-->
 <div class="container">
-    <header class="bd-navbar mb-2">
-        <nav class="navbar navbar-dark ">
+    <header class="bd-navbar">
+        <nav class="navbar">
             <div class="container-fluid">
-                <a class="navbar-brand mx-auto" href="#">
-                    <img src="/favicon.ico" alt="" width="20" height="20" class="d-inline-block align-text-top ">
+                <p class="navbar-brand mx-auto">
                     产品溯源信息
-                </a>
+                </p>
             </div>
         </nav>
     </header>
     <main class="card-group">
-        <div class="card border-light bg-primary text-dark bg-opacity-10 w-100 rounded-3">
+        <div class="card border-light text-dark w-100 rounded-3 base-info">
             <div class="card-body">
-                <h6 class="card-subtitle mb-2">基本信息</h6>
-                <div class="card-text">
+                <h6 class="card-subtitle mb-2" style="border-left:5px solid #FF9815;">基本信息</h6>
+                <div class="card-text bg-image">
                     <div class="row">
-                        <div class="col-4 text-muted">名称</div>
-                        <div class="col-8">增城丝喵咪</div>
+                        <div class="col-6 text-muted">【名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称】：</div>
+                        <div class="col-6">增城丝喵咪</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 text-muted">编码</div>
-                        <div class="col-8">2022017665</div>
+                        <div class="col-6 text-muted">【编&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码】：</div>
+                        <div class="col-6">2022017665</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 text-muted">规格</div>
-                        <div class="col-8">25kg/袋</div>
+                        <div class="col-6 text-muted">【规&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格】：</div>
+                        <div class="col-6">25kg/袋</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 text-muted">产地</div>
-                        <div class="col-8">广州增城</div>
+                        <div class="col-6 text-muted">【产&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地】：</div>
+                        <div class="col-6">广州增城</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 text-muted">数量</div>
-                        <div class="col-8">200袋</div>
+                        <div class="col-6 text-muted">【数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量】：</div>
+                        <div class="col-6">200袋</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 text-muted">质检证书</div>
-                        <div class="col-8">查看详情</div>
+                        <div class="col-6 text-muted">【质检证书】：</div>
+                        <div class="col-6">查看详情</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 text-muted">生产商</div>
-                        <div class="col-8">广州金凤凰米业</div>
+                        <div class="col-6 text-muted">【生&nbsp;&nbsp;产&nbsp;&nbsp;商】：</div>
+                        <div class="col-6">广州金凤凰米业</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 text-muted">产品类型</div>
-                        <div class="col-8">籼米</div>
+                        <div class="col-6 text-muted">【产品类型】：</div>
+                        <div class="col-6">籼米</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 text-muted">质量等级</div>
-                        <div class="col-8">一级</div>
+                        <div class="col-6 text-muted">【质量等级】：</div>
+                        <div class="col-6">一级</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 text-muted">生产日期</div>
-                        <div class="col-8">2022年1月20日</div>
+                        <div class="col-6 text-muted">【生产日期】：</div>
+                        <div class="col-6">2022年1月20日</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 text-muted">保质期</div>
-                        <div class="col-8">6个月</div>
+                        <div class="col-6 text-muted">【保质日期】：</div>
+                        <div class="col-6">6个月</div>
                     </div>
                     <div class="row">
-                        <a href="#" class="card-link">查看质检证书>></a>
+                        <div class="col-6 text-muted">【质检证书】：</div>
+                        <div class="col-6"><a href="#" class="card-link">查看详情>></a></div>
+
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card border-light bg-success text-dark bg-opacity-10 w-100 rounded-3">
+        <div class="card border-light text-dark bg-opacity-10 w-100 rounded-3">
+            <h6 class="card-subtitle mb-2" style="border-left:5px solid #15a1ff;">仓储物流</h6>
             <div id="map" class="card-img-top"></div>
-            <div class="card-body">
-                <h6 class="card-subtitle mb-2">仓储物流</h6>
+            <p class="mb-2 fs-6 mt-2">运输物流</p>
+            <div class="card-body" style="background-color: #FFFEFA">
                 <section class="card-text">
                     <ul class="timeline-with-icons">
-                        <li class="timeline-item mb-5">
-                            <span class="timeline-icon"><i class="bi bi-bank"></i></span>
-                            <h5 class="fw-bold">广州凤凰仓库</h5>
+                        <li class="timeline-item mb-4">
+                            <span class="timeline-icon"><i class="bi bi-house"></i></span>
+                            <p class="fw-bold">广州凤凰仓库</p>
                             <p class="text-muted mb-2 fw-bold">2022-1-25 10:30</p>
                             <p class="text-muted">
-                                入库：2号仓13货架
+                                上架位置：2号仓13货架
                             </p>
                         </li>
-                        <li class="timeline-item mb-5">
+                        <li class="timeline-item mb-4">
                             <span class="timeline-icon"><i class="bi bi-truck"></i></span>
-                            <h5 class="fw-bold">运送中</h5>
+                            <p class="fw-bold">运输中</p>
                             <p class="text-muted mb-2 fw-bold">2022-2-20 15:35</p>
                             <p class="text-muted">
                                 出库物流: 顺丰速运
+                                单号: 87238723
                             </p>
                         </li>
-                        <li class="timeline-item mb-5">
+                        <li class="timeline-item mb-4">
                             <span class="timeline-icon2"></span>
-                            <h5 class="fw-bold"></h5>
-                            <p class="text-muted mb-2 fw-bold">2022-2-20 17:20</p>
+                            <p class="fw-bold"></p>
                             <p class="text-muted">
                                 广州发车
                             </p>
-                        </li>
-                        <li class="timeline-item mb-5">
-                            <span class="timeline-icon2"></span>
-                            <h5 class="fw-bold"></h5>
                             <p class="text-muted mb-2 fw-bold">2022-2-20 17:20</p>
-                            <p class="text-muted">
-                                广州发车
-                            </p>
+
                         </li>
-                        <li class="timeline-item mb-5">
+                        <li class="timeline-item mb-4">
                             <span class="timeline-icon2"></span>
-                            <h5 class="fw-bold"></h5>
-                            <p class="text-muted mb-2 fw-bold">2022-2-20 17:20</p>
+                            <p class="fw-bold"></p>
                             <p class="text-muted">
                                 上海中转
                             </p>
+                            <p class="text-muted mb-2 fw-bold">2022-2-21  09:00:00</p>
+
                         </li>
-                        <li class="timeline-item mb-5">
+                        <li class="timeline-item mb-4">
                             <span class="timeline-icon2"></span>
-                            <h5 class="fw-bold"></h5>
-                            <p class="text-muted mb-2 fw-bold">2022-2-20 17:20</p>
+                            <p class="fw-bold"></p>
                             <p class="text-muted">
                                 徐州中转
                             </p>
+                            <p class="text-muted mb-2 fw-bold">2022-2-21  23:25:00</p>
+
                         </li>
-                        <li class="timeline-item mb-5">
+                        <li class="timeline-item mb-4">
                             <span class="timeline-icon2"></span>
-                            <h5 class="fw-bold"></h5>
-                            <p class="text-muted mb-2 fw-bold">2022-2-20 17:20</p>
+                            <p class="fw-bold"></p>
                             <p class="text-muted">
                                 济南中转
                             </p>
+                            <p class="text-muted mb-2 fw-bold">2022-2-22  06:25:00</p>
                         </li>
-                        <li class="timeline-item mb-5">
-                            <span class="timeline-icon"><i class="bi bi-bank"></i></span>
-                            <h5>北京市亦庄仓库</h5>
-                            <p class="text-muted mb-2 fw-bold">2022/2/22 9:56</p>
+                        <li class="timeline-item mb-4">
+                            <span class="timeline-icon"><i class="bi bi-house"></i></span>
+                            <p class="fw-bold">北京市亦庄仓库</p>
+                            <p class="text-muted mb-2 fw-bold">2022-2-22  09:56:00</p>
                             <p class="text-muted">
-                                入库：6号仓59货架
+                                上架位置：6号仓59货架
                             </p>
                         </li>
                     </ul>

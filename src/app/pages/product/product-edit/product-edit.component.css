@@ -1,15 +1,15 @@
 [nz-form-label] {
-  overflow: visible;
+    overflow: visible;
 }
 
 button {
-  margin-left: 8px;
+    margin-left: 8px;
 }
 
 nz-date-picker {
-  width: 100%;
+    width: 100%;
 }
 
 nz-input-number > {
-  width: 100%;
+    width: 100%;
 }

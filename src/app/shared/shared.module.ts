@@ -5,24 +5,24 @@ import {IconsProviderModule} from "../icons-provider.module";
 
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    // angular
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    // 3rd
-    IconsProviderModule
-  ]
+    declarations: [],
+    imports: [
+        CommonModule
+    ],
+    exports: [
+        // angular
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        // 3rd
+        IconsProviderModule
+    ]
 })
 export class SharedModule {
-  static forRoot(): ModuleWithProviders<SharedModule> {
-    return {
-      ngModule: SharedModule,
-      providers: []
-    };
-  }
+    static forRoot(): ModuleWithProviders<SharedModule> {
+        return {
+            ngModule: SharedModule,
+            providers: []
+        };
+    }
 }

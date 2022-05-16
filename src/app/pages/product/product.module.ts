@@ -22,30 +22,30 @@ import {NzImageModule} from "ng-zorro-antd/image";
 
 
 @NgModule({
-  declarations: [
-    ProductListComponent,
-    ProductAddComponent,
-    ProductDetailComponent,
-    ProductEditComponent,
-  ],
-  imports: [
-    ProductRoutingModule,
-    NzTableModule,
-    NzButtonModule,
-    NzFormModule,
-    NzInputModule,
-    SharedModule,
-    NzSelectModule,
-    NzDatePickerModule,
-    NzPageHeaderModule,
-    NzBreadCrumbModule,
-    NzDropDownModule,
-    NzInputNumberModule,
-    NzUploadModule,
-    NzModalModule,
-    NzImageModule
+    declarations: [
+        ProductListComponent,
+        ProductAddComponent,
+        ProductDetailComponent,
+        ProductEditComponent,
+    ],
+    imports: [
+        ProductRoutingModule,
+        NzTableModule,
+        NzButtonModule,
+        NzFormModule,
+        NzInputModule,
+        SharedModule,
+        NzSelectModule,
+        NzDatePickerModule,
+        NzPageHeaderModule,
+        NzBreadCrumbModule,
+        NzDropDownModule,
+        NzInputNumberModule,
+        NzUploadModule,
+        NzModalModule,
+        NzImageModule
 
-  ]
+    ]
 })
 export class ProductModule {
 }

@@ -14,21 +14,21 @@ import {SignInComponent} from './sign-in/sign-in.component';
 
 
 @NgModule({
-  declarations: [
-    ForgotPasswordComponent,
-    ResetPasswordComponent,
-    SignUpComponent,
-    SignInComponent
-  ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule,
-    NzFormModule,
-    NzInputModule,
-    NzCheckboxModule,
-    SharedModule,
-    NzButtonModule
-  ]
+    declarations: [
+        ForgotPasswordComponent,
+        ResetPasswordComponent,
+        SignUpComponent,
+        SignInComponent
+    ],
+    imports: [
+        CommonModule,
+        AuthRoutingModule,
+        NzFormModule,
+        NzInputModule,
+        NzCheckboxModule,
+        SharedModule,
+        NzButtonModule
+    ]
 })
 export class AuthModule {
 }
