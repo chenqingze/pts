@@ -7,24 +7,27 @@ body {
     font-size: 26px;
     font-weight: 500;
 }
-.card-subtitle{
+
+.card-subtitle {
     font-size: 22px;
     padding-left: 3px;
 }
-.bg-image{
+
+.bg-image {
     background-image: url('bg2@2x.png');
     background-size: cover;
 }
+
 .base-info .col-6 {
     white-space: pre;
     /*font-size: 20px;*/
 
 }
-.base-info .row{
-    border-bottom:1px dashed #DCDBD9;
+
+.base-info .row {
+    border-bottom: 1px dashed #DCDBD9;
     padding-top: 12px;
 }
-
 
 
 .timeline-with-icons {
@@ -108,6 +111,20 @@ body {
     width: 100vw;
     height: 90vh;
 }
+/*地图模态框头部*/
+.modal-dialog{
+    margin: 0;
+}
+.map-header{
+    display: flex;
+    justify-content: space-between;
+    padding:  0.5rem 1rem;
+}
+.modal-body {
+    padding: 0;
+}
+
+
 
 /*进入首页 loading spinner*/
 #overlay {
@@ -120,6 +137,14 @@ body {
     width: 100%;
     background-color: #2980b9;
     z-index: 10000;
+}
+
+#overlay p {
+    text-align: center;
+    margin-top: 60px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .spinner {
