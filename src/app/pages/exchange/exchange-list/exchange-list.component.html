@@ -1,0 +1,72 @@
+<nz-page-header nzBackIcon>
+    <nz-page-header-title>交易-商品信息</nz-page-header-title>
+    <!--subtitle-->
+    <!--<nz-page-header-subtitle>仓储物流信息</nz-page-header-subtitle>-->
+</nz-page-header>
+<nz-table
+    #rowSelectionTable
+    nzShowSizeChanger
+    nzBordered
+    nzSize="small"
+    [nzData]="exchangeList"
+    [nzScroll]="{ x: '80vw',y: '60vh' }"
+>
+    <thead>
+    <tr>
+        <!--<th nzLeft
+            [(nzChecked)]="checked"
+            [nzIndeterminate]="indeterminate"
+            (nzCheckedChange)="onAllChecked($event)"></th>-->
+        <th nzLeft>产品编号</th>
+        <th nzLeft>产品名称</th>
+        <th nzLeft>产品批号</th>
+        <th>交易平台</th>
+        <th>买方</th>
+        <th>卖方</th>
+        <th>交易时间</th>
+        <th nzRight>交割仓储</th>
+        <th nzRight>发货仓储</th>
+        <th nzRight>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of rowSelectionTable.data">
+        <!-- <td nzLeft [nzChecked]="setOfCheckedId.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"
+             [nzDisabled]="data.qualityStatus!==qualityStatus.NotInspected"></td>-->
+        <td nzLeft>{{ data.code }}</td>
+        <td nzLeft>{{ data.name }}</td>
+        <td nzLeft>{{ data.batchNo }}</td>
+        <td>{{ data.exchangePlatform}}</td>
+        <td>{{ data.buyer}}</td>
+        <td>{{ data.shipper}}</td>
+        <td>{{ data.exchangeTime }}</td>
+        <td>{{data.toWarehouse}}</td>
+        <td>{{data.fromWarehouse}}</td>
+        <td nzRight>
+            <button nz-button nzType="link" [routerLink]="['/exchange/detail', data.id, ]">查看</button>
+            <!-- <nz-button-group>
+                 <button nz-button nzType="link" [routerLink]="['/product/detail', data.id, ]">查看</button>
+                 <button nz-button nzType="link" nz-dropdown [nzDropdownMenu]="moreAction" nzPlacement="bottomRight">
+                     &lt;!&ndash;<i nz-icon nzType="ellipsis"></i>&ndash;&gt;
+                     更多<i nz-icon nzType="double-right"></i>
+                 </button>
+             </nz-button-group>
+             <nz-dropdown-menu #moreAction="nzDropdownMenu">
+                 <ul nz-menu>
+                     <li nz-menu-item>
+                         <a nz-button nzType="link" nzSize="small" [routerLink]="['/product/edit', data.id, ]">
+                             <i nz-icon nzType="edit"></i>编辑
+                         </a>
+                     </li>
+                     <li nz-menu-item>
+                         <a nz-button nzType="link" nzSize="small" nzDanger (click)="delete(data.id)">
+                             <i nz-icon nzType="delete"></i>删除
+                         </a>
+                     </li>
+                 </ul>
+             </nz-dropdown-menu>-->
+        </td>
+    </tr>
+    </tbody>
+</nz-table>
+

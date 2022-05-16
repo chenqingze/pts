@@ -1,151 +1,97 @@
 {
   "products": [
     {
-      "id": 5,
-      "name": "1",
-      "batchNo": "1",
-      "specs": "1",
-      "countryOFOrigin": "1",
-      "quantity": "1",
-      "importer": "1",
-      "importerAddress": "1",
-      "placeOfClearance": "1",
-      "manufacturer": "1",
-      "material": "1",
-      "expirationDate": "2022-04-30T10:22:01.358Z",
-      "description": "1",
-      "pictures": [],
-      "qualityStatus": "未质检"
+      "name": "增城丝苗米",
+      "batchNo": "202112766587",
+      "specs": "25Kg/袋",
+      "countryOFOrigin": "广州增城市",
+      "quantity": 500,
+      "category": "籼米",
+      "manufacturer": "广州金凤凰米业",
+      "productionDate": "2021-12-20T00:00:00.000Z",
+      "expirationDate": "12个月",
+      "storageMethods": "阴凉通风，干燥存储",
+      "pictures": [
+        "product-pic-1652701894888.jpg"
+      ],
+      "qualifiedCertificate": "",
+      "qualityRating": "一级",
+      "netWeight": "25kg",
+      "tracingNo": "",
+      "qualityStatus": "未质检",
+      "id": 1
     },
     {
-      "id": 6,
-      "name": "2",
-      "batchNo": "2",
-      "specs": "2",
-      "countryOFOrigin": "2",
-      "quantity": "1",
-      "importer": "2",
-      "importerAddress": "2",
-      "placeOfClearance": "2",
-      "manufacturer": "2",
-      "material": "2",
-      "expirationDate": "2022-04-22T11:08:57.847Z",
-      "description": "2",
+      "name": "五常大米",
+      "batchNo": "202112767856",
+      "specs": "25Kg/袋",
+      "countryOFOrigin": "哈尔滨五常市",
+      "quantity": 500,
+      "category": "籼米",
+      "manufacturer": "哈尔滨裕丰谷业",
+      "productionDate": "2022-1-12T00:00:00.000Z",
+      "expirationDate": "12个月",
+      "storageMethods": "常温保存，防潮防晒",
       "pictures": [
-        null
+        "product-pic-1652701894888.jpg"
       ],
-      "qualityStatus": "未质检"
-    },
-    {
-      "id": 8,
-      "name": "5",
-      "batchNo": "5",
-      "specs": "5",
-      "countryOFOrigin": "5",
-      "quantity": "1",
-      "importer": "5",
-      "importerAddress": "5",
-      "placeOfClearance": "5",
-      "manufacturer": "5",
-      "material": "5",
-      "expirationDate": "2022-05-05T11:21:49.214Z",
-      "description": "5",
-      "pictures": [
-        "product-pic-1651462246677.jpg",
-        "product-pic-1651462257169.jpg",
-        "product-pic-1651462697851.jpg"
-      ],
-      "qualityStatus": "未质检"
-    },
-    {
-      "id": 9,
-      "name": "111",
-      "batchNo": "4312",
-      "specs": "432432",
-      "countryOFOrigin": "4123",
-      "quantity": "1",
-      "importer": "4312",
-      "importerAddress": "4312",
-      "placeOfClearance": "4312",
-      "manufacturer": "43124",
-      "material": "4312",
-      "expirationDate": "2022-05-11T03:51:01.658Z",
-      "description": "43124",
-      "pictures": [
-        "product-pic-1651636268882.jpg"
-      ],
-      "qualityStatus": "未质检"
-    },
-    {
-      "id": 10,
-      "name": "111",
-      "batchNo": "4312",
-      "specs": "432432",
-      "countryOFOrigin": "4123",
-      "quantity": "1",
-      "importer": "4312",
-      "importerAddress": "4312",
-      "placeOfClearance": "4312",
-      "manufacturer": "43124",
-      "material": "4312",
-      "expirationDate": "2022-05-11T03:51:01.658Z",
-      "description": "43124",
-      "pictures": [
-        "product-pic-1651668457514.jpg"
-      ],
-      "qualityStatus": "已质检"
-    },
-    {
-      "id": 11,
-      "name": "111",
-      "batchNo": "111",
-      "specs": "111",
-      "countryOFOrigin": "111",
-      "quantity": 1,
-      "category": "111",
-      "manufacturer": "111",
-      "productionDate": "2022-05-27",
-      "expirationDate": "2022-05-27T05:17:41.298Z",
-      "storageMethods": "111",
-      "pictures": [
-        "product-pic-1652680021857.jpg",
-        "product-pic-1652682677789.jpg"
-      ],
-      "qualifiedCertificate": "QualifiedCertificate-1652680061439.pdf",
-      "qualityRating": "111",
-      "netWeight": "111",
-      "tracingNo": "tracingNo-1652670693034.jpg",
-      "qualityStatus": "未质检"
+      "qualifiedCertificate": "",
+      "qualityRating": "一级",
+      "netWeight": "25kg",
+      "tracingNo": "",
+      "qualityStatus": "未质检",
+      "id": 1
     }
   ],
   "goods": [
     {
       "id": 10,
-      "name": "111",
-      "code": "21",
-      "batchNo": "4312",
-      "specs": "432432",
-      "countryOFOrigin": "4123",
-      "quantity": "1",
+      "name": "增城丝苗米",
+      "code": "1",
+      "batchNo": "202112766587",
+      "specs": "25KG/袋",
+      "quantity": "500袋",
       "qualityStatus": "已质检",
+      "countryOFOrigin": "广州增城市",
       "transferList": [
         {
-          "warehouse": "仓库名称1",
-          "position": "仓库位置1",
-          "inTime": "入库时间1",
-          "outTime": "出库时间1",
-          "shelf": "上架位置1",
-          "inspector": "质检员1",
-          "carrier": "出库物流1"
+          "warehouse": "广州凤凰仓库",
+          "position": "广州市",
+          "inTime": "2022-1-25  10:30:00",
+          "outTime": "2022-2-20  15:35:00",
+          "shelf": "2号仓13货架",
+          "inspector": "钟亦",
+          "carrier": "顺丰速运：87238723"
         },
         {
-          "warehouse": "仓库名称1",
-          "position": "仓库位置1",
-          "inTime": "入库时间1",
-          "outTime": "出库时间1",
-          "shelf": "上架位置1",
-          "inspector": "质检员1",
-          "logisticsOrder": "出库物流1"
+          "warehouse": "北京市亦庄仓库",
+          "position": "北京市",
+          "inTime": "2022/2/22  09:56:00",
+          "outTime": "",
+          "shelf": "6号仓59货架",
+          "inspector": "李宏良",
+          "logisticsOrder": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "五常大米",
+      "code": "2",
+      "batchNo": "202112767856",
+      "specs": "25KG/袋",
+      "quantity": "500袋",
+      "qualityStatus": "已质检",
+      "countryOFOrigin": "哈尔滨五常市",
+      "transferList": [
+        {
+          "warehouse": "哈尔滨市裕丰仓库",
+          "position": "哈尔滨市",
+          "inTime": "2022-1-30 17:30",
+          "outTime": "2022-2-15  11:35:00",
+          "shelf": "5号仓18货架",
+          "inspector": "赵贝贝",
+          "carrier": "德邦速运：38764534"
         }
       ]
     }
@@ -153,28 +99,68 @@
   "logistics": [
     {
       "id": 10,
-      "name": "111",
-      "code": "21",
-      "batchNo": "4312",
-      "specs": "432432",
-      "countryOFOrigin": "4123",
-      "quantity": "1",
-      "fromWarehouse": "发货仓",
-      "toWarehouse": "收货仓",
+      "name": "五常大米",
+      "code": "2",
+      "batchNo": "202112767856",
+      "specs": "25KG/袋",
+      "countryOFOrigin": "哈尔滨五常市",
+      "quantity": "500袋",
+      "fromWarehouse": "哈尔滨市裕丰仓库",
+      "toWarehouse": "北京亦庄仓库",
       "qualityStatus": "已质检",
-      "outTime": "2022-5-10 9:00",
+      "outTime": "2022-2-15  11:35:00",
       "currentPosition": "北京仓库",
       "transitList": [
         {
-          "station": "北京中转站",
-          "outTime": "2022-5-10 12:00"
+          "station": "哈尔滨发车",
+          "outTime": "2022-2-15  12:25:00"
         },
         {
-          "station": "北京中转站",
-          "outTime": "2022-5-10 12:00"
+          "station": "长春中转",
+          "outTime": "2022-2-15  23:35:00"
+        },
+        {
+          "station": "沈阳中转",
+          "outTime": "2022-2-16  09:20:00"
         }
       ],
       "logisticsOrder": "德邦速运：38764534"
+    }
+  ],
+  "exchanges": [
+    {
+      "id": 10,
+      "name": "增城丝苗米",
+      "code": "1",
+      "batchNo": "202112766587",
+      "specs": "25KG/袋",
+      "countryOFOrigin": "广州增城市",
+      "quantity": "500袋",
+      "fromWarehouse": "广州凤凰仓库",
+      "toWarehouse": "北京亦庄仓库",
+      "exchangePlatform": "上海广发贸易网",
+      "orderNo": "202205353463",
+      "buyer": "北京逸邻贸易有限公司",
+      "shipper": "广州金凤凰米业",
+      "exchangeTime": "2022-2-19  15:30:00",
+      "price": "150元/袋"
+    },
+    {
+      "id": 10,
+      "name": "增城丝苗米",
+      "code": "2",
+      "batchNo": "202112766587",
+      "specs": "25KG/袋",
+      "countryOFOrigin": "哈尔滨五常市",
+      "quantity": "500袋",
+      "fromWarehouse": "哈尔滨市裕丰仓库",
+      "toWarehouse": "北京亦庄仓库",
+      "exchangePlatform": "上海广发贸易网",
+      "orderNo": "202205358678",
+      "buyer": "北京逸邻贸易有限公司",
+      "shipper": "哈尔滨裕丰谷业",
+      "exchangeTime": "2022-2-19 15:30",
+      "price": "150元/袋"
     }
   ]
 }

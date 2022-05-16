@@ -187,11 +187,12 @@
                 <nz-form-item>
                     <nz-form-label [nzSpan]="4" nzFor="expirationDate">保质期</nz-form-label>
                     <nz-form-control [nzSpan]="16">
-                        <nz-date-picker
-                                nzFormat="yyyy-MM-dd"
+                        <input
+                                nz-input
+                                placeholder="请输入保质期<"
                                 formControlName="expirationDate"
                                 id="expirationDate"
-                        ></nz-date-picker>
+                        />
                     </nz-form-control>
                 </nz-form-item>
             </div>

@@ -24,6 +24,10 @@ const routes: Routes = [
                 path: 'logistics',
                 loadChildren: () => import('./pages/logistics/logistics.module').then(m => m.LogisticsModule)
             },
+            {
+                path: 'exchange',
+                loadChildren: () => import('./pages/exchange/exchange.module').then(m => m.ExchangeModule)
+            }
         ],
         canActivate: [AuthGuard]
     },
