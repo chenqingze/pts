@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
     appName: 'pts',
-    endpoint: 'http://localhost:3000'
+    endpoint: 'http://192.168.1.112:3000'
 };
