@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ExchangeService} from "../exchange.service";
-import {Exchange} from "../exchange.model";
+import {Product} from "../../../shared/product.model";
 
 @Component({
     selector: 'app-exchange-list',
@@ -9,7 +9,7 @@ import {Exchange} from "../exchange.model";
 })
 export class ExchangeListComponent implements OnInit {
 
-    exchangeList: Exchange[] = [];
+    exchangeList: Product[] = [];
 
     constructor(private exchangeService: ExchangeService) {
     }

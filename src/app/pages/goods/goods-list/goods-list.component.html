@@ -8,7 +8,7 @@
         #rowSelectionTable
         nzShowSizeChanger
         nzBordered
-        nzSize="small"
+        nzSize="middle"
         [nzData]="goodsList"
         (nzCurrentPageDataChange)="onCurrentPageDataChange($event)"
         [nzScroll]="{ x: '80vw',y: '60vh' }"
@@ -19,9 +19,9 @@
                 [(nzChecked)]="checked"
                 [nzIndeterminate]="indeterminate"
                 (nzCheckedChange)="onAllChecked($event)"></th>-->
-            <th nzLeft>产品编号</th>
-            <th nzLeft>产品批号</th>
+            <th nzLeft nzWidth="80px">产品编号</th>
             <th nzLeft>产品名称</th>
+            <th >产品批号</th>
             <th>仓库名称</th>
             <th>仓库位置</th>
             <th>入库时间</th>
@@ -34,13 +34,13 @@
         <tr *ngFor="let data of rowSelectionTable.data">
             <!-- <td nzLeft [nzChecked]="setOfCheckedId.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"
                  [nzDisabled]="data.qualityStatus!==qualityStatus.NotInspected"></td>-->
-            <td nzLeft>{{ data.code }}</td>
-            <td nzLeft>{{ data.batchNo }}</td>
+            <td nzLeft nzAlign="center">{{ data.code }}</td>
             <td nzLeft>{{ data.name }}</td>
-            <td>{{ data.transferList[data.transferList.length - 1]['warehouse'] }}</td>
-            <td>{{ data.transferList[data.transferList.length - 1]['position']  }}</td>
-            <td>{{data.transferList[data.transferList.length - 1]['inTime'] }}</td>
-            <td>{{data.transferList[data.transferList.length - 1]['outTime'] }}</td>
+            <td>{{ data.batchNo }}</td>
+            <td>{{ data.wareHouseList[data.wareHouseList.length - 1]['warehouse'] }}</td>
+            <td>{{ data.wareHouseList[data.wareHouseList.length - 1]['position']  }}</td>
+            <td>{{data.wareHouseList[data.wareHouseList.length - 1]['inTime'] }}</td>
+            <td>{{data.wareHouseList[data.wareHouseList.length - 1]['outTime'] }}</td>
             <td nzRight>{{ qualityStatusMap[data.qualityStatus] || qualityStatusMap[qualityStatus.NotInspected]}}</td>
             <td nzRight>
                 <button nz-button nzType="link" [routerLink]="['/goods/detail', data.id, ]">查看</button>

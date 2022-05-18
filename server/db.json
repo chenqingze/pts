@@ -1,59 +1,41 @@
 {
   "products": [
     {
+      "id": 1,
+      "code": "1",
       "name": "增城丝苗米",
       "batchNo": "202112766587",
       "specs": "25Kg/袋",
       "countryOFOrigin": "广州增城市",
-      "quantity": 500,
+      "quantity": "500袋",
       "category": "籼米",
       "manufacturer": "广州金凤凰米业",
-      "productionDate": "2021-12-20T00:00:00.000Z",
+      "productionDate": "2021-12-20",
       "expirationDate": "12个月",
       "storageMethods": "阴凉通风，干燥存储",
-      "pictures": [
-        "product-pic-1652701894888.jpg"
-      ],
       "qualifiedCertificate": "30061312-20220114-金凤凰米业-金凤凰增城丝苗米-营养检测-SY1121120409.pdf",
+      "qualifiedCertificatePic": [
+        "30061312-20220114-金凤凰米业-金凤凰增城丝苗米-营养检测-SY1121120409-1.png",
+        "30061312-20220114-金凤凰米业-金凤凰增城丝苗米-营养检测-SY1121120409-2.png",
+        "30061312-20220114-金凤凰米业-金凤凰增城丝苗米-营养检测-SY1121120409-3.png",
+        "30061312-20220114-金凤凰米业-金凤凰增城丝苗米-营养检测-SY1121120409-4.png"
+      ],
       "qualityRating": "一级",
       "netWeight": "25kg",
       "tracingNo": "",
-      "qualityStatus": "未质检",
-      "id": 1
-    },
-    {
-      "name": "五常大米",
-      "batchNo": "202112767856",
-      "specs": "25Kg/袋",
-      "countryOFOrigin": "哈尔滨五常市",
-      "quantity": 500,
-      "category": "籼米",
-      "manufacturer": "哈尔滨裕丰谷业",
-      "productionDate": "2022-1-12T00:00:00.000Z",
-      "expirationDate": "12个月",
-      "storageMethods": "常温保存，防潮防晒",
-      "pictures": [
-        "product-pic-1652703552937.jpg"
-      ],
-      "qualifiedCertificate": "",
-      "qualityRating": "一级",
-      "netWeight": "25kg",
-      "tracingNo": "50061513-20220114-裕丰谷业-稻花香五常大米-营养检测-SY1121120607.pdf",
-      "qualityStatus": "未质检",
-      "id": 1
-    }
-  ],
-  "goods": [
-    {
-      "id": 10,
-      "name": "增城丝苗米",
-      "code": "1",
-      "batchNo": "202112766587",
-      "specs": "25KG/袋",
-      "quantity": "500袋",
       "qualityStatus": "已质检",
-      "countryOFOrigin": "广州增城市",
-      "transferList": [
+      "exchange": {
+        "exchangePlatform": "上海广发贸易网",
+        "orderNo": "202205353463",
+        "buyer": "北京逸邻贸易有限公司",
+        "shipper": "广州金凤凰米业",
+        "exchangeTime": "2022-2-19 15:30:00",
+        "price": "150元/袋",
+        "fromWarehouse": "广州凤凰仓库",
+        "toWarehouse": "北京亦庄仓库",
+        "outTime": "2022-2-15  11:35:00"
+      },
+      "wareHouseList": [
         {
           "warehouse": "广州凤凰仓库",
           "position": "广州市",
@@ -66,49 +48,52 @@
         {
           "warehouse": "北京市亦庄仓库",
           "position": "北京市",
-          "inTime": "2022/2/22  09:56:00",
+          "inTime": "2022-2-22  09:56:00",
           "outTime": "",
           "shelf": "6号仓59货架",
           "inspector": "李宏良",
           "logisticsOrder": ""
         }
+      ],
+      "pictures": [
+        "product-pic-1652701894888.jpg"
       ]
     },
     {
       "id": 2,
-      "name": "五常大米",
       "code": "2",
-      "batchNo": "202112767856",
-      "specs": "25KG/袋",
-      "quantity": "500袋",
-      "qualityStatus": "已质检",
-      "countryOFOrigin": "哈尔滨五常市",
-      "transferList": [
-        {
-          "warehouse": "哈尔滨市裕丰仓库",
-          "position": "哈尔滨市",
-          "inTime": "2022-1-30 17:30",
-          "outTime": "2022-2-15  11:35:00",
-          "shelf": "5号仓18货架",
-          "inspector": "赵贝贝",
-          "carrier": "德邦速运：38764534"
-        }
-      ]
-    }
-  ],
-  "logistics": [
-    {
-      "id": 10,
       "name": "五常大米",
-      "code": "2",
       "batchNo": "202112767856",
-      "specs": "25KG/袋",
+      "specs": "25Kg/袋",
       "countryOFOrigin": "哈尔滨五常市",
       "quantity": "500袋",
-      "fromWarehouse": "哈尔滨市裕丰仓库",
-      "toWarehouse": "北京亦庄仓库",
+      "category": "籼米",
+      "manufacturer": "哈尔滨裕丰谷业",
+      "productionDate": "2022-1-12",
+      "expirationDate": "12个月",
+      "storageMethods": "常温保存，防潮防晒",
+      "qualifiedCertificate": "50061513-20220114-裕丰谷业-稻花香五常大米-营养检测-SY1121120607.pdf",
+      "qualifiedCertificatePic": [
+        "50061513-20220114-裕丰谷业-稻花香五常大米-营养检测-SY1121120607-1.png",
+        "50061513-20220114-裕丰谷业-稻花香五常大米-营养检测-SY1121120607-2.png",
+        "50061513-20220114-裕丰谷业-稻花香五常大米-营养检测-SY1121120607-3.png",
+        "50061513-20220114-裕丰谷业-稻花香五常大米-营养检测-SY1121120607-4.png"
+      ],
+      "qualityRating": "一级",
+      "netWeight": "25kg",
+      "tracingNo": "",
       "qualityStatus": "已质检",
-      "outTime": "2022-2-15  11:35:00",
+      "exchange": {
+        "exchangePlatform": "上海广发贸易网",
+        "orderNo": "202205358678",
+        "buyer": "北京逸邻贸易有限公司",
+        "shipper": "哈尔滨裕丰谷业",
+        "exchangeTime": "2022-2-19 15:30:00",
+        "price": "150元/袋",
+        "fromWarehouse": "哈尔滨市裕丰仓库",
+        "toWarehouse": "北京亦庄仓库",
+        "outTime": "2022-2-15  11:35:00"
+      },
       "currentPosition": "北京仓库",
       "transitList": [
         {
@@ -124,43 +109,21 @@
           "outTime": "2022-2-16  09:20:00"
         }
       ],
-      "logisticsOrder": "德邦速运：38764534"
-    }
-  ],
-  "exchanges": [
-    {
-      "id": 10,
-      "name": "增城丝苗米",
-      "code": "1",
-      "batchNo": "202112766587",
-      "specs": "25KG/袋",
-      "countryOFOrigin": "广州增城市",
-      "quantity": "500袋",
-      "fromWarehouse": "广州凤凰仓库",
-      "toWarehouse": "北京亦庄仓库",
-      "exchangePlatform": "上海广发贸易网",
-      "orderNo": "202205353463",
-      "buyer": "北京逸邻贸易有限公司",
-      "shipper": "广州金凤凰米业",
-      "exchangeTime": "2022-2-19  15:30:00",
-      "price": "150元/袋"
-    },
-    {
-      "id": 10,
-      "name": "增城丝苗米",
-      "code": "2",
-      "batchNo": "202112766587",
-      "specs": "25KG/袋",
-      "countryOFOrigin": "哈尔滨五常市",
-      "quantity": "500袋",
-      "fromWarehouse": "哈尔滨市裕丰仓库",
-      "toWarehouse": "北京亦庄仓库",
-      "exchangePlatform": "上海广发贸易网",
-      "orderNo": "202205358678",
-      "buyer": "北京逸邻贸易有限公司",
-      "shipper": "哈尔滨裕丰谷业",
-      "exchangeTime": "2022-2-19 15:30",
-      "price": "150元/袋"
+      "logisticsOrder": "德邦速运：38764534",
+      "wareHouseList": [
+        {
+          "warehouse": "哈尔滨市裕丰仓库",
+          "position": "哈尔滨市",
+          "inTime": "2022-1-30 17:30:00",
+          "outTime": "2022-2-15  11:35:00",
+          "shelf": "5号仓18货架",
+          "inspector": "赵贝贝",
+          "logisticsOrder": "德邦速运：38764534"
+        }
+      ],
+      "pictures": [
+        "product-pic-1652703552937.jpg"
+      ]
     }
   ]
 }

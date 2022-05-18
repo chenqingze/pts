@@ -7,7 +7,7 @@
     #rowSelectionTable
     nzShowSizeChanger
     nzBordered
-    nzSize="small"
+    nzSize="middle"
     [nzData]="exchangeList"
     [nzScroll]="{ x: '80vw',y: '60vh' }"
 >
@@ -17,9 +17,9 @@
             [(nzChecked)]="checked"
             [nzIndeterminate]="indeterminate"
             (nzCheckedChange)="onAllChecked($event)"></th>-->
-        <th nzLeft>产品编号</th>
+        <th nzLeft nzWidth="80px" >产品编号</th>
         <th nzLeft>产品名称</th>
-        <th nzLeft>产品批号</th>
+        <th>产品批号</th>
         <th>交易平台</th>
         <th>买方</th>
         <th>卖方</th>
@@ -33,15 +33,15 @@
     <tr *ngFor="let data of rowSelectionTable.data">
         <!-- <td nzLeft [nzChecked]="setOfCheckedId.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"
              [nzDisabled]="data.qualityStatus!==qualityStatus.NotInspected"></td>-->
-        <td nzLeft>{{ data.code }}</td>
+        <td nzLeft nzAlign="center">{{ data.code }}</td>
         <td nzLeft>{{ data.name }}</td>
         <td nzLeft>{{ data.batchNo }}</td>
-        <td>{{ data.exchangePlatform}}</td>
-        <td>{{ data.buyer}}</td>
-        <td>{{ data.shipper}}</td>
-        <td>{{ data.exchangeTime }}</td>
-        <td>{{data.toWarehouse}}</td>
-        <td>{{data.fromWarehouse}}</td>
+        <td>{{ data.exchange?.exchangePlatform}}</td>
+        <td>{{ data.exchange?.buyer}}</td>
+        <td>{{ data.exchange?.shipper}}</td>
+        <td>{{ data.exchange?.exchangeTime }}</td>
+        <td nzRight>{{data.exchange?.toWarehouse}}</td>
+        <td nzRight>{{data.exchange?.fromWarehouse}}</td>
         <td nzRight>
             <button nz-button nzType="link" [routerLink]="['/exchange/detail', data.id, ]">查看</button>
             <!-- <nz-button-group>

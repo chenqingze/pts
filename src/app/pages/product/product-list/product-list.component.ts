@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Product, QualityStatus, QualityStatusRecord} from "../product.model";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {ProductService} from "../product.service";
 import {NzModalService} from "ng-zorro-antd/modal";
+import {Product, QualityStatus, QualityStatusRecord} from "../../../shared/product.model";
 
 @Component({
     selector: 'app-product-list',

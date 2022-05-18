@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {GoodsService} from "../goods.service";
-import {QualityStatus} from "../../product/product.model";
-import {Logistics} from "../goods.model";
+import {QualityStatus, WareHouse} from "../../../shared/product.model";
 
 @Component({
     selector: 'app-goods-detail',
@@ -13,7 +12,7 @@ import {Logistics} from "../goods.model";
 export class GoodsDetailComponent implements OnInit {
 
     goodsForm: FormGroup;
-    transferList: Logistics[] = [];
+    wareHouseList: WareHouse[] = [];
 
     constructor(private fb: FormBuilder, private goodsService: GoodsService, private router: Router, private route: ActivatedRoute) {
         this.goodsForm = this.fb.group({
@@ -50,9 +49,9 @@ export class GoodsDetailComponent implements OnInit {
                     // Certificate of Origin 原产地证书
                     quantity: data?.quantity, // 数量,数量=Quantity, Q'ty
                     qualityStatus: data?.qualityStatus, // 质检状态:未质检；待质检；已质检
-                    transferList: data?.transferList// 仓储物流
+                    logisticsList: data?.wareHouseList// 仓储物流
                 });
-                this.transferList = data?.transferList || [];
+                this.wareHouseList = data?.wareHouseList || [];
             })
         });
 

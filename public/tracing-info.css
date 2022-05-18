@@ -1,21 +1,27 @@
 body {
-    background-color: #fffefa;
+    background-color: #0054F1;
 }
 
 
 .bd-navbar p {
-    font-size: 26px;
-    font-weight: 500;
+    /*font-size: 26px;*/
+    font-weight: bold;
+    color: #fbfbfb;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
-
+.card{
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
 .card-subtitle {
     font-size: 22px;
     padding-left: 3px;
 }
 
 .bg-image {
-    background-image: url('bg2@2x.png');
-    background-size: cover;
+    /*background-image: url('bg2@2x.png');*/
+    /*background-size: cover;*/
 }
 
 .base-info .col-6 {

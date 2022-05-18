@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ExchangeService} from "../exchange.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Exchange} from "../exchange.model";
+import {Product} from "../../../shared/product.model";
 
 @Component({
     selector: 'app-exchange-detail',
@@ -10,7 +10,7 @@ import {Exchange} from "../exchange.model";
 })
 export class ExchangeDetailComponent implements OnInit {
 
-    exchange!: Exchange;
+    exchange!: Product;
 
     constructor(private exchangeService: ExchangeService, private router: Router, private route: ActivatedRoute) {
         this.route.params.subscribe(params => {

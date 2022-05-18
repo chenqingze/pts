@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
-import {Exchange} from "../exchange/exchange.model";
 import {HttpApi} from "../../core/http/http-api";
 import {HttpClient} from "@angular/common/http";
+import {Product} from "../../shared/product.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExchangeService {
 
-  list(): Observable<Exchange []> {
-    return this.httpClient.get<Exchange []>(HttpApi.exchange);
+  list(): Observable<Product []> {
+    return this.httpClient.get<Product []>(HttpApi.products);
   }
 
-  create(exchange: Exchange): Observable<any> {
-    return this.httpClient.post(HttpApi.exchange, exchange);
+  create(products: Product): Observable<any> {
+    return this.httpClient.post(HttpApi.products, products);
   }
 
-  get(id: string): Observable<Exchange> {
-    return this.httpClient.get<Exchange>(`${HttpApi.exchange}/${id}`);
+  get(id: string): Observable<Product> {
+    return this.httpClient.get<Product>(`${HttpApi.products}/${id}`);
   }
 
-  update(exchange: Exchange): Observable<unknown> {
-    return this.httpClient.put(`${HttpApi.exchange}/${exchange.id}`, exchange);
+  update(products: Product): Observable<unknown> {
+    return this.httpClient.put(`${HttpApi.products}/${products.id}`, products);
   }
 
   qualityInspect(ids: Array<string>): Observable<unknown> {
@@ -32,7 +32,7 @@ export class ExchangeService {
   }
 
   delete(id: string): Observable<unknown> {
-    return this.httpClient.delete(`${HttpApi.exchange}/${encodeURI(id)}`);
+    return this.httpClient.delete(`${HttpApi.products}/${encodeURI(id)}`);
   }
 
   constructor(private httpClient: HttpClient) {

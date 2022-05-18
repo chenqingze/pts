@@ -97,14 +97,14 @@
         #rowSelectionTable
         nzShowSizeChanger
         nzBordered
-        nzSize="small"
+        nzSize="middle"
         [nzData]="productList"
         (nzCurrentPageDataChange)="onCurrentPageDataChange($event)"
         [nzScroll]="{ x: '80vw',y: '60vh' }"
     >
         <thead>
         <tr>
-            <th nzLeft
+            <th nzLeft nzWidth="40px"
                 [(nzChecked)]="checked"
                 [nzIndeterminate]="indeterminate"
                 (nzCheckedChange)="onAllChecked($event)"></th>

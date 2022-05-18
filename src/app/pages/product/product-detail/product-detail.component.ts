@@ -6,7 +6,7 @@ import {NzUploadChangeParam, NzUploadFile} from "ng-zorro-antd/upload";
 import {getBase64} from "../../../shared/utils";
 import {HttpApi} from "../../../core/http/http-api";
 import {NzMessageService} from "ng-zorro-antd/message";
-import {Product, QualityStatus} from "../product.model";
+import {Product, QualityStatus} from "../../../shared/product.model";
 
 @Component({
     selector: 'app-product-detail',
@@ -136,7 +136,7 @@ export class ProductDetailComponent implements OnInit {
                     netWeight: data?.netWeight, // 净含量
                     tracingNo: data?.tracingNo, // 溯源码
                     // hashCode: ['', Validators.required] // 哈希值
-                    qualityStatus: data?.qualityStatus || QualityStatus.NotInspected //质检状态
+                    qualityStatus: data?.qualityStatus || QualityStatus.NotInspected, //质检状态
                 })
                 this.pictureList = data.pictures.map((pic, index) => {
                     return {
@@ -152,12 +152,15 @@ export class ProductDetailComponent implements OnInit {
                     filename: data?.tracingNo,
                     url: `${HttpApi.uploads}/${data?.tracingNo}`
                 }];
-                this.qualifiedCertificateFileList = [{
-                    uid: data?.qualifiedCertificate,
-                    name: data?.qualifiedCertificate,
-                    filename: data?.qualifiedCertificate,
-                    url: `${HttpApi.uploads}/${data?.qualifiedCertificate}`
-                }]
+                this.qualifiedCertificateFileList = data.qualifiedCertificatePic.map((pic, index) => {
+                    return {
+                        uid: `${index}`,
+                        name: pic,
+                        filename: pic,
+                        url: `${HttpApi.uploads}/${pic}`
+                    } as NzUploadFile;
+                });
+
                 console.log(this.tracingNoFileList);
             })
         });
