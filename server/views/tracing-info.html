@@ -20,8 +20,8 @@
         <div class="rect3"></div>
         <div class="rect4"></div>
         <div class="rect5"></div>
+        <p>正在验证区块链指纹,请耐心等待~</p>
     </div>
-    <p>正在验证区块链指纹,请稍后~</p>
 </div>
 <div class="container">
     <header class="bd-navbar">
@@ -214,15 +214,16 @@
 <!--loading overlay-->
 <script type="text/javascript">
     document.body.setAttribute("class", "noscroll");
-
     document.getElementById("overlay").style.display = "block";
     document.getElementById("spinner").style.display = "block";
 
     window.onload = function () {
-        document.getElementById("spinner").style.display = "none";
-        document.getElementById("overlay").style.display = "none";
+        setTimeout(function(){
+            document.getElementById("spinner").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+            document.body.className = document.body.className.replace(/\bnoscroll\b/, '');
+        },3000)  //一秒钟打印出111
 
-        document.body.className = document.body.className.replace(/\bnoscroll\b/, '');
     }
 </script>
 <!-- Optional JavaScript; choose one of the two! -->
@@ -273,6 +274,12 @@
             zoom: 2
         });
         map.on('click', mapClick);
+        // map.on("complete", function () {
+        //     document.getElementById("spinner").style.display = "none";
+        //     document.getElementById("overlay").style.display = "none";
+        //
+        //     document.body.className = document.body.className.replace(/\bnoscroll\b/, '');
+        // });
         let drivingOption = {
             policy: AMap.DrivingPolicy.LEAST_TIME, // 其它policy参数请参考 https://lbs.amap.com/api/javascript-api/reference/route-search#m_DrivingPolicy
             ferry: 1, // 是否可以使用轮渡
@@ -370,15 +377,13 @@
             },
         }).then((AMap) => {
             let modalMap = new AMap.Map(document.getElementById('modalMap'), {
-                features: ['bg', 'point','road'],
+                features: ['bg', 'point', 'road'],
                 isHotspot: false,
                 center: [116.397559, 39.89621],
                 mapStyle: 'amap://styles/macaron',
                 zoom: 10
             });
-            // modalMap.on("complete", function () {
-            //
-            // });
+
             document.getElementById('mapModal').addEventListener('hidden.bs.modal', function (event) {
                 console.log('hidden.bs.modal====>执行了)');
                 modalMap.destroy();
