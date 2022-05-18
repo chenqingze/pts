@@ -3,3 +3,12 @@
 /*@import "~ng-zorro-antd/ng-zorro-antd.dark.css";*/
 /*@import "~ng-zorro-antd/ng-zorro-antd.compact.css";*/
 /*@import "~ng-zorro-antd/ng-zorro-antd.aliyun.css";*/
+
+/*去掉高德地图logo*/
+.amap-logo {
+    display: none !important;
+}
+
+.amap-copyright {
+    opacity: 0;
+}
