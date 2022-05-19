@@ -28,7 +28,6 @@ export class GoodsDetailComponent implements OnInit {
             // Certificate of Origin 原产地证书
             quantity: ['1', Validators.required], // 数量,数量=Quantity, Q'ty
             qualityStatus: [QualityStatus.Inspected, Validators.required],
-            transferList: [[], Validators.required]
         });
 
     }
@@ -49,7 +48,7 @@ export class GoodsDetailComponent implements OnInit {
                     // Certificate of Origin 原产地证书
                     quantity: data?.quantity, // 数量,数量=Quantity, Q'ty
                     qualityStatus: data?.qualityStatus, // 质检状态:未质检；待质检；已质检
-                    logisticsList: data?.wareHouseList// 仓储物流
+                    // wareHouseList: data?.wareHouseList// 仓储物流
                 });
                 this.wareHouseList = data?.wareHouseList || [];
             })

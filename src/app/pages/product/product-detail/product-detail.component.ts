@@ -20,9 +20,10 @@ export class ProductDetailComponent implements OnInit {
     previewImage: string | undefined = '';
     previewVisible = false;
     pictureList: any[] = [];
-    qualifiedCertificateFileList: any[] = [];
-    tracingNoFileList: any[] = [];
-    handlePreview = async (file: NzUploadFile): Promise<void> => {
+    qualifiedCertificatePicList: NzUploadFile[] = [];
+    qualifiedCertificateFile!: NzUploadFile;
+    tracingNo!: NzUploadFile;
+   /* handlePreview = async (file: NzUploadFile): Promise<void> => {
         if (!file.url && !file['preview']) {
             file['preview'] = await getBase64(file.originFileObj!);
         }
@@ -43,32 +44,32 @@ export class ProductDetailComponent implements OnInit {
         }
     }
 
-    handleTracingNoChange(info: NzUploadChangeParam) {
-        if (info.file.status !== 'uploading') {
-            console.log(info.file, info.fileList);
-        }
-        if (info.file.status === 'done') {
-            this.productForm.controls['tracingNo'].setValue(info.file.response.filename);
-            console.log(this.productForm.controls['tracingNo'])
-            console.log(this.productForm)
-            this.msg.success(`${info.file.name} file uploaded successfully`);
-        } else if (info.file.status === 'error') {
-            this.msg.error(`${info.file.name} file upload failed.`);
-        }
-    }
+      handleTracingNoChange(info: NzUploadChangeParam) {
+          if (info.file.status !== 'uploading') {
+              console.log(info.file, info.fileList);
+          }
+          if (info.file.status === 'done') {
+              this.productForm.controls['tracingNo'].setValue(info.file.response.filename);
+              console.log(this.productForm.controls['tracingNo'])
+              console.log(this.productForm)
+              this.msg.success(`${info.file.name} file uploaded successfully`);
+          } else if (info.file.status === 'error') {
+              this.msg.error(`${info.file.name} file upload failed.`);
+          }
+      }
 
-    handlePicturesChange(info: NzUploadChangeParam): void {
-        if (info.file.status !== 'uploading') {
-            console.log(info.file, info.fileList);
-        }
-        if (info.file.status === 'done') {
-            this.msg.success(`${info.file.name} file uploaded successfully`);
-        } else if (info.file.status === 'error') {
-            this.msg.error(`${info.file.name} file upload failed.`);
-        }
-        console.log(this.productForm);
-    }
-
+      handlePicturesChange(info: NzUploadChangeParam): void {
+          if (info.file.status !== 'uploading') {
+              console.log(info.file, info.fileList);
+          }
+          if (info.file.status === 'done') {
+              this.msg.success(`${info.file.name} file uploaded successfully`);
+          } else if (info.file.status === 'error') {
+              this.msg.error(`${info.file.name} file upload failed.`);
+          }
+          console.log(this.productForm);
+      }
+  */
     constructor(private fb: FormBuilder, private productService: ProductService, private router: Router, private route: ActivatedRoute, private msg: NzMessageService) {
         this.productForm = this.fb.group({
             id: [''],
@@ -146,13 +147,19 @@ export class ProductDetailComponent implements OnInit {
                         url: `${HttpApi.uploads}/${pic}`
                     } as NzUploadFile;
                 });
-                this.tracingNoFileList = [{
+                this.tracingNo = {
                     uid: data?.tracingNo,
                     name: data?.tracingNo,
                     filename: data?.tracingNo,
                     url: `${HttpApi.uploads}/${data?.tracingNo}`
-                }];
-                this.qualifiedCertificateFileList = data.qualifiedCertificatePic.map((pic, index) => {
+                } as NzUploadFile;
+                this.qualifiedCertificateFile = {
+                    uid: `${data.qualifiedCertificate}`,
+                    name: data.qualifiedCertificate,
+                    filename: data.qualifiedCertificate,
+                    url: `${HttpApi.uploads}/${data.qualifiedCertificate}`
+                } as NzUploadFile;
+                this.qualifiedCertificatePicList = data.qualifiedCertificatePic.map((pic, index) => {
                     return {
                         uid: `${index}`,
                         name: pic,
@@ -161,7 +168,6 @@ export class ProductDetailComponent implements OnInit {
                     } as NzUploadFile;
                 });
 
-                console.log(this.tracingNoFileList);
             })
         });
     }
