@@ -9,7 +9,7 @@
        </nz-breadcrumb-item>
      </nz-breadcrumb>-->
     <!--title-->
-    <nz-page-header-title>产品列表</nz-page-header-title>
+    <nz-page-header-title>纳管-商品信息</nz-page-header-title>
     <!--subtitle-->
     <nz-page-header-subtitle>您可以在这里提交质检或管理产品信息</nz-page-header-subtitle>
     <!--extra-->
@@ -114,6 +114,8 @@
             <th>数量</th>
             <th>产地</th>
             <th>生产商</th>
+            <th>仓库名称</th>
+            <th>质检证书编码</th>
             <th nzRight>质检状态</th>
             <th nzRight>操作</th>
         </tr>
@@ -128,6 +130,8 @@
             <td>{{ data.quantity }}</td>
             <td>{{ data.countryOFOrigin }}</td>
             <td>{{ data.manufacturer }}</td>
+            <td>{{ data.wareHouseList[0].warehouse }}</td>
+            <td>{{ data.qualifiedCertificateNo }}</td>
             <td nzRight>{{ qualityStatusMap[data.qualityStatus] || qualityStatusMap[qualityStatus.NotInspected]}}</td>
             <td nzRight>
                 <nz-button-group>

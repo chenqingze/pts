@@ -90,25 +90,33 @@
         <div nz-row [nzGutter]="24"></div>
         <nz-divider nzText="物流信息"></nz-divider>
 
-
-        <div class="logistics">
-            <div>
-                <nz-tag nzColor="processing">
-                    <i nz-icon nzType="sync" nzSpin></i>
-                    <span>德邦速运:38764534 运输中</span>
-                </nz-tag>
-                <div #mapEl class="map"></div>
-            </div>
-            <div class="line">
-                <nz-timeline>
-                    <!--                <nz-timeline-item nzColor="red" nzLabel="入库">2022/2/18 17:20 北京亦庄仓库</nz-timeline-item>-->
-                    <nz-timeline-item nzLabel="运送中">2022/2/16 09:20:00 沈阳中转</nz-timeline-item>
-                    <nz-timeline-item nzLabel="运送中">2022/2/15 23:35:00 长春中转</nz-timeline-item>
-                    <nz-timeline-item nzLabel="运送中">2022/2/15 12:25:00 哈尔滨发车</nz-timeline-item>
-                    <nz-timeline-item nzColor="green" nzLabel="出库">2022/2/15 11:35:00 哈尔滨市裕丰仓库</nz-timeline-item>
-                </nz-timeline>
+        <div style="background: #ECECEC;padding:30px;">
+            <div nz-row [nzGutter]="8">
+                <div nz-col [nzSpan]="8">
+                    <nz-card nzTitle="北斗定位信息：">
+                      <p>内容</p>
+                    </nz-card>
+                </div>
+                <div nz-col [nzSpan]="16">
+                    <nz-card nzTitle="德邦速运:38764534 运输中">
+                        <div class="logistics">
+                            <div #mapEl class="map"></div>
+                            <div class="line">
+                                <nz-timeline>
+                                    <!--                <nz-timeline-item nzColor="red" nzLabel="入库">2022/2/18 17:20 北京亦庄仓库</nz-timeline-item>-->
+                                    <nz-timeline-item nzLabel="运送中">2022-2-16 09:20:00 沈阳中转</nz-timeline-item>
+                                    <nz-timeline-item nzLabel="运送中">2022-2-15 23:35:00 长春中转</nz-timeline-item>
+                                    <nz-timeline-item nzLabel="运送中">2022-2-15 12:25:00 哈尔滨发车</nz-timeline-item>
+                                    <nz-timeline-item nzColor="green" nzLabel="产地仓库">2022-2-15 11:35:00 哈尔滨市裕丰仓库
+                                    </nz-timeline-item>
+                                </nz-timeline>
+                            </div>
+                        </div>
+                    </nz-card>
+                </div>
             </div>
         </div>
+
 
     </fieldset>
 </form>

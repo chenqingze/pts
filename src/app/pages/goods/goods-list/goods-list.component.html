@@ -1,5 +1,5 @@
 <nz-page-header nzBackIcon>
-    <nz-page-header-title>仓储-物流信息</nz-page-header-title>
+    <nz-page-header-title>仓储-商品信息</nz-page-header-title>
     <!--subtitle-->
     <!--<nz-page-header-subtitle>仓储物流信息</nz-page-header-subtitle>-->
 </nz-page-header>
@@ -24,6 +24,7 @@
             <th >产品批号</th>
             <th>仓库名称</th>
             <th>仓库位置</th>
+            <th>上架位置</th>
             <th>入库时间</th>
             <th>出库时间</th>
             <th nzRight>质检状态</th>
@@ -39,6 +40,7 @@
             <td>{{ data.batchNo }}</td>
             <td>{{ data.wareHouseList[data.wareHouseList.length - 1]['warehouse'] }}</td>
             <td>{{ data.wareHouseList[data.wareHouseList.length - 1]['position']  }}</td>
+            <td>{{ data.wareHouseList[data.wareHouseList.length - 1]['shelf']  }}</td>
             <td>{{data.wareHouseList[data.wareHouseList.length - 1]['inTime'] }}</td>
             <td>{{data.wareHouseList[data.wareHouseList.length - 1]['outTime'] }}</td>
             <td nzRight>{{ qualityStatusMap[data.qualityStatus] || qualityStatusMap[qualityStatus.NotInspected]}}</td>

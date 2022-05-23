@@ -14,6 +14,8 @@ import {SharedModule} from "../../shared/shared.module";
 import {NzDividerModule} from "ng-zorro-antd/divider";
 import {NzTimelineModule} from "ng-zorro-antd/timeline";
 import {NzTagModule} from "ng-zorro-antd/tag";
+import {NzCardModule} from "ng-zorro-antd/card";
+import {NzDescriptionsModule} from "ng-zorro-antd/descriptions";
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import {NzTagModule} from "ng-zorro-antd/tag";
         SharedModule,
         NzDividerModule,
         NzTimelineModule,
-        NzTagModule
+        NzTagModule,
+        NzCardModule,
+        NzDescriptionsModule
     ]
 })
 export class LogisticsModule {

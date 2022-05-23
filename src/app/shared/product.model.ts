@@ -12,6 +12,7 @@ export interface Product {
     expirationDate?: string;// 保质期
     storageMethods?: string;// 储存方式
     qualifiedCertificate: string;// 合格证书、质检证书
+    qualifiedCertificateNo:string; // 质检证书编码
     qualifiedCertificatePic: string[];
     qualityRating?: string;// 质量等级
     netWeight: string;// 净含量

@@ -6,7 +6,7 @@ import {NzUploadChangeParam, NzUploadFile} from "ng-zorro-antd/upload";
 import {getBase64} from "../../../shared/utils";
 import {HttpApi} from "../../../core/http/http-api";
 import {NzMessageService} from "ng-zorro-antd/message";
-import {Product, QualityStatus} from "../../../shared/product.model";
+import {Product, QualityStatus, WareHouse} from "../../../shared/product.model";
 
 @Component({
     selector: 'app-product-detail',
@@ -21,6 +21,7 @@ export class ProductDetailComponent implements OnInit {
     previewVisible = false;
     pictureList: any[] = [];
     qualifiedCertificatePicList: NzUploadFile[] = [];
+    wareHouseList: WareHouse[] = [];
     qualifiedCertificateFile!: NzUploadFile;
     tracingNo!: NzUploadFile;
    /* handlePreview = async (file: NzUploadFile): Promise<void> => {
@@ -167,6 +168,7 @@ export class ProductDetailComponent implements OnInit {
                         url: `${HttpApi.uploads}/${pic}`
                     } as NzUploadFile;
                 });
+                this.wareHouseList = data?.wareHouseList || [];
 
             })
         });
