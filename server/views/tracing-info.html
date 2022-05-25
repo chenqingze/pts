@@ -20,7 +20,7 @@
         <div class="rect3"></div>
         <div class="rect4"></div>
         <div class="rect5"></div>
-        <p>正在验证区块链指纹,请耐心等待~</p>
+        <p id="word">正在验证区块链指纹,请耐心等待~</p>
     </div>
 </div>
 <div class="container">
@@ -61,7 +61,8 @@
                     </div>
                     <div class="row">
                         <div class="col-6 text-muted">【质检证书】：</div>
-                        <div class="col-6"><a href="/uploads/30061312-20220114-金凤凰米业-金凤凰增城丝苗米-营养检测-SY1121120409.pdf" target="_blank"
+                        <div class="col-6"><a href="/uploads/30061312-20220114-金凤凰米业-金凤凰增城丝苗米-营养检测-SY1121120409.pdf"
+                                              target="_blank"
                                               class="card-link">查看详情>></a></div>
                     </div>
                     <div class="row">
@@ -143,7 +144,7 @@
         <div class="card border-light text-dark bg-opacity-10 w-100 rounded-3">
             <h6 class="card-subtitle mb-2" style="border-left:5px solid #15a1ff;">仓储物流</h6>
             <div id="map" class="card-img-top"></div>
-<!--            <p class="mb-2 fs-6 mt-2">运输物流</p>-->
+            <!--            <p class="mb-2 fs-6 mt-2">运输物流</p>-->
             <div class="card-body" style="background-color: #FFFEFA">
                 <section class="card-text">
                     <ul class="timeline-with-icons">
@@ -230,16 +231,59 @@
 </div>
 <!--loading overlay-->
 <script type="text/javascript">
+    let words = ['连接溯源链Certificate Authority服务器认证数据访问权限。', '获取产品id对应生产信息、物流仓储信息生成的哈希指纹与链上存储指纹验证比对。', '产品信息验证一致，获取产品图片、质检原件、物流信息。', ' 查询北斗定位信息，获取商品当前位置。'],
+        part,
+        i = 0,
+        offset = 0,
+        len = words.length,
+        forwards = true,
+        skip_count = 0,
+        skip_delay = 15,
+        speed = 60;
+    let wordFlick = function () {
+        if (forwards) {
+            if (offset >= words[i].length) {
+                ++skip_count;
+                if (skip_count == skip_delay) {
+                    forwards = false;
+                    skip_count = 0;
+                }
+            }
+        } else {
+            if (offset == 0) {
+                forwards = true;
+                i++;
+                offset = 0;
+                if (i >= len) {
+                    i = 0;
+                }
+            }
+        }
+        part = words[i].substr(0, offset);
+        if (skip_count == 0) {
+            if (forwards) {
+                offset++;
+            } else {
+                offset--;
+            }
+        }
+        document.getElementById('word').innerHTML = part;
+    };
+
+   let wordFlickTask= setInterval(wordFlick, speed);
+
     document.body.setAttribute("class", "noscroll");
     document.getElementById("overlay").style.display = "block";
     document.getElementById("spinner").style.display = "block";
 
     window.onload = function () {
+        wordFlick();
         setTimeout(function(){
             document.getElementById("spinner").style.display = "none";
             document.getElementById("overlay").style.display = "none";
             document.body.className = document.body.className.replace(/\bnoscroll\b/, '');
-        },3000)  //一秒钟打印出111
+            clearInterval(wordFlickTask);
+        },10000)  //一秒钟打印出111
 
     }
 </script>
@@ -485,5 +529,6 @@
         });
     }
 </script>
+
 </body>
 </html>
