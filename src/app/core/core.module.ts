@@ -8,7 +8,13 @@ import {NzMenuModule} from "ng-zorro-antd/menu";
 import {TokenInterceptor} from "./http/token.interceptor";
 import {ErrorInterceptor} from "./http/error.interceptor";
 import {NzMessageService} from "ng-zorro-antd/message";
+import {NZ_CONFIG, NzConfig} from "ng-zorro-antd/core/config";
 
+const ngZorroConfig: NzConfig = {
+    // 注意组件名称没有 nz 前缀
+    message: {nzTop: 120},
+    notification: {nzTop: 240}
+};
 
 @NgModule({
     declarations: [
@@ -26,6 +32,7 @@ import {NzMessageService} from "ng-zorro-antd/message";
     providers: [
         {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
         {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+        {provide: NZ_CONFIG, useValue: ngZorroConfig},
         {provide: NzMessageService}
     ],
 })

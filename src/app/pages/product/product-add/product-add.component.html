@@ -240,7 +240,7 @@
                 </nz-form-control>
             </nz-form-item>
         </div>
-        <div nz-col [nzSpan]="6">
+        <div nz-col [nzSpan]="12">
             <nz-form-item>
                 <nz-form-label [nzSpan]="4" nzFor="qualifiedCertificate">质检证书</nz-form-label>
                 <nz-form-control [nzSpan]="16">
@@ -268,3 +268,27 @@
         </nz-form-control>
     </nz-form-item>
 </form>
+<ng-template #progress1>
+    <p>提交商品生产信息（名称、生产商、批次码、数量、质检证书编号等）哈希指纹到endorser节点验证交易条件</p>
+    <nz-progress [nzPercent]="percent1"
+                 style="width: 60vw;margin-right: 8px; margin-bottom: 8px; display: inline-block;"
+                 [nzStrokeColor]="{ '0%': '#108ee9', '100%': '#87d068' }" nzStatus="active"></nz-progress>
+</ng-template>
+
+<ng-template #progress2>
+   <p>交易验证通过，提交order节点记账分发到溯源链各成员节点存储产品信息指纹，返回交易id</p>
+    <nz-progress [nzPercent]="percent2"
+                 style="width: 60vw;margin-right: 8px; margin-bottom: 8px; display: inline-block;"
+                 [nzStrokeColor]="{ '0%': '#108ee9', '100%': '#87d068' }" nzStatus="active"></nz-progress>
+</ng-template>
+<ng-template #progress3>
+   <p>产品图片、质检证书原件保持至本地存储节点</p>
+    <nz-progress [nzPercent]="percent3"
+                 style="width: 60vw;margin-right: 8px; margin-bottom: 8px; display: inline-block;"
+                 [nzStrokeColor]="{ '0%': '#108ee9', '100%': '#87d068' }" nzStatus="active"></nz-progress>
+</ng-template>
+<!--<ng-template #progress4>
+    <nz-progress [nzPercent]="percent4"
+                 style="width: 60vw;margin-right: 8px; margin-bottom: 8px; display: inline-block;"
+                 [nzStrokeColor]="{ '0%': '#108ee9', '100%': '#87d068' }" nzStatus="active"></nz-progress>
+</ng-template>-->

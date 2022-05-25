@@ -19,6 +19,7 @@ import {NzInputNumberModule} from "ng-zorro-antd/input-number";
 import {NzUploadModule} from "ng-zorro-antd/upload";
 import {NzModalModule} from "ng-zorro-antd/modal";
 import {NzImageModule} from "ng-zorro-antd/image";
+import {NzProgressModule} from "ng-zorro-antd/progress";
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import {NzImageModule} from "ng-zorro-antd/image";
         NzInputNumberModule,
         NzUploadModule,
         NzModalModule,
-        NzImageModule
+        NzImageModule,
+        NzProgressModule
 
     ]
 })
