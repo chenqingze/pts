@@ -1,4 +1,5 @@
 export interface Product {
+    wareHouseType: number,
     id: string;// id
     code: string;// 编号
     name: string;//Name of Product  产品名称/品名

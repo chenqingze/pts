@@ -11,6 +11,24 @@ import * as AMapLoader from '@amap/amap-jsapi-loader';
     styleUrls: ['./logistics-detail.component.css']
 })
 export class LogisticsDetailComponent implements OnInit {
+    positionList = [
+        {
+            time: '2022/2/16 09:21',
+            position: 'E123.429096;N41.796765'
+        }, {
+            time: '2022/2/16 09:22',
+            position: 'E123.429096;N41.796765'
+        }, {
+            time: '2022/2/16 09:23',
+            position: 'E123.429096;N41.796765'
+        }, {
+            time: '2022/2/16 09:24',
+            position: 'E123.429096;N41.796764'
+        }, {
+            time: '2022/2/16 09:25',
+            position: 'E123.429096;N41.796763'
+        },
+    ]
     logisticsForm: FormGroup;
     productList: Product [] = [];
     @ViewChild('mapEl') mapEl!: ElementRef;

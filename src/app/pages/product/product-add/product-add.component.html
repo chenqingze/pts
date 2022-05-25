@@ -187,11 +187,7 @@
             <nz-form-item>
                 <nz-form-label [nzSpan]="4" nzFor="expirationDate">保质期</nz-form-label>
                 <nz-form-control [nzSpan]="16">
-                    <nz-date-picker
-                            nzFormat="yyyy-MM-dd"
-                            formControlName="expirationDate"
-                            id="expirationDate"
-                    ></nz-date-picker>
+                    <input nz-input formControlName="expirationDate" id="expirationDate" placeholder="请输入保质期">
                 </nz-form-control>
             </nz-form-item>
         </div>
@@ -241,24 +237,6 @@
                             </ng-template>
                         </nz-modal>
                     </div>
-                </nz-form-control>
-            </nz-form-item>
-        </div>
-        <div nz-col [nzSpan]="5" nzOffset="1">
-            <nz-form-item>
-                <nz-form-label [nzSpan]="4" nzFor="tracingNo">溯源码</nz-form-label>
-                <nz-form-control [nzSpan]="16">
-                    <nz-upload
-                            nzName="tracingNo"
-                            [nzAction]="uploadAction"
-                            [nzHeaders]="{ authorization: 'authorization-text' }"
-                            (nzChange)="handleTracingNoChange($event)"
-                    >
-                        <button nz-button>
-                            <i nz-icon nzType="upload"></i>
-                            点击上传
-                        </button>
-                    </nz-upload>
                 </nz-form-control>
             </nz-form-item>
         </div>

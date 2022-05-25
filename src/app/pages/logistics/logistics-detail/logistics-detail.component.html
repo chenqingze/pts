@@ -93,8 +93,21 @@
         <div style="background: #ECECEC;padding:30px;">
             <div nz-row [nzGutter]="8">
                 <div nz-col [nzSpan]="8">
-                    <nz-card nzTitle="北斗定位信息：">
-                      <p>内容</p>
+                    <nz-card nzTitle="北斗定位信息：" style="height: 100%" [nzExtra]="beiDouIcon">
+                        <nz-space nzDirection="vertical">
+                            <p >
+                                <nz-tag nzColor="processing" style="padding-left:30px ;padding-right: 70px">
+                                    <i nz-icon nzType="sync" nzSpin></i>
+                                    <span>当前服务卫星：13星、17星、26星、35星、51星</span>
+                                </nz-tag>
+                            </p>
+                            <nz-list nzBordered nzHeader="定位轨迹：">
+                                <nz-list-item *ngFor="let item of positionList">
+                                    <span nz-typography>{{item.time}}</span>
+                                    {{ item.position }}
+                                </nz-list-item>
+                            </nz-list>
+                        </nz-space>
                     </nz-card>
                 </div>
                 <div nz-col [nzSpan]="16">
@@ -103,7 +116,7 @@
                             <div #mapEl class="map"></div>
                             <div class="line">
                                 <nz-timeline>
-                                    <!--                <nz-timeline-item nzColor="red" nzLabel="入库">2022/2/18 17:20 北京亦庄仓库</nz-timeline-item>-->
+                                    <!-- <nz-timeline-item nzColor="red" nzLabel="入库">2022/2/18 17:20 北京亦庄仓库</nz-timeline-item>-->
                                     <nz-timeline-item nzLabel="运送中">2022-2-16 09:20:00 沈阳中转</nz-timeline-item>
                                     <nz-timeline-item nzLabel="运送中">2022-2-15 23:35:00 长春中转</nz-timeline-item>
                                     <nz-timeline-item nzLabel="运送中">2022-2-15 12:25:00 哈尔滨发车</nz-timeline-item>
@@ -120,3 +133,6 @@
 
     </fieldset>
 </form>
+<ng-template #beiDouIcon>
+    <img style="width: 20px;height: 20px" src="assets/16771653310386_.pic.jpg">
+</ng-template>

@@ -81,6 +81,7 @@ export class ProductAddComponent implements OnInit {
             console.log('submit', this.productForm.getRawValue());
             this.productService.create(this.productForm.getRawValue()).subscribe(() => {
                 console.log("创建成功");
+                // todo: 增加弹窗显示上链信息
                 this.router.navigate(['/product'])
             });
         } else {

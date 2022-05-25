@@ -104,10 +104,10 @@
     >
         <thead>
         <tr>
-            <th nzLeft nzWidth="40px"
+ <!--           <th nzLeft nzWidth="40px"
                 [(nzChecked)]="checked"
                 [nzIndeterminate]="indeterminate"
-                (nzCheckedChange)="onAllChecked($event)"></th>
+                (nzCheckedChange)="onAllChecked($event)"></th>-->
             <th nzLeft>产品批号</th>
             <th nzLeft>产品名称</th>
             <th>产品规格</th>
@@ -121,42 +121,44 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let data of rowSelectionTable.data">
-            <td nzLeft [nzChecked]="setOfCheckedId.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"
-                [nzDisabled]="data.qualityStatus!==qualityStatus.NotInspected"></td>
-            <td nzLeft>{{ data.batchNo }}</td>
-            <td nzLeft>{{ data.name }}</td>
-            <td>{{ data.specs }}</td>
-            <td>{{ data.quantity }}</td>
-            <td>{{ data.countryOFOrigin }}</td>
-            <td>{{ data.manufacturer }}</td>
-            <td>{{ data.wareHouseList[0].warehouse }}</td>
-            <td>{{ data.qualifiedCertificateNo }}</td>
-            <td nzRight>{{ qualityStatusMap[data.qualityStatus] || qualityStatusMap[qualityStatus.NotInspected]}}</td>
-            <td nzRight>
-                <nz-button-group>
-                    <button nz-button nzType="link" [routerLink]="['/product/detail', data.id, ]">查看</button>
-                    <button nz-button nzType="link" nz-dropdown [nzDropdownMenu]="moreAction" nzPlacement="bottomRight">
-                        <!--            <i nz-icon nzType="ellipsis"></i>-->
-                        更多<i nz-icon nzType="double-right"></i>
-                    </button>
-                </nz-button-group>
-                <nz-dropdown-menu #moreAction="nzDropdownMenu">
-                    <ul nz-menu>
-                        <li nz-menu-item>
-                            <a nz-button nzType="link" nzSize="small" [routerLink]="['/product/edit', data.id, ]">
-                                <i nz-icon nzType="edit"></i>编辑
-                            </a>
-                        </li>
-                        <li nz-menu-item>
-                            <a nz-button nzType="link" nzSize="small" nzDanger (click)="delete(data.id)">
-                                <i nz-icon nzType="delete"></i>删除
-                            </a>
-                        </li>
-                    </ul>
-                </nz-dropdown-menu>
-            </td>
-        </tr>
+        <ng-container *ngFor="let data of rowSelectionTable.data">
+            <tr *ngIf="data.wareHouseType===0">
+                <!--<td nzLeft [nzChecked]="setOfCheckedId.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"
+                    [nzDisabled]="data.qualityStatus!==qualityStatus.NotInspected"></td>-->
+                <td nzLeft>{{ data.batchNo }}</td>
+                <td nzLeft>{{ data.name }}</td>
+                <td>{{ data.specs }}</td>
+                <td>{{ data.quantity }}</td>
+                <td>{{ data.countryOFOrigin }}</td>
+                <td>{{ data.manufacturer }}</td>
+                <td>{{ data.wareHouseList[0].warehouse }}</td>
+                <td>{{ data.qualifiedCertificateNo }}</td>
+                <td nzRight>{{ qualityStatusMap[data.qualityStatus] || qualityStatusMap[qualityStatus.NotInspected]}}</td>
+                <td nzRight>
+                    <nz-button-group>
+                        <button nz-button nzType="link" [routerLink]="['/product/detail', data.id, ]">查看</button>
+                        <!-- <button nz-button nzType="link" nz-dropdown [nzDropdownMenu]="moreAction" nzPlacement="bottomRight">
+                             &lt;!&ndash;            <i nz-icon nzType="ellipsis"></i>&ndash;&gt;
+                             更多<i nz-icon nzType="double-right"></i>
+                         </button>-->
+                    </nz-button-group>
+                    <!-- <nz-dropdown-menu #moreAction="nzDropdownMenu">
+                         <ul nz-menu>
+                             <li nz-menu-item>
+                                 <a nz-button nzType="link" nzSize="small" [routerLink]="['/product/edit', data.id, ]">
+                                     <i nz-icon nzType="edit"></i>编辑
+                                 </a>
+                             </li>
+                             <li nz-menu-item>
+                                 <a nz-button nzType="link" nzSize="small" nzDanger (click)="delete(data.id)">
+                                     <i nz-icon nzType="delete"></i>删除
+                                 </a>
+                             </li>
+                         </ul>
+                     </nz-dropdown-menu>-->
+                </td>
+            </tr>
+        </ng-container>
         </tbody>
     </nz-table>
 </div>

@@ -16,6 +16,9 @@ import {NzTimelineModule} from "ng-zorro-antd/timeline";
 import {NzTagModule} from "ng-zorro-antd/tag";
 import {NzCardModule} from "ng-zorro-antd/card";
 import {NzDescriptionsModule} from "ng-zorro-antd/descriptions";
+import {NzSpaceModule} from "ng-zorro-antd/space";
+import {NzListModule} from "ng-zorro-antd/list";
+import {NzTypographyModule} from "ng-zorro-antd/typography";
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import {NzDescriptionsModule} from "ng-zorro-antd/descriptions";
         NzTimelineModule,
         NzTagModule,
         NzCardModule,
-        NzDescriptionsModule
+        NzDescriptionsModule,
+        NzSpaceModule,
+        NzListModule,
+        NzTypographyModule
     ]
 })
 export class LogisticsModule {
