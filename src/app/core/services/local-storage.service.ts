@@ -10,7 +10,7 @@ export class LocalStorageService {
     private storage: any;
 
     constructor() {
-        this.storage = localStorage;
+        this.storage = sessionStorage;
     }
 
     public getItem(key: string): any {

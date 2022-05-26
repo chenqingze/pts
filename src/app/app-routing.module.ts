@@ -11,22 +11,27 @@ const routes: Routes = [
             {
                 path: 'welcome',
                 loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule),
+                canActivate: [AuthGuard]
             },
             {
                 path: 'product',
                 loadChildren: () => import('./pages/product/product.module').then(m => m.ProductModule),
+                canActivate: [AuthGuard]
             },
             {
                 path: 'goods',
-                loadChildren: () => import('./pages/goods/goods.module').then(m => m.GoodsModule)
+                loadChildren: () => import('./pages/goods/goods.module').then(m => m.GoodsModule),
+                canActivate: [AuthGuard]
             },
             {
                 path: 'logistics',
-                loadChildren: () => import('./pages/logistics/logistics.module').then(m => m.LogisticsModule)
+                loadChildren: () => import('./pages/logistics/logistics.module').then(m => m.LogisticsModule),
+                canActivate: [AuthGuard]
             },
             {
                 path: 'exchange',
-                loadChildren: () => import('./pages/exchange/exchange.module').then(m => m.ExchangeModule)
+                loadChildren: () => import('./pages/exchange/exchange.module').then(m => m.ExchangeModule),
+                canActivate: [AuthGuard]
             }
         ],
         canActivate: [AuthGuard]

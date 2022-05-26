@@ -15,12 +15,27 @@
 <body>
 <div id="overlay">
     <div class="spinner" id="spinner">
-        <div class="rect1"></div>
-        <div class="rect2"></div>
-        <div class="rect3"></div>
-        <div class="rect4"></div>
-        <div class="rect5"></div>
-        <p id="word">正在验证区块链指纹,请耐心等待~</p>
+        <div class="rect1 react"></div>
+        <div class="rect2 react"></div>
+        <div class="rect3 react"></div>
+        <div class="rect4 react"></div>
+        <div class="rect5 react"></div>
+        <!-- <div id="scroll-container">
+             <div id="scroll-text">
+                 连接溯源链Certificate Authority服务器认证数据访问权限<br><br/>
+                 获取产品id对应生产信息、物流仓储信息生成的哈希指纹与链上存储指纹验证比对<br/><br/>
+                 产品信息验证一致，获取产品图片、质检原件、物流信息<br/><br/>
+                 查询北斗定位信息，获取商品当前位置
+             </div>
+         </div>-->
+        <div class="visible">
+            <div class="list-word ">
+                <p> 连接溯源链Certificate Authority服务器认证数据访问权限</p>
+                <p>获取产品id对应生产信息、物流仓储信息生成的哈希指纹与链上存储指纹验证比对</p>
+                <p>产品信息验证一致，获取产品图片、质检原件、物流信息</p>
+                <p>查询北斗定位信息，获取商品当前位置</p>
+            </div>
+        </div>
     </div>
 </div>
 <div class="container">
@@ -231,59 +246,19 @@
 </div>
 <!--loading overlay-->
 <script type="text/javascript">
-    let words = ['连接溯源链Certificate Authority服务器认证数据访问权限。', '获取产品id对应生产信息、物流仓储信息生成的哈希指纹与链上存储指纹验证比对。', '产品信息验证一致，获取产品图片、质检原件、物流信息。', ' 查询北斗定位信息，获取商品当前位置。'],
-        part,
-        i = 0,
-        offset = 0,
-        len = words.length,
-        forwards = true,
-        skip_count = 0,
-        skip_delay = 15,
-        speed = 60;
-    let wordFlick = function () {
-        if (forwards) {
-            if (offset >= words[i].length) {
-                ++skip_count;
-                if (skip_count == skip_delay) {
-                    forwards = false;
-                    skip_count = 0;
-                }
-            }
-        } else {
-            if (offset == 0) {
-                forwards = true;
-                i++;
-                offset = 0;
-                if (i >= len) {
-                    i = 0;
-                }
-            }
-        }
-        part = words[i].substr(0, offset);
-        if (skip_count == 0) {
-            if (forwards) {
-                offset++;
-            } else {
-                offset--;
-            }
-        }
-        document.getElementById('word').innerHTML = part;
-    };
+    // let words = ['连接溯源链Certificate Authority服务器认证数据访问权限。', '获取产品id对应生产信息、物流仓储信息生成的哈希指纹与链上存储指纹验证比对。', '产品信息验证一致，获取产品图片、质检原件、物流信息。', ' 查询北斗定位信息，获取商品当前位置。'];
 
-   let wordFlickTask= setInterval(wordFlick, speed);
 
     document.body.setAttribute("class", "noscroll");
     document.getElementById("overlay").style.display = "block";
     document.getElementById("spinner").style.display = "block";
 
     window.onload = function () {
-        wordFlick();
-        setTimeout(function(){
+        setTimeout(function () {
             document.getElementById("spinner").style.display = "none";
             document.getElementById("overlay").style.display = "none";
             document.body.className = document.body.className.replace(/\bnoscroll\b/, '');
-            clearInterval(wordFlickTask);
-        },10000)  //一秒钟打印出111
+        }, 7000);  //一秒钟打印出111
 
     }
 </script>

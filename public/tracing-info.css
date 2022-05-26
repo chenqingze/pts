@@ -10,10 +10,12 @@ body {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
-.card{
+
+.card {
     margin-top: 1rem;
     padding-top: 1rem;
 }
+
 .card-subtitle {
     font-size: 22px;
     padding-left: 3px;
@@ -117,19 +119,21 @@ body {
     width: 100vw;
     height: 90vh;
 }
+
 /*地图模态框头部*/
-.modal-dialog{
+.modal-dialog {
     margin: 0;
 }
-.map-header{
+
+.map-header {
     display: flex;
     justify-content: space-between;
-    padding:  0.5rem 1rem;
+    padding: 0.5rem 1rem;
 }
+
 .modal-body {
     padding: 0;
 }
-
 
 
 /*进入首页 loading spinner*/
@@ -145,20 +149,137 @@ body {
     z-index: 10000;
 }
 
-#overlay p {
+#overlay .visible {
+    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "MicrosoftYaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-weight: bold;
+    overflow: hidden;
+    height: 100px;
+    /*padding: 0 40px;*/
+
     text-align: center;
     margin-top: 100px;
     color: white;
-    font-weight: bold;
-    font-size: 15px;
+    /*font-weight: bold;*/
+    font-size: 20px;
 }
 
-#id {
-    margin: auto;
-    color: white;
-    font: 700 normal 2.5em 'tahoma';
-    text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+#overlay .list-word {
+    margin-top: 0;
+    /*padding-left: 110px;*/
+    /*text-align: left;*/
+    list-style: none;
+    -webkit-animation-name: change;
+    -webkit-animation-duration: 7s;
+    -webkit-animation-iteration-count: 1;
+    animation-name: change;
+    animation-duration: 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
+
+.list-word p {
+    text-align: center;
+    line-height: 40px;
+    padding: 0 !important;
+    margin-top: 0px !important;
+    margin-bottom: 50px !important;
+}
+
+@keyframes change {
+    0%, 12%, 100% {
+        transform: translateY(0);
+    }
+    17%, 29% {
+        transform: translateY(-30%);
+    }
+    34%, 46% {
+        transform: translateY(-60%);
+    }
+    51%, 80% {
+        transform: translateY(-90%);
+    }
+    85%, 100% {
+        transform: translateY(-100%);
+    }
+}
+
+@-webkit-keyframes change {
+    0%, 12%, 100% {
+        transform: translateY(0);
+    }
+    17%, 29% {
+        transform: translateY(-30%);
+    }
+    34%, 46% {
+        transform: translateY(-60%);
+    }
+    51%, 80% {
+        transform: translateY(-90%);
+    }
+    85%, 100% {
+        transform: translateY(-100%);
+    }
+
+}
+
+
+/*
+#scroll-container {
+    margin-top: 100px;
+    display: block;
+    border: none;
+    height: 16px;
+    overflow: hidden;
+}
+
+#scroll-text {
+    height: 100%;
+    text-align: center;
+    color: white;
+    !* animation properties *!
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+
+    -moz-animation: my-animation 5s linear infinite;
+    -webkit-animation: my-animation 5s linear infinite;
+    animation: my-animation 5s linear infinite;
+}
+
+!* for Firefox *!
+@-moz-keyframes my-animation {
+    from {
+        -moz-transform: translateY(100%);
+    }
+    to {
+        -moz-transform: translateY(-100%);
+    }
+}
+
+!* for Chrome *!
+@-webkit-keyframes my-animation {
+    from {
+        -webkit-transform: translateY(100%);
+    }
+    to {
+        -webkit-transform: translateY(-100%);
+    }
+}
+
+@keyframes my-animation {
+    from {
+        -moz-transform: translateY(100%);
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+    to {
+        -moz-transform: translateY(-100%);
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+}
+*/
+
 
 .spinner {
     margin: 300px auto;
@@ -168,7 +289,7 @@ body {
     font-size: 10px;
 }
 
-.spinner > div {
+.spinner > .react {
     background-color: white;
     height: 100%;
     width: 6px;
