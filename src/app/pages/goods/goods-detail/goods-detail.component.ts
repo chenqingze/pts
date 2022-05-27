@@ -10,7 +10,6 @@ import {QualityStatus, WareHouse} from "../../../shared/product.model";
     styleUrls: ['./goods-detail.component.css']
 })
 export class GoodsDetailComponent implements OnInit {
-
     goodsForm: FormGroup;
     wareHouseList: WareHouse[] = [];
 

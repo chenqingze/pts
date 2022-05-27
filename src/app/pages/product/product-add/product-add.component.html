@@ -193,6 +193,21 @@
         </div>
         <div nz-col [nzSpan]="12">
             <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="wareHouseList">仓库名称</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <input nz-input
+                           formControlName="wareHouseList"
+                           id="wareHouseList"
+                    />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+
+
+    </div>
+    <div nz-row [nzGutter]="24">
+        <div nz-col [nzSpan]="12">
+            <nz-form-item>
                 <nz-form-label [nzSpan]="4" nzFor="quantity">数量</nz-form-label>
                 <nz-form-control [nzSpan]="16">
                     <nz-input-number
@@ -200,6 +215,24 @@
                             formControlName="quantity"
                             id="quantity"
                     ></nz-input-number>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="4" nzFor="qualifiedCertificate">质检证书</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <nz-upload
+                            nzName="QualifiedCertificate"
+                            [nzAction]="uploadAction"
+                            [nzHeaders]="{ authorization: 'authorization-text' }"
+                            (nzChange)="handleQualifiedCertificateChange($event)"
+                    >
+                        <button nz-button>
+                            <i nz-icon nzType="upload"></i>
+                            点击上传
+                        </button>
+                    </nz-upload>
                 </nz-form-control>
             </nz-form-item>
         </div>
@@ -240,25 +273,6 @@
                 </nz-form-control>
             </nz-form-item>
         </div>
-        <div nz-col [nzSpan]="12">
-            <nz-form-item>
-                <nz-form-label [nzSpan]="4" nzFor="qualifiedCertificate">质检证书</nz-form-label>
-                <nz-form-control [nzSpan]="16">
-                    <nz-upload
-                            nzName="QualifiedCertificate"
-                            [nzAction]="uploadAction"
-                            [nzHeaders]="{ authorization: 'authorization-text' }"
-                            (nzChange)="handleQualifiedCertificateChange($event)"
-                    >
-                        <button nz-button>
-                            <i nz-icon nzType="upload"></i>
-                            点击上传
-                        </button>
-                    </nz-upload>
-                </nz-form-control>
-            </nz-form-item>
-        </div>
-
     </div>
     <input [hidden]="true" formControlName="qualityStatus">
     <nz-form-item nz-row>
@@ -276,13 +290,13 @@
 </ng-template>
 
 <ng-template #progress2>
-   <p>交易验证通过，提交order节点记账分发到溯源链各成员节点存储产品信息指纹，返回交易id</p>
+    <p>交易验证通过，提交order节点记账分发到溯源链各成员节点存储产品信息指纹，返回交易id</p>
     <nz-progress [nzPercent]="percent2"
                  style="width: 60vw;margin-right: 8px; margin-bottom: 8px; display: inline-block;"
                  [nzStrokeColor]="{ '0%': '#108ee9', '100%': '#87d068' }" nzStatus="active"></nz-progress>
 </ng-template>
 <ng-template #progress3>
-   <p>产品图片、质检证书原件保持至本地存储节点</p>
+    <p>产品图片、质检证书原件保持至本地存储节点</p>
     <nz-progress [nzPercent]="percent3"
                  style="width: 60vw;margin-right: 8px; margin-bottom: 8px; display: inline-block;"
                  [nzStrokeColor]="{ '0%': '#108ee9', '100%': '#87d068' }" nzStatus="active"></nz-progress>

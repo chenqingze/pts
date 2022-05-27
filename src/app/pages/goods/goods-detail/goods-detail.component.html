@@ -6,7 +6,7 @@
 </nz-page-header>
 <form nz-form [formGroup]="goodsForm">
     <fieldset [disabled]="true">
-        <nz-divider nzText="商品信息" ></nz-divider>
+        <nz-divider nzText="商品信息"></nz-divider>
         <div nz-row [nzGutter]="24">
             <div nz-col [nzSpan]="12">
                 <nz-form-item>
@@ -88,7 +88,7 @@
 
         </div>
         <div nz-row [nzGutter]="24"></div>
-        <nz-divider   nzText="仓库信息" ></nz-divider>
+        <nz-divider nzText="仓库信息"></nz-divider>
         <div nz-row [nzGutter]="24" nzJustify="center">
             <div nz-col [nzSpan]="24">
                 <nz-table #basicTable [nzData]="wareHouseList">
@@ -104,12 +104,18 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr *ngFor="let data of basicTable.data">
-                        <td>{{ data.warehouse }}</td>
+                    <tr *ngFor="let data of basicTable.data; let i=index">
+                        <td *ngIf="data.wareHouseType===0; else saleEl">{{ data.warehouse }}（产地仓）</td>
+                        <ng-template #saleEl>
+                            <td>{{ data.warehouse }}（销售仓）</td>
+                        </ng-template>
                         <td>{{ data.position }}</td>
                         <td>{{ data.inTime }}</td>
                         <td>{{ data.outTime }}</td>
-                        <td>{{ data.shelf }}</td>
+                        <td *ngIf="i!==0; else saleTDEl">{{ data.shelf }}</td>
+                        <ng-template #saleTDEl>
+                            <td></td>
+                        </ng-template>
                         <td>{{ data.inspector }}</td>
                         <td>{{ data.logisticsOrder }}</td>
                     </tr>

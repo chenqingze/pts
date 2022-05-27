@@ -87,19 +87,29 @@ export class ProductAddComponent implements OnInit {
         if (this.productForm.valid) {
             let pics = this.pictureList.map(pic => pic.response.filename);
             this.productForm.controls['pictures'].setValue(pics);
+            this.productForm.controls['wareHouseList'].setValue([ {
+                "warehouse": "广州凤凰仓库",
+                "wareHouseType": 0,
+                "position": "广州市",
+                "inTime": "2022-1-25  10:30:00",
+                "outTime": "2022-2-20  15:35:00",
+                "shelf": "2号仓13货架",
+                "inspector": "钟亦",
+                "carrier": "顺丰速运：87238723"
+            }]);
             console.log('submit', this.productForm.getRawValue());
             this.startShowMessages();
-            /*this.productService.create(this.productForm.getRawValue()).subscribe(() => {
+            this.productService.create(this.productForm.getRawValue()).subscribe(() => {
                 console.log("创建成功");
                 // todo: 增加弹窗显示上链信息
-                this.router.navigate(['/product'])
-            });*/
+                // this.router.navigate(['/product'])
+            });
         }
     }
 
     startShowMessages(): void {
         this.msg
-            .loading('连接溯源链Certificate Authority服务器认证数据访问权限...', {nzDuration: 1000})
+            .loading('连接溯源链Certificate Authority服务器认证数据访问权限...', {nzDuration: 3000})
             .onClose!
             .pipe(
                 concatMap(() => {
@@ -141,6 +151,7 @@ export class ProductAddComponent implements OnInit {
         this.productForm = this.fb.group({
             // id: [null],
             name: ['增城丝苗米', Validators.required], //Name of Product  产品名称/品名
+            wareHouseType: 0,
             // Model No. /Part number ( P/N), P/N# 件号
             batchNo: ['2022050766588', Validators.required],// 产品批号
             // Serial Number, S/N#  序列号
@@ -167,7 +178,8 @@ export class ProductAddComponent implements OnInit {
             netWeight: ['25kg', Validators.required], // 净含量
             // tracingNo: [''], // 溯源码
             // hashCode: ['', Validators.required] // 哈希值
-            qualityStatus: [QualityStatus.NotInspected]
+            qualityStatus: [QualityStatus.NotInspected],
+            wareHouseList: [['广州凤凰仓库']]
         });
     }
 

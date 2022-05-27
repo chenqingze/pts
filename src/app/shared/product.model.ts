@@ -1,5 +1,5 @@
 export interface Product {
-    wareHouseType: number,
+    wareHouseType: number, // 0 生产仓；1 销售仓
     id: string;// id
     code: string;// 编号
     name: string;//Name of Product  产品名称/品名
@@ -13,7 +13,7 @@ export interface Product {
     expirationDate?: string;// 保质期
     storageMethods?: string;// 储存方式
     qualifiedCertificate: string;// 合格证书、质检证书
-    qualifiedCertificateNo:string; // 质检证书编码
+    qualifiedCertificateNo: string; // 质检证书编码
     qualifiedCertificatePic: string[];
     qualityRating?: string;// 质量等级
     netWeight: string;// 净含量
@@ -36,6 +36,7 @@ export interface WareHouse {
     shelf: string// 上架位置
     inspector: string // 质检员
     logisticsOrder: string;//出库物流信息
+    wareHouseType: number; // 仓库类型
 }
 
 export interface Transit {
@@ -54,6 +55,7 @@ export interface Exchange {
     toWarehouse: string; // 收货仓
     outTime: string
 }
+
 export enum QualityStatus {
     NotInspected = '未质检',
     ToBeInspected = '待质检',

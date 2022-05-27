@@ -8,6 +8,8 @@
 .map {
     width: 500px;
     height: 300px;
+    margin-bottom: auto;
+    margin-top: auto;
 }
 
 .line{
