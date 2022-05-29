@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="/tracing-info.css" type="text/css" rel="stylesheet">
+
+    <title>数字仓单产品信息管理系统（DEMO）</title>
+</head>
+<body>
+<div id="overlay">
+    <div class="spinner" id="spinner">
+        <div class="rect1 react"></div>
+        <div class="rect2 react"></div>
+        <div class="rect3 react"></div>
+        <div class="rect4 react"></div>
+        <div class="rect5 react"></div>
+        <!-- <div id="scroll-container">
+             <div id="scroll-text">
+                 连接溯源链Certificate Authority服务器认证数据访问权限<br><br/>
+                 获取产品id对应生产信息、物流仓储信息生成的哈希指纹与链上存储指纹验证比对<br/><br/>
+                 产品信息验证一致，获取产品图片、质检原件、物流信息<br/><br/>
+                 查询北斗定位信息，获取商品当前位置
+             </div>
+         </div>-->
+        <div class="visible">
+            <div class="list-word ">
+                <p> 连接溯源链Certificate Authority服务器认证数据访问权限</p>
+                <p>获取产品id对应生产信息、物流仓储信息生成的哈希指纹与链上存储指纹验证比对</p>
+                <p>产品信息验证一致，获取产品图片、质检原件、物流信息</p>
+                <p>查询北斗定位信息，获取商品当前位置</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <header class="bd-navbar">
+        <nav class="navbar">
+            <!--            <div class="container-fluid">-->
+            <p class="navbar-brand mx-auto">
+                数字仓单产品信息管理系统（DEMO）
+            </p>
+            <!--            </div>-->
+        </nav>
+        <img src="/header.jpg" style="width: 100%;border-radius: 10px">
+    </header>
+    <main class="card-group">
+        <div class="card border-light text-dark w-100 rounded-3 base-info">
+            <h6 class="card-subtitle mb-2" style="border-left:5px solid #FF9815;">基本信息</h6>
+            <div class="card-body">
+                <div class="card-text bg-image">
+                    <div class="row">
+                        <div class="col-6 text-muted">【名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称】：</div>
+                        <div class="col-6">增城丝苗米</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【批&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号】：</div>
+                        <div class="col-6">202112766587</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【产品规格】：</div>
+                        <div class="col-6">25kg/袋</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【产&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地】：</div>
+                        <div class="col-6">广州增城市</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量】：</div>
+                        <div class="col-6">200袋</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【质检证书】：</div>
+                        <div class="col-6"><a href="/uploads/30061312-20220114-金凤凰米业-金凤凰增城丝苗米-营养检测-SY1121120409.pdf"
+                                              target="_blank"
+                                              class="card-link">SY1121120409</a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【生&nbsp;&nbsp;产&nbsp;&nbsp;商】：</div>
+                        <div class="col-6">广州金凤凰米业</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【产品类型】：</div>
+                        <div class="col-6">籼米</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【质量等级】：</div>
+                        <div class="col-6">一级</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【生产日期】：</div>
+                        <div class="col-6">2022年1月20日</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【保质日期】：</div>
+                        <div class="col-6">6个月</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="card border-light text-dark w-100 rounded-3 base-info">
+            <h6 class="card-subtitle mb-2" style="border-left:5px solid #58DCD8;">交易信息</h6>
+            <div class="card-body">
+                <div class="card-text bg-image">
+                    <div class="row">
+                        <div class="col-6 text-muted">【交易平台】：</div>
+                        <div class="col-6">上海广发贸易网</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【电子单号】：</div>
+                        <div class="col-6">202112766587</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【买&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;方】：</div>
+                        <div class="col-6">北京逸邻贸易有限公司</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【卖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;方】：</div>
+                        <div class="col-6">广州金凤凰米业</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【交易时间】：</div>
+                        <div class="col-6">2022-2-19 15:30:00</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【交易数量】：</div>
+                        <div class="col-6">500袋</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-muted">【交割仓储】：</div>
+                        <div class="col-6">北京亦庄</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card border-light text-dark w-100 rounded-3 base-info">
+            <h6 class="card-subtitle mb-2" style="border-left:5px solid #58DCD8;">北斗定位</h6>
+            <img src="/1653109806141.gif" class="card-img-top">
+            <div class="card-body">
+                <div class="card-text bg-image">
+                    <div class="row">
+                        <div class="col-5 text-muted">【服务卫星】：</div>
+                        <div class="col-7">13星.17星.26星.35星.51星</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5 text-muted">【坐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;标】：</div>
+                        <div class="col-7">E:116.34149,N:39.72668</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5 text-muted">【地理位置】：</div>
+                        <div class="col-7">北京亦庄仓库</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card border-light text-dark bg-opacity-10 w-100 rounded-3">
+            <h6 class="card-subtitle mb-2" style="border-left:5px solid #15a1ff;">仓储物流</h6>
+            <div id="map" class="card-img-top"></div>
+            <!--            <p class="mb-2 fs-6 mt-2">运输物流</p>-->
+            <div class="card-body" style="background-color: #FFFEFA">
+                <section class="card-text">
+                    <ul class="timeline-with-icons">
+                        <li class="timeline-item mb-4">
+                            <span class="timeline-icon"><i class="bi bi-house"></i></span>
+                            <p class="fw-bold">产地仓库:广州凤凰仓库</p>
+                            <p class="text-muted mb-2 fw-bold">2022-1-25 10:30</p>
+                            <p class="text-muted">
+                                上架位置：2号仓13货架
+                            </p>
+                        </li>
+                        <li class="timeline-item mb-4">
+                            <span class="timeline-icon"><i class="bi bi-truck"></i></span>
+                            <p class="fw-bold">运输物流</p>
+                            <p class="text-muted mb-2 fw-bold">2022-2-20 15:35</p>
+                            <p class="text-muted">
+                                出库物流: 顺丰速运
+                                单号: 87238723
+                            </p>
+                        </li>
+                        <li class="timeline-item mb-4">
+                            <span class="timeline-icon2"></span>
+                            <p class="fw-bold"></p>
+                            <p class="text-muted">
+                                广州发车
+                            </p>
+                            <p class="text-muted mb-2 fw-bold">2022-2-20 17:20</p>
+
+                        </li>
+                        <li class="timeline-item mb-4">
+                            <span class="timeline-icon2"></span>
+                            <p class="fw-bold"></p>
+                            <p class="text-muted">
+                                上海中转
+                            </p>
+                            <p class="text-muted mb-2 fw-bold">2022-2-21 09:00:00</p>
+
+                        </li>
+                        <li class="timeline-item mb-4">
+                            <span class="timeline-icon2"></span>
+                            <p class="fw-bold"></p>
+                            <p class="text-muted">
+                                徐州中转
+                            </p>
+                            <p class="text-muted mb-2 fw-bold">2022-2-21 23:25:00</p>
+
+                        </li>
+                        <li class="timeline-item mb-4">
+                            <span class="timeline-icon2"></span>
+                            <p class="fw-bold"></p>
+                            <p class="text-muted">
+                                济南中转
+                            </p>
+                            <p class="text-muted mb-2 fw-bold">2022-2-22 06:25:00</p>
+                        </li>
+                        <li class="timeline-item mb-4">
+                            <span class="timeline-icon"><i class="bi bi-house"></i></span>
+                            <p class="fw-bold">销地仓库:北京市亦庄仓库</p>
+                            <p class="text-muted mb-2 fw-bold">2022-2-22 09:56:00</p>
+                            <p class="text-muted">
+                                上架位置：6号仓59货架
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</div>
+<!-- Full screen modal -->
+<div id="mapModal" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="map-header">
+                <p class="modal-title">运输路径</p>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="modalMap"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--loading overlay-->
+<script type="text/javascript">
+    // let words = ['连接溯源链Certificate Authority服务器认证数据访问权限。', '获取产品id对应生产信息、物流仓储信息生成的哈希指纹与链上存储指纹验证比对。', '产品信息验证一致，获取产品图片、质检原件、物流信息。', ' 查询北斗定位信息，获取商品当前位置。'];
+
+
+    document.body.setAttribute("class", "noscroll");
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("spinner").style.display = "block";
+
+    window.onload = function () {
+        setTimeout(function () {
+            document.getElementById("spinner").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+            document.body.className = document.body.className.replace(/\bnoscroll\b/, '');
+        }, 7000);  //一秒钟打印出111
+
+    }
+</script>
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+-->
+
+<script type="text/javascript">
+    // window._AMapSecurityConfig = {
+    //     serviceHost:'您的代理服务器域名或地址/_AMapService',
+    //     // 例如 ：serviceHost:'http://1.1.1.1:80/_AMapService',
+    // }
+    window._AMapSecurityConfig = {
+        securityJsCode: 'b5153d0e85cf945408095a6b9e4f4379',
+    }
+</script>
+<script src="https://webapi.amap.com/loader.js"></script>
+<script type="text/javascript">
+    let mapEl = document.getElementById('map');
+    AMapLoader.load({
+        "key": "a5d7cb14f231eeaf3f0f99bd6963df7b",              // 申请好的Web端开发者Key，首次调用 load 时必填
+        "version": "2.0",   // 指定要加载的 JSAPI 的版本，缺省时默认为 1.4.15
+        "plugins": ['AMap.Driving'],           // 需要使用的的插件列表，如比例尺'AMap.Scale'等
+        "AMapUI": {             // 是否加载 AMapUI，缺省不加载
+            "version": '1.1',   // AMapUI 版本
+            "plugins": ['overlay/SimpleMarker'],       // 需要加载的 AMapUI ui插件
+        },
+        "Loca": {                // 是否加载 Loca， 缺省不加载
+            "version": '2.0'  // Loca 版本
+        },
+    }).then((AMap) => {
+        let map = new AMap.Map(mapEl, {
+            features: ['bg', 'point','road'],
+            isHotspot: false,
+            center: [116.397559, 39.89621],
+            zoomEnable: false,
+            touchZoom: false,
+            doubleClickZoom: false,
+            keyboardEnable: false,
+            scrollWheel: false,
+            dragEnable: false,
+            mapStyle: 'amap://styles/macaron',
+            zoom: 2
+        });
+        map.on('click', mapClick);
+        // map.on("complete", function () {
+        //     document.getElementById("spinner").style.display = "none";
+        //     document.getElementById("overlay").style.display = "none";
+        //
+        //     document.body.className = document.body.className.replace(/\bnoscroll\b/, '');
+        // });
+        let drivingOption = {
+            policy: AMap.DrivingPolicy.LEAST_TIME, // 其它policy参数请参考 https://lbs.amap.com/api/javascript-api/reference/route-search#m_DrivingPolicy
+            ferry: 1, // 是否可以使用轮渡
+            province: '京', // 车牌省份的汉字缩写
+        }
+
+        // 构造路线导航类
+        let driving = new AMap.Driving(drivingOption)
+
+        // 根据起终点经纬度规划驾车导航路线
+        driving.search(new AMap.LngLat(113.267065, 23.128673), new AMap.LngLat(116.3215, 39.89455), function (status, result) {
+            // result即是对应的驾车导航信息，相关数据结构文档请参考 https://lbs.amap.com/api/javascript-api/reference/route-search#m_DrivingResult
+            if (status === 'complete') {
+                if (result.routes && result.routes.length) {
+                    // 绘制第一条路线，也可以按需求绘制其它几条路线
+                    drawRoute(result.routes[0])
+                    console.log('绘制驾车路线完成', result);
+                }
+            } else {
+                console.error('获取驾车数据失败：' + result);
+            }
+        });
+
+        function drawRoute(route) {
+            let path = parseRouteToPath(route)
+
+            let startMarker = new AMap.Marker({
+                position: path[0],
+                icon: 'https://webapi.amap.com/theme/v1.3/markers/n/start.png',
+                map: map,
+                anchor: 'bottom-center'
+            })
+
+            let endMarker = new AMap.Marker({
+                position: path[path.length - 1],
+                icon: 'https://webapi.amap.com/theme/v1.3/markers/n/end.png',
+                map: map,
+                anchor: 'bottom-center'
+            })
+
+            let routeLine = new AMap.Polyline({
+                path: path,
+                isOutline: true,
+                outlineColor: '#ffeeee',
+                borderWeight: 1,
+                strokeWeight: 2,
+                strokeOpacity: 0.9,
+                strokeColor: '#0091ff',
+                lineJoin: 'round',
+                bubble: true
+            })
+
+            map.add(routeLine);
+
+            // 调整视野达到最佳显示区域
+            map.setFitView([startMarker, endMarker, routeLine])
+        }
+
+        // 解析DrivingRoute对象，构造成AMap.Polyline的path参数需要的格式
+        // DrivingResult对象结构参考文档 https://lbs.amap.com/api/javascript-api/reference/route-search#m_DriveRoute
+        function parseRouteToPath(route) {
+            let path = []
+
+            for (let i = 0, l = route.steps.length; i < l; i++) {
+                let step = route.steps[i]
+
+                for (let j = 0, n = step.path.length; j < n; j++) {
+                    path.push(step.path[j])
+                }
+            }
+
+            return path
+        }
+    }).catch((e) => {
+        console.error(e);  //加载错误提示
+    });
+</script>
+<script type="text/javascript">
+    let mapModal = new bootstrap.Modal(document.getElementById('mapModal'), {})
+
+    function mapClick() {
+        console.log('modal执行了');
+        mapModal.show();
+
+        AMapLoader.load({
+            "key": "a5d7cb14f231eeaf3f0f99bd6963df7b",              // 申请好的Web端开发者Key，首次调用 load 时必填
+            "version": "2.0",   // 指定要加载的 JSAPI 的版本，缺省时默认为 1.4.15
+            "plugins": ['AMap.Driving'],           // 需要使用的的插件列表，如比例尺'AMap.Scale'等
+            "AMapUI": {             // 是否加载 AMapUI，缺省不加载
+                "version": '1.1',   // AMapUI 版本
+                "plugins": ['overlay/SimpleMarker'],       // 需要加载的 AMapUI ui插件
+            },
+            "Loca": {                // 是否加载 Loca， 缺省不加载
+                "version": '2.0'  // Loca 版本
+            },
+        }).then((AMap) => {
+            let modalMap = new AMap.Map(document.getElementById('modalMap'), {
+                features: ['bg', 'point', 'road'],
+                isHotspot: false,
+                center: [116.397559, 39.89621],
+                mapStyle: 'amap://styles/macaron',
+                zoom: 10
+            });
+
+            document.getElementById('mapModal').addEventListener('hidden.bs.modal', function (event) {
+                console.log('hidden.bs.modal====>执行了)');
+                modalMap.destroy();
+            })
+            let drivingOption = {
+                policy: AMap.DrivingPolicy.LEAST_TIME, // 其它policy参数请参考 https://lbs.amap.com/api/javascript-api/reference/route-search#m_DrivingPolicy
+                ferry: 1, // 是否可以使用轮渡
+                province: '京', // 车牌省份的汉字缩写
+            }
+
+            // 构造路线导航类
+            let driving = new AMap.Driving(drivingOption);
+
+            // 根据起终点经纬度规划驾车导航路线
+            driving.search(new AMap.LngLat(113.267065, 23.128673), new AMap.LngLat(116.3215, 39.89455), function (status, result) {
+                // result即是对应的驾车
+                // 导航信息，相关数据结构文档请参考 https://lbs.amap.com/api/javascript-api/reference/route-search#m_DrivingResult
+                if (status === 'complete') {
+                    if (result.routes && result.routes.length) {
+                        // 绘制第一条路线，也可以按需求绘制其它几条路线
+                        drawRoute(result.routes[0])
+                        console.log('绘制驾车路线完成', result);
+                    }
+                } else {
+                    console.error('获取驾车数据失败：' + result);
+                }
+            });
+
+            drawRoute = (route) => {
+                let path = parseRouteToPath(route)
+
+                let startMarker = new AMap.Marker({
+                    position: path[0],
+                    icon: 'https://webapi.amap.com/theme/v1.3/markers/n/start.png',
+                    map: modalMap,
+                    anchor: 'bottom-center'
+                })
+
+                let endMarker = new AMap.Marker({
+                    position: path[path.length - 1],
+                    icon: 'https://webapi.amap.com/theme/v1.3/markers/n/end.png',
+                    map: modalMap,
+                    anchor: 'bottom-center'
+                })
+
+                let routeLine = new AMap.Polyline({
+                    path: path,
+                    isOutline: true,
+                    outlineColor: '#ffeeee',
+                    borderWeight: 1,
+                    strokeWeight: 2,
+                    strokeOpacity: 0.9,
+                    strokeColor: '#0091ff',
+                    lineJoin: 'round',
+                    showDir: true
+                })
+
+                modalMap.add(routeLine);
+
+                // 调整视野达到最佳显示区域
+                modalMap.setFitView([startMarker, endMarker, routeLine])
+            }
+
+            // 解析DrivingRoute对象，构造成AMap.Polyline的path参数需要的格式
+            // DrivingResult对象结构参考文档 https://lbs.amap.com/api/javascript-api/reference/route-search#m_DriveRoute
+            function parseRouteToPath(route) {
+                let path = []
+
+                for (let i = 0, l = route.steps.length; i < l; i++) {
+                    let step = route.steps[i]
+
+                    for (let j = 0, n = step.path.length; j < n; j++) {
+                        path.push(step.path[j])
+                    }
+                }
+
+                return path
+            }
+
+        }).catch((e) => {
+            console.error(e);  //加载错误提示
+        });
+    }
+</script>
+
+</body>
+</html>

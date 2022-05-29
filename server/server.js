@@ -119,11 +119,17 @@ nunjucks.configure(path.join(__dirname, 'views'), {
     watch: true
 });
 server.get('/tracing-info', (req, res) => {
-    res.render('tracing-info.html', {username: 'professor'})
-})
+    res.render('tracing-info.html')
+});
+server.get('/tracing-info-origin', (req, res) => {
+    res.render('tracing-info-origin.html')
+});
+server.get('/tracing-info-sale', (req, res) => {
+    res.render('tracing-info-sale.html')
+});
 server.get('/tracing-map', (req, res) => {
     res.render('tracing-map.html')
-})
+});
 
 
 /*server.use(/^(?!\/auth).*$/,  (req, res, next) => {
