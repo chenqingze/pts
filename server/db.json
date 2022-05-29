@@ -131,6 +131,37 @@
       "pictures": [
         "product-pic-1652703552937.jpg"
       ]
+    },
+    {
+      "name": "增城丝苗米",
+      "wareHouseType": 0,
+      "batchNo": "2022050766588",
+      "specs": "25Kg/袋",
+      "countryOFOrigin": "广州增城市",
+      "quantity": "500袋",
+      "category": "籼米",
+      "manufacturer": "广州金凤凰米业",
+      "productionDate": "2022-05-07",
+      "expirationDate": "12个月",
+      "storageMethods": "阴凉通风，干燥存储",
+      "pictures": [],
+      "qualifiedCertificate": "",
+      "qualityRating": "一级",
+      "netWeight": "25kg",
+      "qualityStatus": "未质检",
+      "wareHouseList": [
+        {
+          "warehouse": "广州凤凰仓库",
+          "wareHouseType": 0,
+          "position": "广州市",
+          "inTime": "2022-1-25  10:30:00",
+          "outTime": "2022-2-20  15:35:00",
+          "shelf": "2号仓13货架",
+          "inspector": "钟亦",
+          "carrier": "顺丰速运：87238723"
+        }
+      ],
+      "id": 3
     }
   ]
 }

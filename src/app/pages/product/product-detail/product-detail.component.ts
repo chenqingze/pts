@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ProductService} from "../product.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {NzUploadChangeParam, NzUploadFile} from "ng-zorro-antd/upload";
-import {getBase64} from "../../../shared/utils";
+import {NzUploadFile} from "ng-zorro-antd/upload";
 import {HttpApi} from "../../../core/http/http-api";
 import {NzMessageService} from "ng-zorro-antd/message";
 import {Product, QualityStatus, WareHouse} from "../../../shared/product.model";
@@ -14,6 +13,7 @@ import {Product, QualityStatus, WareHouse} from "../../../shared/product.model";
     styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
+    wareHouse!:WareHouse;
     product!: Product;
     uploadAction = HttpApi.uploads;
     productForm: FormGroup;
@@ -24,53 +24,54 @@ export class ProductDetailComponent implements OnInit {
     wareHouseList: WareHouse[] = [];
     qualifiedCertificateFile!: NzUploadFile;
     tracingNo!: NzUploadFile;
-   /* handlePreview = async (file: NzUploadFile): Promise<void> => {
-        if (!file.url && !file['preview']) {
-            file['preview'] = await getBase64(file.originFileObj!);
-        }
-        this.previewImage = file.url || file['preview'];
-        this.previewVisible = true;
-    };
 
-    handleQualifiedCertificateChange(info: NzUploadChangeParam) {
-        if (info.file.status !== 'uploading') {
-            console.log(info.file, info.fileList);
-        }
-        if (info.file.status === 'done') {
-            console.log(info.file, info.fileList);
-            this.productForm.controls['qualifiedCertificate'].setValue(info.file.response.filename);
-            this.msg.success(`${info.file.name} file uploaded successfully`);
-        } else if (info.file.status === 'error') {
-            this.msg.error(`${info.file.name} file upload failed.`);
-        }
-    }
+    /* handlePreview = async (file: NzUploadFile): Promise<void> => {
+         if (!file.url && !file['preview']) {
+             file['preview'] = await getBase64(file.originFileObj!);
+         }
+         this.previewImage = file.url || file['preview'];
+         this.previewVisible = true;
+     };
 
-      handleTracingNoChange(info: NzUploadChangeParam) {
-          if (info.file.status !== 'uploading') {
-              console.log(info.file, info.fileList);
-          }
-          if (info.file.status === 'done') {
-              this.productForm.controls['tracingNo'].setValue(info.file.response.filename);
-              console.log(this.productForm.controls['tracingNo'])
-              console.log(this.productForm)
-              this.msg.success(`${info.file.name} file uploaded successfully`);
-          } else if (info.file.status === 'error') {
-              this.msg.error(`${info.file.name} file upload failed.`);
-          }
-      }
+     handleQualifiedCertificateChange(info: NzUploadChangeParam) {
+         if (info.file.status !== 'uploading') {
+             console.log(info.file, info.fileList);
+         }
+         if (info.file.status === 'done') {
+             console.log(info.file, info.fileList);
+             this.productForm.controls['qualifiedCertificate'].setValue(info.file.response.filename);
+             this.msg.success(`${info.file.name} file uploaded successfully`);
+         } else if (info.file.status === 'error') {
+             this.msg.error(`${info.file.name} file upload failed.`);
+         }
+     }
 
-      handlePicturesChange(info: NzUploadChangeParam): void {
-          if (info.file.status !== 'uploading') {
-              console.log(info.file, info.fileList);
-          }
-          if (info.file.status === 'done') {
-              this.msg.success(`${info.file.name} file uploaded successfully`);
-          } else if (info.file.status === 'error') {
-              this.msg.error(`${info.file.name} file upload failed.`);
-          }
-          console.log(this.productForm);
-      }
-  */
+       handleTracingNoChange(info: NzUploadChangeParam) {
+           if (info.file.status !== 'uploading') {
+               console.log(info.file, info.fileList);
+           }
+           if (info.file.status === 'done') {
+               this.productForm.controls['tracingNo'].setValue(info.file.response.filename);
+               console.log(this.productForm.controls['tracingNo'])
+               console.log(this.productForm)
+               this.msg.success(`${info.file.name} file uploaded successfully`);
+           } else if (info.file.status === 'error') {
+               this.msg.error(`${info.file.name} file upload failed.`);
+           }
+       }
+
+       handlePicturesChange(info: NzUploadChangeParam): void {
+           if (info.file.status !== 'uploading') {
+               console.log(info.file, info.fileList);
+           }
+           if (info.file.status === 'done') {
+               this.msg.success(`${info.file.name} file uploaded successfully`);
+           } else if (info.file.status === 'error') {
+               this.msg.error(`${info.file.name} file upload failed.`);
+           }
+           console.log(this.productForm);
+       }
+   */
     constructor(private fb: FormBuilder, private productService: ProductService, private router: Router, private route: ActivatedRoute, private msg: NzMessageService) {
         this.productForm = this.fb.group({
             id: [''],
@@ -99,8 +100,9 @@ export class ProductDetailComponent implements OnInit {
             qualifiedCertificate: ['', Validators.required], // 合格证书、质检证书
             qualityRating: ['', Validators.required],// 质量等级
             netWeight: ['', Validators.required], // 净含量
-            tracingNo: ['', Validators.required], // 溯源码
+            tracingNo: [''], // 溯源码
             // hashCode: ['', Validators.required] // 哈希值
+            wareHouse: [''],
             qualityStatus: [QualityStatus.NotInspected]
         });
     }
@@ -109,6 +111,9 @@ export class ProductDetailComponent implements OnInit {
         this.route.params.subscribe(params => {
             this.productService.get(params['id']).subscribe(data => {
                 this.product = data;
+                this.wareHouseList = data?.wareHouseList || [];
+                console.log('===========>', this.wareHouseList[0].warehouse);
+                console.log('===========>', data?.wareHouseList[0].warehouse)
                 this.productForm.setValue({
                     id: data?.id,
                     name: data?.name, //Name of Product  产品名称/品名
@@ -136,7 +141,8 @@ export class ProductDetailComponent implements OnInit {
                     qualifiedCertificate: data?.qualifiedCertificate, // 合格证书、质检证书
                     qualityRating: data?.qualityRating,// 质量等级
                     netWeight: data?.netWeight, // 净含量
-                    tracingNo: data?.tracingNo, // 溯源码
+                    tracingNo: data?.tracingNo||'', // 溯源码
+                    wareHouse: data?.wareHouseList[0].warehouse,
                     // hashCode: ['', Validators.required] // 哈希值
                     qualityStatus: data?.qualityStatus || QualityStatus.NotInspected, //质检状态
                 })
@@ -168,7 +174,6 @@ export class ProductDetailComponent implements OnInit {
                         url: `${HttpApi.uploads}/${pic}`
                     } as NzUploadFile;
                 });
-                this.wareHouseList = data?.wareHouseList || [];
 
             })
         });
