@@ -39,10 +39,10 @@
             <a nz-button nzType="link" (click)="showOwnerModal(data.id)">{{  data.owner.companyName }}</a>
         </td>
         <td>
-            <a nz-button nzType="link" [routerLink]="['/product/detail', data.id, ]">{{ data.wareHouse}}</a>
+            <a nz-button nzType="link" [routerLink]="['/goods/detail', data.id, ]">{{ data.wareHouse}}</a>
         </td>
         <td>
-            <a nz-button nzType="link" [routerLink]="['/goods/detail', data.id, ]">{{ data.carrier}}</a>
+            <a nz-button nzType="link" [routerLink]="['/logistics/detail', data.id, ]">{{ data.carrier}}</a>
         </td>
         <td>
             <a nz-button nzType="link" [routerLink]="['/exchange/detail', data.id, ]">{{ data.createAt}}</a>

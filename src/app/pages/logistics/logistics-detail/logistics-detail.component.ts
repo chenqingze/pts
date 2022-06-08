@@ -108,7 +108,7 @@ export class LogisticsDetailComponent implements OnInit {
                 isHotspot: false,
                 center: [116.397559, 39.89621],
                 mapStyle: 'amap://styles/macaron',
-                zoom: 10
+                zoom: 5
             });
             // modalMap.on("complete", function () {
             //
@@ -123,7 +123,7 @@ export class LogisticsDetailComponent implements OnInit {
             let driving = new AMap.Driving(drivingOption);
 
             // 根据起终点经纬度规划驾车导航路线
-            driving.search(new AMap.LngLat(127.392946, 45.524789), new AMap.LngLat(123.666823, 41.558234), function (status: any, result: any) {
+            driving.search(new AMap.LngLat(113.851006,23.292775), new AMap.LngLat(117.235421,31.906654), function (status: any, result: any) {
                 // result即是对应的驾车
                 // 导航信息，相关数据结构文档请参考 https://lbs.amap.com/api/javascript-api/reference/route-search#m_DrivingResult
                 if (status === 'complete') {
@@ -153,7 +153,7 @@ export class LogisticsDetailComponent implements OnInit {
                 });
 
                 let endMarker = new AMap.Marker({
-                    position: [116.3215, 39.89455],
+                    position: [117.069141,36.705944],
                     icon: 'https://webapi.amap.com/theme/v1.3/markers/n/end.png',
                     map: map,
                     anchor: 'bottom-center'
