@@ -1,0 +1,20 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 30vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+p{
+    font-size: 20px;
+}
+
+img {
+    padding: .5rem;
+    border-radius: 1rem;
+    mix-blend-mode: darken;
+    width: 50px;
+    height: 50px;
+}
