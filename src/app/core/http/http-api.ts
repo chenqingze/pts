@@ -12,5 +12,6 @@ export const HttpApi = {
     goods: `${baseUrl}/goods`,
     logistics: `${baseUrl}/logistics`,
     exchange: `${baseUrl}/exchanges`,
+    deliveryNotes: `${baseUrl}/delivery-notes`,
 };
 

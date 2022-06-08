@@ -1,0 +1,90 @@
+<nz-page-header nzBackIcon>
+    <nz-page-header-title>仓单状态页</nz-page-header-title>
+    <!--subtitle-->
+    <!--<nz-page-header-subtitle>仓储物流信息</nz-page-header-subtitle>-->
+</nz-page-header>
+<nz-table
+    #rowSelectionTable
+    nzShowSizeChanger
+    nzBordered
+    nzSize="middle"
+    [nzData]="deliveryNoteList"
+    [nzScroll]="{ x: '80vw',y: '60vh' }"
+>
+    <thead>
+    <tr>
+        <th nzLeft>仓单编号</th>
+        <th>生成时间</th>
+        <th>商品信息</th>
+        <th>所有者信息</th>
+        <th>仓储信息</th>
+        <th>物流信息</th>
+        <th>交易时间</th>
+        <th nzRight>金融信息</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of rowSelectionTable.data">
+
+        <td nzLeft>
+            <a nz-button nzType="link" [routerLink]="['/delivery-note/detail', data.id, ]">{{ data.code }}</a>
+        </td>
+        <td>
+            <a nz-button nzType="link" (click)="showTracingModal(data.id)">{{ data.createAt }}</a>
+        </td>
+        <td>
+            <a nz-button nzType="link" [routerLink]="['/product/detail', data.id, ]">{{ data.productName }}</a>
+        </td>
+        <td>
+            <a nz-button nzType="link" (click)="showOwnerModal(data.id)">{{  data.owner.companyName }}</a>
+        </td>
+        <td>
+            <a nz-button nzType="link" [routerLink]="['/product/detail', data.id, ]">{{ data.wareHouse}}</a>
+        </td>
+        <td>
+            <a nz-button nzType="link" [routerLink]="['/goods/detail', data.id, ]">{{ data.carrier}}</a>
+        </td>
+        <td>
+            <a nz-button nzType="link" [routerLink]="['/product/detail', data.id, ]">{{ data.createAt}}</a>
+        </td>
+        <td nzRight>
+            <a nz-button nzType="link" [routerLink]="['/financial-info']">{{data.financialInfo!.status}}</a>
+        </td>
+    </tr>
+    </tbody>
+</nz-table>
+
+<nz-modal [(nzVisible)]="isVisible" [nzTitle]="title" (nzOnCancel)="handleCancel()">
+
+    <div *nzModalContent>
+        <ng-container *ngIf="model==0">
+            <nz-table #basicTable [nzData]="tracingList">
+                <thead>
+                <tr>
+                    <th>流程</th>
+                    <th>时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let data of basicTable.data">
+                    <td>{{data.step}}</td>
+                    <td>{{data.dateTime}}</td>
+                </tr>
+                </tbody>
+            </nz-table>
+        </ng-container>
+        <ng-container *ngIf="model==1">
+            <p>经营者名称:{{owner.companyName}}</p>
+            <p>统一社会信用代码:{{owner.uscc}}</p>
+            <p> 营业期限:{{owner.businessTerm}}</p>
+            <p> 企业类型:{{owner.businessTerm}}</p>
+            <p> 注册地址:{{owner.location}}</p>
+            <p>经营范围:{{owner.generalItem}}</p>
+            <p> 注册资本:{{owner.registeredCapital}}</p>
+            <p> 成立日期:{{owner.establishmentDate}}</p>
+        </ng-container>
+    </div>
+    <div *nzModalFooter>
+        <button nz-button nzType="primary" (click)="handleOk()">关闭</button>
+    </div>
+</nz-modal>

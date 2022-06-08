@@ -1,0 +1,39 @@
+<nz-page-header nzBackIcon>
+    <!--title-->
+    <nz-page-header-title>数字仓单详情</nz-page-header-title>
+    <!--subtitle-->
+    <nz-page-header-subtitle></nz-page-header-subtitle>
+</nz-page-header>
+<nz-descriptions nzBordered>
+    <nz-descriptions-item nzTitle="仓单状态" [nzSpan]="2">{{deliveryNote.deliveryStatus}}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="长安联盟链仓单存证" [nzSpan]="2">{{deliveryNote.hashcode}}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="仓单编号" [nzSpan]="2">{{deliveryNote.code}}</nz-descriptions-item>
+
+    <nz-descriptions-item nzTitle="产品名称" [nzSpan]="2">{{deliveryNote.productName}}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="数量" [nzSpan]="2">{{deliveryNote.quantity}}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="损耗标准" [nzSpan]="2">{{deliveryNote.lossCriteria}}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="质量等级" [nzSpan]="2">{{deliveryNote.qualityRating}}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="产地" [nzSpan]="2">{{deliveryNote.placeOfOrigin}}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="所有人" [nzSpan]="2">{{deliveryNote.owner.companyName}}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="所有人地址" [nzSpan]="2">{{deliveryNote.owner.location}}</nz-descriptions-item>
+
+    <ng-container *ngIf="deliveryNote.wareHouse;else carrierEl">
+        <nz-descriptions-item nzTitle="仓储保管" [nzSpan]="2">{{deliveryNote.owner.location}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="仓储地址" [nzSpan]="2">{{deliveryNote.owner.location}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="仓储期限" [nzSpan]="2">{{deliveryNote.storagePeriod}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="仓储合同" [nzSpan]="2">见合同详情</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="仓储费" [nzSpan]="2">见合同详情</nz-descriptions-item>
+    </ng-container>
+    <ng-template #carrierEl>
+        <nz-descriptions-item nzTitle="物流运输" [nzSpan]="2">{{deliveryNote.carrier}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="当前位置" [nzSpan]="2">{{deliveryNote.currentPosition}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="运输时限" [nzSpan]="2">{{deliveryNote.deliveryPeriod}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="运输合同" [nzSpan]="2">见合同详情</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="物流运费" [nzSpan]="2">见合同详情</nz-descriptions-item>
+    </ng-template>
+    <nz-descriptions-item nzTitle="保险" [nzSpan]="2">{{deliveryNote.insurance}}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="生产商" [nzSpan]="2">{{deliveryNote.manufacturer}}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="生产商" [nzSpan]="2">{{deliveryNote.manufacturer}}</nz-descriptions-item>
+
+</nz-descriptions>
+

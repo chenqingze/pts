@@ -19,6 +19,9 @@
             <li nz-submenu nzOpen nzTitle="溯源管理" nzIcon="gold">
                 <ul>
                     <li nz-menu-item nzMatchRouter>
+                        <a routerLink="/delivery-note/list">仓单管理</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
                         <a routerLink="/product/list">产地仓储</a>
                     </li>
                     <li nz-menu-item nzMatchRouter>
@@ -42,12 +45,22 @@
                       -->
                 </ul>
             </li>
-            <!--
-            <li nz-submenu nzTitle="管理" nzIcon="bank">
-              <ul>
-              </ul>
+            <li nz-submenu nzTitle="数据采集" nzIcon="bank">
+                <ul>
+                    <li nz-menu-item nzMatchRouter>
+                        <a routerLink="/daq/certified-warehouse">数字仓认证</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a routerLink="/daq/certified-device">采集设备认证</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a routerLink="/daq/certified-api">采集接口认证</a>
+                    </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a routerLink="/daq/certified-operator">采集人员认证</a>
+                    </li>
+                </ul>
             </li>
-            -->
             <li nz-submenu nzTitle="系统配置" nzIcon="setting">
                 <ul>
                     <li nz-menu-item nzMatchRouter>
@@ -90,7 +103,7 @@
             <div class="inner-content">
                 <router-outlet></router-outlet>
             </div>
-            <nz-footer>Design @2022 数字仓单产品信息管理系统-Demo</nz-footer>
+            <nz-footer>Design @2022 数字仓单产品信息管理系统</nz-footer>
         </nz-content>
     </nz-layout>
 </nz-layout>

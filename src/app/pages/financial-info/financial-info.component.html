@@ -1,0 +1,50 @@
+<nz-page-header nzBackIcon>
+    <nz-page-header-title>金融信息</nz-page-header-title>
+    <!--subtitle-->
+    <!--<nz-page-header-subtitle>仓储物流信息</nz-page-header-subtitle>-->
+</nz-page-header>
+<nz-table
+    #rowSelectionTable
+    nzShowSizeChanger
+    nzBordered
+    nzSize="middle"
+    [nzData]="deliveryNoteList"
+    [nzScroll]="{ x: '80vw',y: '60vh' }"
+>
+    <thead>
+    <tr>
+        <th nzLeft>仓单编号</th>
+        <th nzLeft>保险公司名称</th>
+        <th>地址</th>
+        <th>电话</th>
+        <th>保单编号</th>
+        <th>保价金额</th>
+        <th>仓单质押状态</th>
+        <th>银行名称</th>
+        <th>地址</th>
+        <th>电话</th>
+        <th>合同编号</th>
+        <th>质押金额</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of rowSelectionTable.data">
+        <ng-container *ngIf="data.financialInfo">
+            <td nzLeft nzAlign="center">{{ data.code }}</td>
+            <td nzLeft>{{ data.financialInfo.companyName }}</td>
+            <td>{{ data.financialInfo.addrs}}</td>
+            <td>{{ data.financialInfo.tel}}</td>
+            <td>{{ data.financialInfo.code}}</td>
+            <td>{{ data.financialInfo.amount}}</td>
+            <td>{{ data.financialInfo.status}}</td>
+            <td>{{data.financialInfo.bankName}}</td>
+            <td>{{data.financialInfo.bankAddrs}}</td>
+            <td>{{data.financialInfo.bankTel}}</td>
+            <td>{{data.financialInfo.contractCode}}</td>
+            <td>{{data.financialInfo.zhiYaAmount}}</td>
+        </ng-container>
+
+    </tr>
+    </tbody>
+</nz-table>
+

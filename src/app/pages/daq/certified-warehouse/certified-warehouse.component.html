@@ -1,0 +1,36 @@
+<nz-page-header nzBackIcon>
+    <nz-page-header-title>数字仓认证</nz-page-header-title>
+</nz-page-header>
+<nz-table
+    #rowSelectionTable
+    nzShowSizeChanger
+    nzBordered
+    nzSize="middle"
+    [nzData]="warehouseList"
+    [nzScroll]="{ x: '80vw',y: '60vh' }"
+>
+    <thead>
+    <tr>
+        <th nzLeft>仓库编号</th>
+        <th>仓库名称</th>
+        <th>位置</th>
+        <th>产权人</th>
+        <th>仓库等级</th>
+        <th>面积</th>
+        <th>认证机构</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of rowSelectionTable.data">
+        <td nzLeft>{{data.code}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.position}}</td>
+        <td>{{data.owner}}</td>
+        <td>{{data.level}}</td>
+        <td>{{data.area}}</td>
+        <td>{{data.certifiedOrg}}</td>
+
+    </tr>
+    </tbody>
+</nz-table>
+

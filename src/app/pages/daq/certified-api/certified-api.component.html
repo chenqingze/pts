@@ -1,0 +1,34 @@
+<nz-page-header nzBackIcon>
+    <nz-page-header-title>采集设备认证</nz-page-header-title>
+</nz-page-header>
+<nz-table
+    #rowSelectionTable
+    nzShowSizeChanger
+    nzBordered
+    nzSize="middle"
+    [nzData]="apiList"
+    [nzScroll]="{ x: '80vw',y: '60vh' }"
+>
+    <thead>
+    <tr>
+        <th nzLeft>接口编号</th>
+        <th>接口单位名称</th>
+        <th>类型</th>
+        <th>通信设备类型</th>
+        <th>加密方式</th>
+        <th>密钥管理</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of rowSelectionTable.data">
+        <td nzLeft>{{data.code}}</td>
+        <td>{{data.orgName}}</td>
+        <td>{{data.type}}</td>
+        <td>{{data.connectionType}}</td>
+        <td>{{data.encryption}}</td>
+        <td>{{data.keyManage}}</td>
+
+    </tr>
+    </tbody>
+</nz-table>
+

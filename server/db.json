@@ -67,17 +67,17 @@
       "wareHouseType": 0,
       "id": 2,
       "code": "2",
-      "name": "五常大米",
-      "batchNo": "202112767856",
+      "name": "增城丝苗米",
+      "batchNo": "35089800876",
       "specs": "25Kg/袋",
-      "countryOFOrigin": "哈尔滨五常市",
+      "countryOFOrigin": "广州增城市",
       "quantity": "500袋",
       "category": "籼米",
-      "manufacturer": "哈尔滨裕丰谷业",
+      "manufacturer": "广州金凤凰米业",
       "productionDate": "2022-1-12",
       "expirationDate": "12个月",
       "storageMethods": "常温保存，防潮防晒",
-      "qualifiedCertificate": "50061513-20220114-裕丰谷业-稻花香五常大米-营养检测-SY1121120607.pdf",
+      "qualifiedCertificate": "30061312-20220114-金凤凰米业-金凤凰增城丝苗米-营养检测-SY1121120409.pdf",
       "qualifiedCertificateNo": "SY1121120607",
       "qualifiedCertificatePic": [
         "50061513-20220114-裕丰谷业-稻花香五常大米-营养检测-SY1121120607-1.png",
@@ -92,26 +92,26 @@
       "exchange": {
         "exchangePlatform": "上海广发贸易网",
         "orderNo": "202205358678",
-        "buyer": "北京逸邻贸易有限公司",
-        "shipper": "哈尔滨裕丰谷业",
+        "buyer": "山东友帮商贸有限公司",
+        "shipper": "广州金凤凰米业",
         "exchangeTime": "2022-2-19 15:30:00",
         "price": "150元/袋",
-        "fromWarehouse": "哈尔滨市裕丰仓库",
-        "toWarehouse": "北京亦庄仓库",
+        "fromWarehouse": "广州金凤凰仓库",
+        "toWarehouse": "济南东城仓库",
         "outTime": "2022-2-15  11:35:00"
       },
-      "currentPosition": "沈阳中转",
+      "currentPosition": "合肥中转",
       "transitList": [
         {
-          "station": "哈尔滨发车",
+          "station": "广州发车",
           "outTime": "2022-2-15  12:25:00"
         },
         {
-          "station": "长春中转",
+          "station": "南昌中转",
           "outTime": "2022-2-15  23:35:00"
         },
         {
-          "station": "沈阳中转",
+          "station": "合肥中转",
           "outTime": "2022-2-16  09:20:00"
         }
       ],
@@ -119,8 +119,8 @@
       "wareHouseList": [
         {
           "wareHouseType": 0,
-          "warehouse": "哈尔滨市裕丰仓库",
-          "position": "哈尔滨市",
+          "warehouse": "广州凤凰仓库",
+          "position": "广州增城市",
           "inTime": "2022-1-30 17:30:00",
           "outTime": "2022-2-15  11:35:00",
           "shelf": "5号仓18货架",
@@ -129,8 +129,164 @@
         }
       ],
       "pictures": [
-        "product-pic-1652703552937.jpg"
+        "product-pic-1652701894888.jpg"
       ]
+    }
+  ],
+  "delivery-notes": [
+    {
+      "id": 1,
+      "financialInfo": "已质押",
+      "createAt": "2021/11/19 11:50",
+      "deliveryStatus": "正常",
+      "code": "35089800876",
+      "wareHouse": "北京亦庄仓库",
+      "wareHouseAddrs": "北京大兴区亦庄XXX",
+      "carrier": "",
+      "currentPosition": "",
+      "productName": "增城丝苗米",
+      "lossCriteria": "0.5%/30天",
+      "storagePeriod": "2022-1-05至2022-6-30",
+      "insurance": "详见保险合同详情",
+      "manufacturer": "广州金凤凰米业",
+      "quantity": "500袋",
+      "contract": "202202038765",
+      "storageCharge": "见合同详情",
+      "placeOfOrigin": "广州增城",
+      "qualityRating": "一级",
+      "hashcode": "交易返回哈希值",
+      "tracingList": [
+        {
+          "step": "165地块丝苗米收割",
+          "dateTime": "2021/11/15 15:30"
+        },
+        {
+          "step": "基地晾晒场脱壳",
+          "dateTime": "2021/11/18 18:20"
+        },
+        {
+          "step": "金凤凰仓库8号地磅称重",
+          "dateTime": "2021/11/19 10:20"
+        },
+        {
+          "step": "金凤凰仓库9号分拣机分拣",
+          "dateTime": "2021/11/19 10:30"
+        },
+        {
+          "step": "金凤凰仓库10号打包机分装",
+          "dateTime": "2021/11/19 11:10"
+        },
+        {
+          "step": "金凤凰仓库10号抽查质检",
+          "dateTime": "2021/11/19 11:10"
+        },
+        {
+          "step": "金凤凰仓库10号8号货位入库",
+          "dateTime": "2021/11/19 11:20"
+        },
+        {
+          "step": "165地块丝苗米信息上链",
+          "dateTime": "2021/11/19 11:30"
+        },
+        {
+          "step": "165地块仓单生成",
+          "dateTime": "2021/11/19 11:50"
+        }
+      ],
+      "owner": {
+        "companyName": "广州金凤凰米业",
+        "uscc": "XXXXXXX",
+        "businessTerm": " 2018-07-03 至 无固定期限",
+        "companyType": "有限责任公司(自然人投资或控股)",
+        "location": "广东省广州市XXXX",
+        "generalItem": "农产品种植、农产品仓储、贸易",
+        "registeredCapital": "1000万",
+        "establishmentDate": "2018年月3日"
+      },
+      "financialInfo": {
+        "companyName": "中国人民保险",
+        "addrs": "北京市朝阳区XXX",
+        "tel": "010-XXXXX",
+        "code": "2022018768",
+        "amount": "10万元",
+        "status": "已质押",
+        "bankName": "北京银行",
+        "bankAddrs": "北京市朝阳区XXXX",
+        "bankTel": "010-XXXX",
+        "contractCode": "20220235",
+        "zhiYaAmount": "8万元"
+      }
+    },
+    {
+      "id": 2,
+      "financialInfo": "",
+      "createAt": "2021/11/21 11:50",
+      "deliveryStatus": "正常",
+      "code": "35089800365",
+      "wareHouse": "",
+      "wareHouseAddrs": "",
+      "carrier": "德邦速运：38764534",
+      "currentPosition": "合肥中转",
+      "productName": "增城丝苗米",
+      "lossCriteria": "0.5%/30天",
+      "storagePeriod": "",
+      "deliveryPeriod": "2022-1-05至2022-6-30",
+      "insurance": "详见保险合同详情",
+      "manufacturer": "广州金凤凰米业",
+      "quantity": "800袋",
+      "contract": "202202038765",
+      "storageCharge": "见合同详情",
+      "placeOfOrigin": "广州增城",
+      "qualityRating": "一级",
+      "hashcode": "交易返回哈希值",
+      "tracingList": [
+        {
+          "step": "165地块丝苗米收割",
+          "dateTime": "2021/11/15 15:30"
+        },
+        {
+          "step": "基地晾晒场脱壳",
+          "dateTime": "2021/11/18 18:20"
+        },
+        {
+          "step": "金凤凰仓库8号地磅称重",
+          "dateTime": "2021/11/19 10:20"
+        },
+        {
+          "step": "金凤凰仓库9号分拣机分拣",
+          "dateTime": "2021/11/19 10:30"
+        },
+        {
+          "step": "金凤凰仓库10号打包机分装",
+          "dateTime": "2021/11/19 11:10"
+        },
+        {
+          "step": "金凤凰仓库10号抽查质检",
+          "dateTime": "2021/11/19 11:10"
+        },
+        {
+          "step": "金凤凰仓库10号8号货位入库",
+          "dateTime": "2021/11/19 11:20"
+        },
+        {
+          "step": "165地块丝苗米信息上链",
+          "dateTime": "2021/11/19 11:30"
+        },
+        {
+          "step": "165地块仓单生成",
+          "dateTime": "2021/11/19 11:50"
+        }
+      ],
+      "owner": {
+        "companyName": "山东友帮商贸有限公司",
+        "uscc": "XXXXXXX",
+        "businessTerm": " 2018-07-03 至 无固定期限",
+        "companyType": "有限责任公司(自然人投资或控股)",
+        "location": "广东省广州市XXXX",
+        "generalItem": "农产品种植、农产品仓储、贸易",
+        "registeredCapital": "1000万",
+        "establishmentDate": "2018年月3日"
+      }
     }
   ]
 }

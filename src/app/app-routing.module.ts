@@ -32,10 +32,21 @@ const routes: Routes = [
                 path: 'exchange',
                 loadChildren: () => import('./pages/exchange/exchange.module').then(m => m.ExchangeModule),
                 canActivate: [AuthGuard]
-            }
+            },
+            {
+                path: 'delivery-note',
+                loadChildren: () => import('./pages/delivery-note/delivery-note.module').then(m => m.DeliveryNoteModule)
+            },
+            {
+                path: 'financial-info',
+                loadChildren: () => import('./pages/financial-info/financial-info.module').then(m => m.FinancialInfoModule)
+            },
+            {path: 'daq', loadChildren: () => import('./pages/daq/daq.module').then(m => m.DaqModule)},
+
         ],
         canActivate: [AuthGuard]
     },
+
 
     {
         path: '**', pathMatch: 'full', redirectTo: '/login'

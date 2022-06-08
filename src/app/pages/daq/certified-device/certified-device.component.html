@@ -1,0 +1,34 @@
+<nz-page-header nzBackIcon>
+    <nz-page-header-title>采集设备认证</nz-page-header-title>
+</nz-page-header>
+<nz-table
+    #rowSelectionTable
+    nzShowSizeChanger
+    nzBordered
+    nzSize="middle"
+    [nzData]="deviceList"
+    [nzScroll]="{ x: '80vw',y: '60vh' }"
+>
+    <thead>
+    <tr>
+        <th nzLeft>设备编号</th>
+        <th>设备名称</th>
+        <th>类型</th>
+        <th>所属单位</th>
+        <th>认证时间</th>
+        <th>认证机构</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of rowSelectionTable.data">
+        <td nzLeft>{{data.code}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.type}}</td>
+        <td>{{data.owner}}</td>
+        <td>{{data.certifiedAt}}</td>
+        <td>{{data.institutions}}</td>
+
+    </tr>
+    </tbody>
+</nz-table>
+
